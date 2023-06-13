@@ -1,14 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import cn from 'classnames';
 
 import styles from './Header.module.scss';
+import ImageBtn from '../ImageBtn/ImageBtn';
 
-const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
+const Header: FC = () => {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showSearch, setShowSearch] = useState<boolean>(false);
+  const [innerWidth, setInnerWidth] = useState<number>(0);
+  const searchRef = useRef<any>(null);
+  const btnSearchRef = useRef<any>(null);
 
   const topLinks = [
     { slug: 'payment', title: 'Payment and delivery' },
@@ -19,8 +24,32 @@ const Header = () => {
     { slug: 'contact', title: 'Contact' },
   ];
 
+  useEffect(() => {
+    const onClick: EventListener = (e) => {
+      if (
+        btnSearchRef.current &&
+        !btnSearchRef.current.contains(e.target) &&
+        searchRef.current &&
+        !searchRef.current.contains(e.target)
+      ) {
+        setShowSearch(false);
+      }
+    };
+
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, [searchRef, btnSearchRef]);
+
+  useEffect(() => {
+    setInnerWidth(window.innerWidth);
+  }, []);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
   };
 
   return (
@@ -37,7 +66,15 @@ const Header = () => {
         </ul>
         <p>5261 W Imperial Hwy, Los Angeles, CA 90045, USA</p>
       </nav>
-      <div className={styles.header_middle}>
+      <input
+        ref={searchRef}
+        type="text"
+        className={styles.header_input}
+        style={showSearch ? { display: 'block', width: '100%' } : { display: 'none' }}
+      />
+      <div
+        className={styles.header_middle}
+        style={!showSearch ? { display: 'grid' } : { display: 'none' }}>
         <Link href="#" className={styles.logo_link}>
           <Image
             src="/image/header/logo.png"
@@ -57,38 +94,35 @@ const Header = () => {
             Catalog
           </button>
         </div>
-        <input type="text" className={styles.header_input} />
-        <ul className={styles.header_right}>
-          <li>
-            <Link href="#" className="header__rigt-basket">
-              <Image src="/image/header/basket_icon_160414.svg" alt="" width={25} height={25} />
-              Basket
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="header__rigt-favorites">
-              <Image
-                src="/image/header/star-favorite-1498-svgrepo-com.svg"
-                alt=""
-                width={25}
-                height={25}
+        {innerWidth < 860 ? (
+          <ImageBtn
+            ref={btnSearchRef}
+            title="Search"
+            srcImg="/image/header/search_black.svg"
+            onClick={toggleSearch}
+          />
+        ) : (
+          <input type="text" className={styles.header_input} />
+        )}
+        <div className={styles.header_right}>
+          <ImageBtn title="Basket" srcImg="/image/header/basket_icon_160414.svg" />
+
+          {innerWidth > 860 && (
+            <>
+              <ImageBtn
+                title="Favorites"
+                srcImg="/image/header/star-favorite-1498-svgrepo-com.svg"
               />
-              Favorites
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="header__rigt-call">
-              <Image
-                src="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
-                alt=""
-                width={25}
-                height={25}
+
+              <ImageBtn
+                title="Order a call"
+                srcImg="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
               />
-              <p className="header__rigt-heading">Order a call</p>
-            </Link>
-          </li>
-        </ul>
+            </>
+          )}
+        </div>
       </div>
+
       <nav>
         <ul className={styles.nav_bot}>
           <li>
