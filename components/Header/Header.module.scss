@@ -229,4 +229,12 @@
   .header_middle {
     grid-template-columns: min-content 4fr 1fr;
   }
+  .logo_link {
+    img {
+      left: -15px !important;
+    }
+  }
+  .header {
+    padding: 10px 15px 0;
+  }
 }
