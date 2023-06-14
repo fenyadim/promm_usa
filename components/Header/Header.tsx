@@ -42,6 +42,9 @@ const Header: FC = () => {
   }, [searchRef, btnSearchRef]);
 
   useEffect(() => {
+    if (innerWidth === 0) {
+      setInnerWidth(window.innerWidth);
+    }
     const resizeWindos = (e: Event) => {
       const target = e.target as Window;
       setInnerWidth(target.innerWidth);
