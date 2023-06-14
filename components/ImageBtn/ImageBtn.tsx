@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { ButtonHTMLAttributes, forwardRef } from 'react';
+import cn from 'classnames';
 
 import styles from './ImageBtn.module.scss';
 
 type IImageBtn = {
-  title: string;
+  title?: string;
   srcImg: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -15,8 +16,8 @@ const ImageBtn = forwardRef<Ref, IImageBtn>((props, ref) => {
 
   return (
     <button ref={ref} className={styles.btn_wrapper} {...props}>
-      <Image src={srcImg} alt={title} width={25} height={25} />
-      {title}
+      <Image src={srcImg} alt="" width={25} height={25} />
+      {title && title}
     </button>
   );
 });
