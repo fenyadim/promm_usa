@@ -1,12 +1,14 @@
 'use client';
 
-import { FC, useEffect, useRef, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import cn from 'classnames';
 
 import styles from './Header.module.scss';
 import ImageBtn from '../ImageBtn/ImageBtn';
+import Menu from '../Menu/Menu';
+import { toggleVisible } from '@/utils/toggleVisible';
 
 const Header: FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -55,17 +57,11 @@ const Header: FC = () => {
     };
   }, []);
 
-  const toggleMobileMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
-  };
+  const toggleMobileMenu = toggleVisible(setShowMobileMenu, showMobileMenu);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  const toggleMenu = toggleVisible(setShowMenu, showMenu);
 
-  const toggleSearch = () => {
-    setShowSearch(!showSearch);
-  };
+  const toggleSearch = toggleVisible(setShowSearch, showSearch);
 
   return (
     <>
@@ -168,7 +164,7 @@ const Header: FC = () => {
             </li>
           </ul>
         </nav>
-        <div
+        {/* <div
           className={styles.dropdown_container}
           style={showMenu ? { opacity: 1 } : { opacity: 0, zIndex: -1 }}>
           <div>
@@ -200,17 +196,40 @@ const Header: FC = () => {
             <Link href="#">Ready-made business-TO THE MOON</Link>
             <Link href="#">Ready-made business-STANDART</Link>
           </div>
-        </div>
+        </div> */}
       </header>
-      <div
-        className={cn(styles.menu_wrapper, {
-          [styles.closeMenu]: !showMobileMenu,
-        })}>
-        <ImageBtn
-          className={styles.close_btn}
-          onClick={toggleMobileMenu}
-          srcImg="/image/header/cross.svg"
-        />
+      <Menu showMenu={showMenu} toggleMenu={toggleMenu} zIndex={2}>
+        <div>
+          <Link href="#">Asic Miner</Link>
+          <Link href="#">Bitmain</Link>
+          <Link href="#">Whatsminer</Link>
+          <Link href="#">Innosilicon</Link>
+          <Link href="#">Canaan</Link>
+          <Link href="#">Goldshell</Link>
+          <Link href="#">iPollo</Link>
+        </div>
+        <div>
+          <Link href="#">Mining containers</Link>
+          <Link href="#">PM Small Container</Link>
+          <Link href="#">PM Start container</Link>
+          <Link href="#">PM Medium container</Link>
+          <Link href="#">PM Optimal container</Link>
+          <Link href="#">PM Big container</Link>
+        </div>
+        <div>
+          <Link href="#">Ready-made business</Link>
+          <Link href="#">Ready-made business-START</Link>
+          <Link href="#">Ready-made business-SMART</Link>
+          <Link href="#">Ready-made business-MEDIUM</Link>
+          <Link href="#">Ready-made business-BIG</Link>
+          <Link href="#">Ready-made business-MAX</Link>
+          <Link href="#">Ready-made business-VIP</Link>
+          <Link href="#">Ready-made business-PREMIUM</Link>
+          <Link href="#">Ready-made business-TO THE MOON</Link>
+          <Link href="#">Ready-made business-STANDART</Link>
+        </div>
+      </Menu>
+      <Menu showMenu={showMobileMenu} toggleMenu={toggleMobileMenu}>
         <Link href="">Investing in mining</Link>
         <Link href="">Turnkey Mining</Link>
         <Link href="">Data Center</Link>
@@ -221,6 +240,20 @@ const Header: FC = () => {
             {title}
           </Link>
         ))}
+      </Menu>
+      <div className={styles.bot_menu}>
+        <ImageBtn
+          srcImg="/image/header/catalog.svg"
+          title="Catalog"
+          sizeImg={30}
+          onClick={toggleMenu}
+        />
+        <ImageBtn title="Basket" srcImg="/image/header/basket_icon_160414.svg" />
+        <ImageBtn title="Favorites" srcImg="/image/header/star-favorite-1498-svgrepo-com.svg" />
+        <ImageBtn
+          title="Order a call"
+          srcImg="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
+        />
       </div>
     </>
   );
