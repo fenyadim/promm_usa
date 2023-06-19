@@ -1,38 +1,53 @@
-import Slider from 'react-slick';
+'use client'
 
-const ImagesSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  return (
-    <div>
-      <h2> Single Item</h2>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-    </div>
-  );
-};
+import Image from 'next/image'
+import { FC, Fragment, PropsWithChildren } from 'react'
+import { Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-export default ImagesSlider;
+import styles from './ImagesSlider.module.scss'
+
+interface IImagesSlider {
+	data: Array<PeopleType>
+}
+
+type PeopleType = {
+	srcImg: string
+	name: string
+	place: string
+}
+
+const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
+	return (
+		<Swiper
+			modules={[Navigation]}
+			spaceBetween={10}
+			slidesPerView={3}
+			onSlideChange={() => console.log('slide change')}
+			onSwiper={(swiper) => console.log(swiper)}
+			navigation
+			loop={true}
+		>
+			{data.map(({ name, srcImg, place }) => (
+				<Fragment key={name}>
+					<SwiperSlide>
+						<div className={styles.slide}>
+							<Image
+								src={srcImg}
+								alt={name}
+								fill
+								style={{ objectFit: 'cover' }}
+							/>
+							<div className={styles.slide_info}>
+								<h4>{name}</h4>
+								<p>{place}</p>
+							</div>
+						</div>
+					</SwiperSlide>
+				</Fragment>
+			))}
+		</Swiper>
+	)
+}
+
+export default ImagesSlider

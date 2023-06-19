@@ -1,0 +1,27 @@
+.slide {
+	position: relative;
+	width: 317px;
+	height: 468px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.slide_info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 14px 30px;
+	background: rgba(255, 255, 255, 0.75);
+	h4 {
+		font-weight: 600;
+		font-size: 20px;
+		margin-bottom: 4px;
+	}
+	p {
+		font-weight: 600;
+		font-size: 10px;
+		text-transform: uppercase;
+		color: #5820f6;
+	}
+}

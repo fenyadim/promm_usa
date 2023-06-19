@@ -1,20 +1,35 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
-import Slider from 'react-slick'
 
 import styles from './Home.module.scss'
 import ImagesSlider from '@/components/ImagesSlider/ImagesSlider'
 import LinkBtn from '@/components/LinkBtn/LinkBtn'
 
 const Home: FC = () => {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-	}
+	const peopleInfo = [
+		{
+			srcImg: '/image/index/people/1.jpg',
+			name: 'Тимофей Кузьменко',
+			place: 'Основатель',
+		},
+		{
+			srcImg: '/image/index/people/2.jpg',
+			name: 'Евгений Дёготь',
+			place: 'Генеральный директор ',
+		},
+		{
+			srcImg: '/image/index/people/3.jpg',
+			name: 'Александр Федоров',
+			place: 'Директор по развитию',
+		},
+		{
+			srcImg: '/image/index/people/4.jpg',
+			name: 'Леонид Белоус',
+			place: 'Финансовый директор',
+		},
+	]
+
 	return (
 		<div className={styles.wrapper}>
 			<section className={styles.media_container}>
@@ -171,7 +186,7 @@ const Home: FC = () => {
 					</div>
 					<LinkBtn title="Learn more" />
 				</div>
-				<div>{/* <ImagesSlider></ImagesSlider> */}</div>
+				<ImagesSlider data={peopleInfo} />
 			</section>
 		</div>
 	)
