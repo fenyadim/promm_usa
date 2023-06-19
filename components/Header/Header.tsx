@@ -1,14 +1,15 @@
 'use client'
 
-import { FC, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-import styles from 'Header.module.scss'
-import ImageBtn from '@/components/ImageBtn/ImageBtn'
+import { FC, useEffect, useRef, useState } from 'react'
 
 import { toggleVisible } from '@/utils/toggleVisible'
+
+import ImageBtn from '@/components/ImageBtn/ImageBtn'
 import Menu from '@/components/Menu/Menu'
+
+import styles from 'Header.module.scss'
 
 const Header: FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -20,10 +21,8 @@ const Header: FC = () => {
 
 	const topLinks = [
 		{ slug: 'payment', title: 'Payment and delivery' },
-		{ slug: 'blog', title: 'Blog' },
 		{ slug: 'company', title: 'Company' },
 		{ slug: 'help', title: 'Help 24/7' },
-		{ slug: 'media-about', title: 'The media about Us' },
 		{ slug: 'contact', title: 'Contact' },
 	]
 
