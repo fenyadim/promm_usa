@@ -3,10 +3,9 @@ import Link from 'next/link'
 import { FC } from 'react'
 import Slider from 'react-slick'
 
-import LinkBtn from '@/components/LinkBtn/LinkBtn'
-
 import styles from './Home.module.scss'
 import ImagesSlider from '@/components/ImagesSlider/ImagesSlider'
+import LinkBtn from '@/components/LinkBtn/LinkBtn'
 
 const Home: FC = () => {
 	const settings = {

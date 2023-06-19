@@ -6,10 +6,9 @@ import { FC, useEffect, useRef, useState } from 'react'
 
 import { toggleVisible } from '@/utils/toggleVisible'
 
+import styles from './Header.module.scss'
 import ImageBtn from '@/components/ImageBtn/ImageBtn'
 import Menu from '@/components/Menu/Menu'
-
-import styles from 'Header.module.scss'
 
 const Header: FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
