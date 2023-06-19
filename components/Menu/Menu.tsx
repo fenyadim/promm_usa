@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from 'react';
-import cn from 'classnames';
-import ImageBtn from '../ImageBtn/ImageBtn';
-import styles from './Menu.module.scss';
+import { FC, PropsWithChildren } from "react";
+import cn from "classnames";
+import ImageBtn from "../ImageBtn/ImageBtn";
+import styles from "./Menu.module.scss";
 
 interface IMenuProps extends PropsWithChildren {
   showMenu: boolean;
@@ -15,7 +15,8 @@ const Menu: FC<IMenuProps> = ({ showMenu, toggleMenu, zIndex, children }) => {
       className={cn(styles.menu_wrapper, {
         [styles.closeMenu]: !showMenu,
       })}
-      style={{ zIndex }}>
+      style={{ zIndex }}
+    >
       <ImageBtn
         className={styles.close_btn}
         onClick={toggleMenu}
