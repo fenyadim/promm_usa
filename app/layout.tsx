@@ -1,4 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 import 'swiper/scss/navigation'
+
+import { IsOpenSubMenuContext } from '@/utils/context'
 
 import './globals.css'
 import Footer from '@/components/Footer/Footer'
@@ -18,12 +23,16 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<html lang="en">
-			<body>
-				<Header />
-				{children}
-				<Footer />
+			<body style={isOpen ? { overflowY: 'hidden' } : { overflowX: 'hidden' }}>
+				<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
+					<Header />
+					{children}
+					<Footer />
+				</IsOpenSubMenuContext.Provider>
 			</body>
 		</html>
 	)

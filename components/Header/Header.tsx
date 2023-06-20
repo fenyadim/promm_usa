@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useContext, useEffect, useRef, useState } from 'react'
 
+import { IsOpenSubMenuContext } from '@/utils/context'
 import { toggleVisible } from '@/utils/toggleVisible'
 
 import styles from './Header.module.scss'
@@ -15,8 +16,11 @@ const Header: FC = () => {
 	const [showSearch, setShowSearch] = useState<boolean>(false)
 	const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
 	const [innerWidth, setInnerWidth] = useState<number>(0)
+	const { setIsOpen } = useContext(IsOpenSubMenuContext)
 	const searchRef = useRef<any>(null)
 	const btnSearchRef = useRef<any>(null)
+
+	setIsOpen(showMenu || showMobileMenu)
 
 	const topLinks = [
 		{ slug: 'payment', title: 'Payment and delivery' },

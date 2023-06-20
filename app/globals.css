@@ -1,52 +1,53 @@
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../public/fonts/Gilroy-Regular.woff2') format('woff2'),
-    url('../public/fonts/Gilroy-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Gilroy';
+	src: url('../public/fonts/Gilroy-Regular.woff2') format('woff2'),
+		url('../public/fonts/Gilroy-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../public/fonts/Gilroy-Medium.woff2') format('woff2'),
-    url('../public/fonts/Gilroy-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+	font-family: 'Gilroy';
+	src: url('../public/fonts/Gilroy-Medium.woff2') format('woff2'),
+		url('../public/fonts/Gilroy-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../public/fonts/Gilroy-Semibold.woff2') format('woff2'),
-    url('../public/fonts/Gilroy-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
+	font-family: 'Gilroy';
+	src: url('../public/fonts/Gilroy-Semibold.woff2') format('woff2'),
+		url('../public/fonts/Gilroy-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
 }
 
 * {
-  font-family: 'Gilroy';
-  font-weight: 400;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	font-family: 'Gilroy';
+	font-weight: 400;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	max-width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 ul,
 li {
-  text-decoration: none;
-  list-style: none;
+	text-decoration: none;
+	list-style: none;
 }
 
 :root {
-  --index: calc(1vw + 1vh);
+	--index: calc(1vw + 1vh);
 }

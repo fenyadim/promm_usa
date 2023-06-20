@@ -19,28 +19,21 @@ type PeopleType = {
 }
 
 const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
-	// const btnRef = useRef(null)
 	const swiperRef = useRef<SwiperType>()
-	// const navigation: NavigationOptions = {
-	// 	enabled: true,
-	// 	//@ts-ignore
-	// 	nextEl: btnRef.current,
-	// }
+
 	return (
 		<div className={styles.slider_wrapper}>
 			<Swiper
 				modules={[Navigation]}
 				spaceBetween={50}
 				slidesPerView={'auto'}
-				// navigation={navigation}
 				onBeforeInit={(swiper) => {
 					swiperRef.current = swiper
 				}}
 			>
-				{data.map(({ name, srcImg, place }) => (
-					<Fragment key={name}>
+				{data.map(({ name, srcImg, place }, id) => (
+					<Fragment key={`${name} ${id}`}>
 						<SwiperSlide className={styles.slide}>
-							{/* <div className={styles.slide}> */}
 							<Image
 								src={srcImg}
 								alt={name}
@@ -51,7 +44,6 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 								<h4>{name}</h4>
 								<p>{place}</p>
 							</div>
-							{/* </div> */}
 						</SwiperSlide>
 					</Fragment>
 				))}
