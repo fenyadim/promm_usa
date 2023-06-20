@@ -1,7 +1,11 @@
+.slider_wrapper {
+	width: 100%;
+}
+
 .slide {
 	position: relative;
-	width: 317px;
-	height: 468px;
+	width: 317px !important;
+	height: 468px !important;
 	border-radius: 12px;
 	overflow: hidden;
 }
@@ -24,4 +28,18 @@
 		text-transform: uppercase;
 		color: #5820f6;
 	}
+}
+
+.next_btn {
+	background-image: url('../../public/image/index/button/nav-next.svg');
+	width: 36px;
+	height: 36px;
+	display: block;
+}
+
+.prev_btn {
+	background-image: url('../../public/image/index/button/nav-prev.svg');
+	width: 36px;
+	height: 36px;
+	display: block;
 }

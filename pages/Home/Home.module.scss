@@ -98,12 +98,13 @@
 
 .company_wrapper {
 	background-color: #f8f8f8;
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr calc(58% - 100px);
+	gap: 120px;
 	.company_info {
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
-		width: 42%;
 		> h2 {
 			font-size: 36px;
 			font-weight: 600;

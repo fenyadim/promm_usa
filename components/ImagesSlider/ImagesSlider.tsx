@@ -1,9 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { FC, Fragment, PropsWithChildren } from 'react'
-import { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { FC, Fragment, useRef } from 'react'
+import { Navigation, Swiper as SwiperType } from 'swiper'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { NavigationOptions } from 'swiper/types'
 
 import styles from './ImagesSlider.module.scss'
 
@@ -18,20 +19,28 @@ type PeopleType = {
 }
 
 const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
+	// const btnRef = useRef(null)
+	const swiperRef = useRef<SwiperType>()
+	// const navigation: NavigationOptions = {
+	// 	enabled: true,
+	// 	//@ts-ignore
+	// 	nextEl: btnRef.current,
+	// }
 	return (
-		<Swiper
-			modules={[Navigation]}
-			spaceBetween={10}
-			slidesPerView={3}
-			onSlideChange={() => console.log('slide change')}
-			onSwiper={(swiper) => console.log(swiper)}
-			navigation
-			loop={true}
-		>
-			{data.map(({ name, srcImg, place }) => (
-				<Fragment key={name}>
-					<SwiperSlide>
-						<div className={styles.slide}>
+		<div className={styles.slider_wrapper}>
+			<Swiper
+				modules={[Navigation]}
+				spaceBetween={50}
+				slidesPerView={'auto'}
+				// navigation={navigation}
+				onBeforeInit={(swiper) => {
+					swiperRef.current = swiper
+				}}
+			>
+				{data.map(({ name, srcImg, place }) => (
+					<Fragment key={name}>
+						<SwiperSlide className={styles.slide}>
+							{/* <div className={styles.slide}> */}
 							<Image
 								src={srcImg}
 								alt={name}
@@ -42,11 +51,20 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 								<h4>{name}</h4>
 								<p>{place}</p>
 							</div>
-						</div>
-					</SwiperSlide>
-				</Fragment>
-			))}
-		</Swiper>
+							{/* </div> */}
+						</SwiperSlide>
+					</Fragment>
+				))}
+			</Swiper>
+			<button
+				onClick={() => swiperRef.current?.slideNext()}
+				className={styles.next_btn}
+			/>
+			<button
+				onClick={() => swiperRef.current?.slidePrev()}
+				className={styles.next_btn}
+			/>
+		</div>
 	)
 }
 
