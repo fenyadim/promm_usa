@@ -1,10 +1,10 @@
 'use client'
 
+import cn from 'classnames'
 import Image from 'next/image'
 import { FC, Fragment, useRef } from 'react'
 import { Navigation, Swiper as SwiperType } from 'swiper'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-import { NavigationOptions } from 'swiper/types'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import styles from './ImagesSlider.module.scss'
 
@@ -56,14 +56,16 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 					</Fragment>
 				))}
 			</Swiper>
-			<button
-				onClick={() => swiperRef.current?.slideNext()}
-				className={styles.next_btn}
-			/>
-			<button
-				onClick={() => swiperRef.current?.slidePrev()}
-				className={styles.next_btn}
-			/>
+			<div className={styles.navigation}>
+				<button
+					onClick={() => swiperRef.current?.slidePrev()}
+					className={cn(styles.prev_btn, styles.btn)}
+				/>
+				<button
+					onClick={() => swiperRef.current?.slideNext()}
+					className={cn(styles.next_btn, styles.btn)}
+				/>
+			</div>
 		</div>
 	)
 }
