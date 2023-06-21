@@ -163,7 +163,7 @@
 	}
 	.awards_content {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: 60px;
 	}
@@ -175,6 +175,7 @@
 		width: min-content;
 		img {
 			border-radius: 10px;
+			// width: 100%;
 		}
 		h3 {
 			font-weight: 600;
@@ -323,6 +324,26 @@
 			p {
 				font-size: 14px;
 				line-height: 1.3;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.awards_wrapper {
+		.awards_item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+			flex-basis: 100%;
+			img {
+				border-radius: 10px;
+				width: 100%;
+			}
+			h3 {
+				font-weight: 600;
+				font-size: 20px;
 			}
 		}
 	}
