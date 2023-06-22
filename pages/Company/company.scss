@@ -1,0 +1,238 @@
+#company__mobile {
+	display: none;
+}
+
+.company_wrapper {
+	section {
+		padding: 0 25px;
+		margin-bottom: 20px;
+		&:first-child {
+			padding: 0;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.wrapper {
+	padding: 0 25px;
+}
+
+.company__list {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 50px;
+}
+
+.company__item {
+	max-width: 300px;
+}
+
+.company__heading {
+	padding-bottom: 25px;
+	font-size: 28px;
+	font-weight: 900;
+	color: blue;
+}
+
+.history__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.history__left {
+	max-width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.history__img {
+	margin-top: 50px;
+	border-radius: 10px;
+}
+
+.history__right {
+	display: flex;
+	flex-direction: column;
+}
+
+.history__description {
+	max-width: 900px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+
+.team__heading {
+	text-align: center;
+}
+
+.team__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding-top: 70px;
+}
+
+.team__item-heading {
+	padding-bottom: 20px;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.team__item-position {
+	font-size: 15px;
+	color: blue;
+}
+
+.section__heading {
+	font-size: 26px;
+}
+
+.team__item {
+	max-width: 500px;
+	background-repeat: no-repeat;
+	background-position-x: right;
+	padding: 40px 40px;
+	margin-bottom: 20px;
+	box-shadow: 5px 5px 2px rgba(109, 107, 107, 0.123);
+}
+
+.team__item:not(:last-child) {
+	margin-right: 20px;
+}
+
+.team__item-description {
+	padding-top: 10px;
+	line-height: 22px;
+}
+
+.team__description {
+	font-size: 20px;
+}
+
+@media screen and (max-width: 1440px) {
+	.history__right {
+		max-width: 800px;
+	}
+
+	.history__img {
+		width: 250px;
+		height: 200px;
+	}
+
+	.history__left {
+		max-width: 550px;
+		margin-right: 65px;
+	}
+
+	.history__wrapper {
+		align-items: start;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.history__img {
+		width: 220px;
+		height: 200px;
+	}
+
+	.company__heading {
+		font-size: 22px;
+	}
+
+	.company__description {
+		font-size: 14px;
+	}
+
+	.history__description {
+		font-size: 16px;
+	}
+
+	.team__item {
+		max-width: 460px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.company__item {
+		max-width: 200px;
+	}
+
+	.company__description {
+		max-width: 150px;
+	}
+
+	.history__img {
+		max-width: 100px;
+		max-height: 120px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	#company__mobile {
+		max-width: 425px;
+		display: block;
+	}
+
+	#company__video {
+		display: none;
+	}
+
+	.team__item:not(:last-child) {
+		margin-right: 0px;
+	}
+	.company__heading {
+		font-size: 18px;
+	}
+
+	.company__list {
+		padding: 0;
+		flex-wrap: wrap;
+	}
+
+	.company__item {
+		padding: 25px 10px;
+	}
+
+	.team__item {
+		padding-left: 0;
+	}
+}
+@media screen and (max-width: 375px) {
+	.company__item {
+		max-width: 150px;
+	}
+
+	.history__left {
+		margin-right: 30px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	#company__mobile {
+		max-width: 320px;
+		display: block;
+	}
+	.company__item {
+		max-width: 130px;
+	}
+
+	.history__left {
+		display: none;
+	}
+
+	.team__item {
+		padding-left: 0px;
+	}
+
+	.team__item-heading {
+		font-size: 20px;
+	}
+
+	.team__item-position {
+		font-size: 12px;
+	}
+}

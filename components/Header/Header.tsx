@@ -72,7 +72,7 @@ const Header: FC = () => {
 					<ul className={styles.nav_top_left}>
 						{topLinks.map(({ slug, title }) => (
 							<li key={slug}>
-								<Link href="#">{title}</Link>
+								<Link href={slug}>{title}</Link>
 							</li>
 						))}
 					</ul>
@@ -92,7 +92,7 @@ const Header: FC = () => {
 					className={styles.header_middle}
 					style={!showSearch ? { display: 'grid' } : { display: 'none' }}
 				>
-					<Link href="#" className={styles.logo_link}>
+					<Link href="/" className={styles.logo_link}>
 						<Image
 							src="/image/header/logo.png"
 							alt="Promminer"
@@ -246,7 +246,7 @@ const Header: FC = () => {
 				<Link href="">Equipment leasing</Link>
 				<Link href="">Ready-made business</Link>
 				{topLinks.map(({ slug, title }) => (
-					<Link key={slug} href="#">
+					<Link key={slug} href={slug}>
 						{title}
 					</Link>
 				))}
