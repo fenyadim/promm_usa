@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import NextNProgress from 'nextjs-progressbar'
 import { FC, useContext, useEffect, useRef, useState } from 'react'
 
 import { IsOpenSubMenuContext } from '@/utils/context'
@@ -67,6 +68,12 @@ const Header: FC = () => {
 
 	return (
 		<>
+			<NextNProgress
+				color="#ffc979"
+				startPosition={0.3}
+				stopDelayMs={200}
+				height={3}
+			/>
 			<header className={styles.header}>
 				<nav className={styles.nav_top}>
 					<ul className={styles.nav_top_left}>

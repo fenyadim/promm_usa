@@ -7,7 +7,6 @@ import { IsOpenSubMenuContext } from '@/utils/context'
 
 import './globals.css'
 import Footer from '@/components/Footer/Footer'
-// import './home.css';
 import Header from '@/components/Header/Header'
 
 import 'swiper/scss'
