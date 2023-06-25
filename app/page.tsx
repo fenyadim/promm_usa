@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Home from '@/pages/Home/Home'
+import { Home } from '@/pages'
 
 const HomePage: NextPage = () => {
 	return <Home />

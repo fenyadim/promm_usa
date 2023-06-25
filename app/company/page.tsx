@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Company from '@/pages/Company/Company'
+import { Company } from '@/pages'
 
 const CompanyPage: NextPage = () => {
 	return <Company />

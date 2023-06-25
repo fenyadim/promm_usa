@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import './help.scss'
+import './delivery.scss'
 
-const Help: FC = () => {
+const Delivery: FC = () => {
 	return (
 		<section className="delivery">
 			<div className="wrapper">
@@ -38,4 +38,4 @@ const Help: FC = () => {
 	)
 }
 
-export default Help
+export default Delivery
