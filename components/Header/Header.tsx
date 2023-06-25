@@ -23,11 +23,12 @@ const Header: FC = () => {
 
 	setIsOpen(showMenu || showMobileMenu)
 
-	const topLinks = [
+	const topLinks: Array<{ slug: string; title: string }> = [
 		{ slug: 'delivery', title: 'Payment and delivery' },
 		{ slug: 'company', title: 'Company' },
 		{ slug: 'help', title: 'Help 24/7' },
 		{ slug: 'contact', title: 'Contact' },
+		{ slug: 'warranty', title: 'Check the warranty' },
 	]
 
 	useEffect(() => {

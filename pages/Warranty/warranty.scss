@@ -1,0 +1,36 @@
+.warranty__wrapper {
+	padding: 25px;
+}
+
+.warranty__heading {
+	padding-bottom: 35px;
+}
+
+.warranty__description {
+	margin-bottom: 24px;
+	line-height: 1.3;
+}
+
+.warranty__description:last-child {
+	font-weight: 600;
+}
+
+.warranty__button {
+	display: flex;
+	a {
+		margin-right: 30px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.warranty__button {
+		display: flex;
+		flex-wrap: wrap;
+		a {
+			margin-right: 0;
+		}
+	}
+}
