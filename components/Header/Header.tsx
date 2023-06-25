@@ -218,7 +218,7 @@ const Header: FC = () => {
 			</header>
 			<Menu showMenu={showMenu} toggleMenu={toggleMenu} zIndex={2}>
 				<div>
-					<Link href="#">Asic Miner</Link>
+					<Link href="/product/asic-miners">Asic Miner</Link>
 					<Link href="#">Bitmain</Link>
 					<Link href="#">Whatsminer</Link>
 					<Link href="#">Innosilicon</Link>
