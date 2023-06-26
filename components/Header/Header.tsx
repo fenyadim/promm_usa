@@ -29,6 +29,7 @@ const Header: FC = () => {
 		{ slug: 'help', title: 'Help 24/7' },
 		{ slug: 'contact', title: 'Contact' },
 		{ slug: 'warranty', title: 'Check the warranty' },
+		{ slug: 'service', title: 'Service' },
 	]
 
 	useEffect(() => {

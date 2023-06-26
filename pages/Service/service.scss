@@ -1,0 +1,142 @@
+ol {
+	padding: 0;
+}
+
+/* service content */
+
+.service__conteiner {
+	section {
+		margin: 50px 0;
+	}
+}
+
+.service__wrapper {
+	background-image: url(/image/service/service_support.jpg);
+	background-position: center top;
+	height: 650px;
+}
+
+.service__heading {
+	text-align: center;
+	padding-top: 150px;
+	font-size: 48px;
+	font-weight: 900;
+}
+
+.service__content-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.service__content-text-position {
+	max-width: 350px;
+}
+
+.service__content-description {
+	padding-top: 15px;
+}
+
+.service__content-item {
+	margin-bottom: 50px;
+}
+
+/* services */
+
+.services__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.services__text-position {
+	max-width: 435px;
+	padding: 5px 15px;
+}
+
+.services__item {
+	margin-bottom: 50px;
+	border-radius: 15px;
+}
+
+.services__item-description {
+	padding-top: 15px;
+}
+
+/* service step */
+
+.service-step__list {
+	padding-left: 25px;
+}
+
+.service-step__content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 100px;
+}
+
+.service-step__right {
+	max-width: 800px;
+}
+
+.service-step__item {
+	list-style: decimal;
+	font-size: 25px;
+}
+
+.service-step__item:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.service-step__item-description {
+	padding-top: 15px;
+	font-size: 18px;
+}
+
+.service-step__heading {
+	margin: 0px 0px 25px 0;
+	font-size: 36px;
+}
+
+.service-step__item-heading {
+	font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+	.service-step__content {
+		justify-content: center;
+	}
+	.services__img {
+		width: 435px;
+	}
+	.service__content-list {
+		justify-content: space-evenly;
+	}
+	.services__list {
+		justify-content: space-evenly;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.service-step__img {
+		max-width: 395px;
+	}
+	.services__img {
+		max-width: 395px;
+	}
+	.service-step__heading {
+		font-size: 32px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.service-step__img {
+		max-width: 350px;
+	}
+	.services__img {
+		max-width: 350px;
+	}
+	.service__content-item {
+		text-align: center;
+	}
+}
