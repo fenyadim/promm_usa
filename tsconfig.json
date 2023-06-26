@@ -20,7 +20,7 @@
 			}
 		],
 		"paths": {
-			"@/components/*": ["./components/*"],
+			"@/components": ["./components"],
 			"@/pages": ["./pages/pages.ts"],
 			// "@/components": ["components/index.ts"],
 			"@/styles/*": ["./styles/*"],

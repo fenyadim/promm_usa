@@ -5,12 +5,12 @@ import Link from 'next/link'
 import NextNProgress from 'nextjs-progressbar'
 import { FC, useContext, useEffect, useRef, useState } from 'react'
 
+import { ImageBtn, Menu } from '@/components'
+
 import { IsOpenSubMenuContext } from '@/utils/context'
 import { toggleVisible } from '@/utils/toggleVisible'
 
 import styles from './Header.module.scss'
-import ImageBtn from '@/components/ImageBtn/ImageBtn'
-import Menu from '@/components/Menu/Menu'
 
 const Header: FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -124,19 +124,19 @@ const Header: FC = () => {
 							<>
 								<ImageBtn
 									ref={btnSearchRef}
-									srcImg="/image/header/search_black.svg"
+									src="/image/header/search_black.svg"
 									onClick={toggleSearch}
 								/>
 								<ImageBtn
 									onClick={toggleMobileMenu}
-									srcImg="/image/header/burger-menu-svgrepo-com (1).svg"
+									src="/image/header/burger-menu-svgrepo-com (1).svg"
 								/>
 							</>
 						) : (
 							<ImageBtn
 								ref={btnSearchRef}
 								title="Search"
-								srcImg="/image/header/search_black.svg"
+								src="/image/header/search_black.svg"
 								onClick={toggleSearch}
 							/>
 						)
@@ -146,17 +146,17 @@ const Header: FC = () => {
 					<div className={styles.header_right}>
 						<ImageBtn
 							title="Basket"
-							srcImg="/image/header/basket_icon_160414.svg"
+							src="/image/header/basket_icon_160414.svg"
 						/>
 						{innerWidth > 860 && (
 							<>
 								<ImageBtn
 									title="Favorites"
-									srcImg="/image/header/star-favorite-1498-svgrepo-com.svg"
+									src="/image/header/star-favorite-1498-svgrepo-com.svg"
 								/>
 								<ImageBtn
 									title="Order a call"
-									srcImg="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
+									src="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
 								/>
 							</>
 						)}
@@ -261,22 +261,19 @@ const Header: FC = () => {
 			</Menu>
 			<div className={styles.bot_menu}>
 				<ImageBtn
-					srcImg="/image/header/catalog.svg"
+					src="/image/header/catalog.svg"
 					title="Catalog"
-					sizeImg={30}
+					size={30}
 					onClick={toggleMenu}
 				/>
-				<ImageBtn
-					title="Basket"
-					srcImg="/image/header/basket_icon_160414.svg"
-				/>
+				<ImageBtn title="Basket" src="/image/header/basket_icon_160414.svg" />
 				<ImageBtn
 					title="Favorites"
-					srcImg="/image/header/star-favorite-1498-svgrepo-com.svg"
+					src="/image/header/star-favorite-1498-svgrepo-com.svg"
 				/>
 				<ImageBtn
 					title="Order a call"
-					srcImg="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
+					src="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
 				/>
 			</div>
 		</>

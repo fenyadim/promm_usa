@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
+import { LinkBtn } from '@/components'
+
 import './warranty.scss'
-import LinkBtn from '@/components/LinkBtn/LinkBtn'
 
 const Warranty: FC = () => (
 	<section className="warranty__wrapper">

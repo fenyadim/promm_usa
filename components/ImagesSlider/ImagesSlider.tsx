@@ -2,7 +2,7 @@
 
 import cn from 'classnames'
 import Image from 'next/image'
-import { FC, Fragment, useRef } from 'react'
+import { FC, useRef } from 'react'
 import { Navigation, Swiper as SwiperType } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -32,20 +32,18 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 				}}
 			>
 				{data.map(({ name, srcImg, place }, id) => (
-					<Fragment key={`${name} ${id}`}>
-						<SwiperSlide className={styles.slide}>
-							<Image
-								src={srcImg}
-								alt={name}
-								fill
-								style={{ objectFit: 'cover' }}
-							/>
-							<div className={styles.slide_info}>
-								<h4>{name}</h4>
-								<p>{place}</p>
-							</div>
-						</SwiperSlide>
-					</Fragment>
+					<SwiperSlide key={`${name} ${id}`} className={styles.slide}>
+						<Image
+							src={srcImg}
+							alt={name}
+							fill
+							style={{ objectFit: 'cover' }}
+						/>
+						<div className={styles.slide_info}>
+							<h4>{name}</h4>
+							<p>{place}</p>
+						</div>
+					</SwiperSlide>
 				))}
 			</Swiper>
 			<div className={styles.navigation}>

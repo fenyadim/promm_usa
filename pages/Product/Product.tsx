@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
+import { ProductCard } from '@/components'
+
 import styles from './Product.module.scss'
-import ProductCard from '@/components/ProductCard/ProductCard'
 
 const Product: FC = () => {
 	return (

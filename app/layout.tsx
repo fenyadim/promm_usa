@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import 'swiper/scss/navigation'
 
+import { Footer, Header } from '@/components'
+
 import { IsOpenSubMenuContext } from '@/utils/context'
 
 import './globals.css'
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
 
-import 'swiper/scss'
 import 'swiper/scss'
 
 export default function RootLayout({

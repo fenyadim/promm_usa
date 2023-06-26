@@ -1,0 +1,7 @@
+export { default as Footer } from './Footer/Footer'
+export { default as Header } from './Header/Header'
+export { default as Menu } from './Menu/Menu'
+export { default as ImageBtn } from './ImageBtn/ImageBtn'
+export { default as LinkBtn } from './LinkBtn/LinkBtn'
+export { default as ImagesSlider } from './ImagesSlider/ImagesSlider'
+export { default as ProductCard } from './ProductCard/ProductCard'
