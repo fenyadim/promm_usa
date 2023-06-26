@@ -21,7 +21,7 @@
 		],
 		"paths": {
 			"@/components": ["./components"],
-			"@/pages": ["./pages/pages.ts"],
+			"@/pages": ["./components/pages/pages.ts"],
 			// "@/components": ["components/index.ts"],
 			"@/styles/*": ["./styles/*"],
 			"@/redux/*": ["./redux/*"],
