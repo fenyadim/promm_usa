@@ -1,0 +1,33 @@
+.contacts_wrapper {
+	padding: 15px 32px 80px;
+	h1 {
+		font-size: 32px;
+		font-weight: 600;
+		margin-bottom: 35px;
+	}
+}
+
+.info {
+	display: flex;
+	height: 566px;
+	gap: 20px;
+}
+
+.contact_place {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	overflow-y: scroll;
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.map {
+	overflow: hidden;
+	border-radius: 8px;
+	width: 850px;
+}
+
+.contact_place::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}

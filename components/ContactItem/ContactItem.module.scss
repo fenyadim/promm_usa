@@ -1,0 +1,55 @@
+.wrapper {
+	display: flex;
+	padding: 28px 32px;
+	gap: 28px;
+	border: 1px solid #dce0e4;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	> h3 {
+		font-size: 24px;
+		font-weight: 600;
+	}
+	> div {
+		display: flex;
+		gap: 8px;
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+		}
+		p {
+			font-size: 16px;
+			letter-spacing: 0.3px;
+			line-height: 1.5;
+			color: #555;
+		}
+	}
+	.address {
+		&::before {
+			background-image: url(/image/contacts/ico-addr.png);
+			padding-right: 1px;
+		}
+	}
+	.mail {
+		&::before {
+			background-image: url(/image/contacts/ico-mail.png);
+		}
+	}
+	.phone {
+		&::before {
+			background-image: url(/image/contacts/ico-phone.png);
+		}
+	}
+}
+
+.active {
+	border: 2px solid #5820f6;
+}
