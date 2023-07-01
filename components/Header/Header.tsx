@@ -173,10 +173,10 @@ const Header: FC = () => {
 				<nav className={styles.nav_bot}>
 					<ul>
 						<li>
-							<Link href="">Investing in mining</Link>
+							<Link href="investment">Investing in mining</Link>
 						</li>
 						<li>
-							<Link href="">Turnkey Mining</Link>
+							<Link href="turnkey-mining">Turnkey Mining</Link>
 						</li>
 						<li>
 							<Link href="">Data Center</Link>
@@ -255,8 +255,8 @@ const Header: FC = () => {
 				</div>
 			</Menu>
 			<Menu showMenu={showMobileMenu} toggleMenu={toggleMobileMenu}>
-				<Link href="">Investing in mining</Link>
-				<Link href="">Turnkey Mining</Link>
+				<Link href="investment">Investing in mining</Link>
+				<Link href="turnkey-mining">Turnkey Mining</Link>
 				<Link href="">Data Center</Link>
 				<Link href="">Equipment leasing</Link>
 				<Link href="">Ready-made business</Link>
