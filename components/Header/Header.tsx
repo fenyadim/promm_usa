@@ -16,9 +16,9 @@ import styles from './Header.module.scss'
 const topLinks: Array<{ slug: string; title: string }> = [
 	{ slug: 'delivery', title: 'Payment and delivery' },
 	{ slug: 'company', title: 'Company' },
-	{ slug: 'contacts', title: 'Contacts' },
 	{ slug: 'warranty', title: 'Check the warranty' },
 	{ slug: 'service', title: 'Service' },
+	{ slug: 'contacts', title: 'Contacts' },
 ]
 const Header: FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
