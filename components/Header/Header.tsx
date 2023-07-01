@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import NextNProgress from 'nextjs-progressbar'
 import { FC, useContext, useEffect, useRef, useState } from 'react'
 
@@ -12,6 +13,13 @@ import { toggleVisible } from '@/utils/toggleVisible'
 
 import styles from './Header.module.scss'
 
+const topLinks: Array<{ slug: string; title: string }> = [
+	{ slug: 'delivery', title: 'Payment and delivery' },
+	{ slug: 'company', title: 'Company' },
+	{ slug: 'contacts', title: 'Contacts' },
+	{ slug: 'warranty', title: 'Check the warranty' },
+	{ slug: 'service', title: 'Service' },
+]
 const Header: FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
 	const [showSearch, setShowSearch] = useState<boolean>(false)
@@ -20,16 +28,9 @@ const Header: FC = () => {
 	const { setIsOpen } = useContext(IsOpenSubMenuContext)
 	const searchRef = useRef<any>(null)
 	const btnSearchRef = useRef<any>(null)
+	const pathname = usePathname()
 
 	setIsOpen(showMenu || showMobileMenu)
-
-	const topLinks: Array<{ slug: string; title: string }> = [
-		{ slug: 'delivery', title: 'Payment and delivery' },
-		{ slug: 'company', title: 'Company' },
-		{ slug: 'contacts', title: 'Contacts' },
-		{ slug: 'warranty', title: 'Check the warranty' },
-		{ slug: 'service', title: 'Service' },
-	]
 
 	useEffect(() => {
 		const onClick = (e: Event) => {
@@ -55,11 +56,17 @@ const Header: FC = () => {
 			const target = e.target as Window
 			setInnerWidth(target.innerWidth)
 		}
+
 		window.addEventListener('resize', resizeWindos)
 		return () => {
 			window.removeEventListener('resize', resizeWindos)
 		}
 	}, [])
+
+	useEffect(() => {
+		setShowMenu(false)
+		setShowMobileMenu(false)
+	}, [pathname])
 
 	const toggleMobileMenu = toggleVisible(setShowMobileMenu, showMobileMenu)
 
