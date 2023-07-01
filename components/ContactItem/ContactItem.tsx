@@ -33,7 +33,9 @@ const ContactItem: FC<IContactItem> = ({
 			onClick={() => onChoseClick(id)}
 			id={`${id}`}
 		>
-			<Image src={imgSrc} alt={title} width={205} height={128} />
+			<div className={styles.image}>
+				<Image src={imgSrc} alt={title} fill style={{ objectFit: 'cover' }} />
+			</div>
 			<div className={styles.info}>
 				<h3>{title}</h3>
 				<div className={styles.address}>

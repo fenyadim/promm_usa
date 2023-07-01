@@ -12,7 +12,7 @@ type ContactType = {
 	options?: {
 		selectOnClick: boolean
 	}
-	coords?: PlacemarkGeometry
+	coords?: PlacemarkGeometry | number[]
 }
 
 export const contactInfo: Array<ContactType> = [

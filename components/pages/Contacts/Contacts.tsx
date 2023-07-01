@@ -9,9 +9,12 @@ import { contactInfo } from '@/api/contactInfo'
 
 import styles from './Contacts.module.scss'
 
+const mapState = { center: [55.751574, 37.573856], zoom: 3 }
+
 const Contacts: FC = () => {
-	const [state, setState] = useState()
 	const [chosenPlace, setChosenPlace] = useState<number>()
+
+	const chosedCoord = contactInfo.filter(({ id }) => chosenPlace === id)[0]
 
 	const onChosePlace = (id: number) => {
 		setChosenPlace(id)
@@ -55,9 +58,9 @@ const Contacts: FC = () => {
 					}}
 				>
 					<Map
-						state={state}
-						height={566}
-						defaultState={{ center: [55.751574, 37.573856], zoom: 3 }}
+						//@ts-ignore
+						state={chosedCoord && { center: chosedCoord.coords }}
+						defaultState={mapState}
 						className={styles.map}
 					>
 						{contactInfo.map(({ id, coords }) => (
