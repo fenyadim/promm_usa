@@ -17,40 +17,16 @@ const Product: FC = () => {
 			title: 'Whatsminer',
 		},
 		{
-			src: '/image/miners/Innosilicon.jpg',
-			title: 'Innosilicon',
-		},
-		{
 			src: '/image/miners/Canaan.png',
 			title: 'Canaan',
-		},
-		{
-			src: '/image/miners/AnexMiner.png',
-			title: 'AnexMiner',
 		},
 		{
 			src: '/image/miners/Goldshell.png',
 			title: 'Goldshell',
 		},
 		{
-			src: '/image/miners/Hummer.png',
-			title: 'Hummer',
-		},
-		{
-			src: '/image/miners/iBeLink.jpg',
-			title: 'iBeLink',
-		},
-		{
 			src: '/image/miners/iPollo.png',
 			title: 'iPollo',
-		},
-		{
-			src: '/image/miners/Jasminer.png',
-			title: 'Jasminer',
-		},
-		{
-			src: '/image/miners/YAMI.png',
-			title: 'YAMI',
 		},
 	]
 
