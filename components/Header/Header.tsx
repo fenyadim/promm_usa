@@ -25,10 +25,10 @@ const Header: FC = () => {
 	const [showSearch, setShowSearch] = useState<boolean>(false)
 	const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
 	const [innerWidth, setInnerWidth] = useState<number>(0)
-	const { setIsOpen } = useContext(IsOpenSubMenuContext)
 	const searchRef = useRef<any>(null)
 	const btnSearchRef = useRef<any>(null)
 	const pathname = usePathname()
+	const { setIsOpen } = useContext(IsOpenSubMenuContext)
 
 	setIsOpen(showMenu || showMobileMenu)
 
@@ -52,14 +52,14 @@ const Header: FC = () => {
 		if (innerWidth === 0) {
 			setInnerWidth(window.innerWidth)
 		}
-		const resizeWindos = (e: Event) => {
+		const resizeWindow = (e: Event) => {
 			const target = e.target as Window
 			setInnerWidth(target.innerWidth)
 		}
 
-		window.addEventListener('resize', resizeWindos)
+		window.addEventListener('resize', resizeWindow)
 		return () => {
-			window.removeEventListener('resize', resizeWindos)
+			window.removeEventListener('resize', resizeWindow)
 		}
 	}, [])
 

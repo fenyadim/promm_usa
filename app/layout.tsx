@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { Provider } from 'react-redux'
 import 'swiper/scss/navigation'
 
 import { Footer, Header } from '@/components'
+
+import { store } from '@/redux/store'
 
 import { IsOpenSubMenuContext } from '@/utils/context'
 
@@ -21,11 +24,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body style={isOpen ? { overflowY: 'hidden' } : { overflowX: 'hidden' }}>
-				<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
-					<Header />
-					{children}
-					<Footer />
-				</IsOpenSubMenuContext.Provider>
+				<Provider store={store}>
+					<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
+						<Header />
+						{children}
+						<Footer />
+					</IsOpenSubMenuContext.Provider>
+				</Provider>
 			</body>
 		</html>
 	)
