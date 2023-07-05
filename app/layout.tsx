@@ -24,13 +24,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body style={isOpen ? { overflowY: 'hidden' } : { overflowX: 'hidden' }}>
-				<Provider store={store}>
-					<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
+				<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
+					<Provider store={store}>
 						<Header />
 						{children}
 						<Footer />
-					</IsOpenSubMenuContext.Provider>
-				</Provider>
+					</Provider>
+				</IsOpenSubMenuContext.Provider>
 			</body>
 		</html>
 	)

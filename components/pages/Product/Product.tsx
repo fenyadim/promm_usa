@@ -1,34 +1,40 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
 import { ProductCard } from '@/components'
 
+import { useAppSelector } from '@/redux/hooks'
+
 import styles from './Product.module.scss'
 
+const brands = [
+	{
+		src: '/image/miners/Bitmain.jpg',
+		title: 'Bitmain',
+	},
+	{
+		src: '/image/miners/Whatsminer.jpg',
+		title: 'Whatsminer',
+	},
+	{
+		src: '/image/miners/Canaan.png',
+		title: 'Canaan',
+	},
+	{
+		src: '/image/miners/Goldshell.png',
+		title: 'Goldshell',
+	},
+	{
+		src: '/image/miners/iPollo.png',
+		title: 'iPollo',
+	},
+]
+
 const Product: FC = () => {
-	const brands = [
-		{
-			src: '/image/miners/Bitmain.jpg',
-			title: 'Bitmain',
-		},
-		{
-			src: '/image/miners/Whatsminer.jpg',
-			title: 'Whatsminer',
-		},
-		{
-			src: '/image/miners/Canaan.png',
-			title: 'Canaan',
-		},
-		{
-			src: '/image/miners/Goldshell.png',
-			title: 'Goldshell',
-		},
-		{
-			src: '/image/miners/iPollo.png',
-			title: 'iPollo',
-		},
-	]
+	const products = useAppSelector((state) => state.productReducer)
 
 	return (
 		<section className={styles.wrapper}>
@@ -50,10 +56,9 @@ const Product: FC = () => {
 			</div>
 			<div className={styles.fliter_wrapper}></div>
 			<div className={styles.products_wrapper}>
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				{products.map((items) => (
+					<ProductCard items={items} />
+				))}
 			</div>
 		</section>
 	)

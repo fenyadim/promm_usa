@@ -5,35 +5,51 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState } from 'react'
 
+import { ProductType } from '@/types/product'
+
 import styles from './ProductCard.module.scss'
 
-const ProductCard: FC = () => {
+const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
+	const { src, title, price, available, coins, hashrate, algorithm, status } =
+		items
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
 	return (
 		<div className={styles.wrapper}>
+			{status && (
+				<div className={styles.status_wrapper}>
+					{status.map((nameStatus) => (
+						<span
+							className={cn(styles.status, {
+								[styles.status_hit]: nameStatus === 'hit',
+								[styles.status_new]: nameStatus === 'new',
+							})}
+						>
+							{nameStatus}
+						</span>
+					))}
+				</div>
+			)}
 			<div className={styles.image}>
 				<Link href="">
-					<Image
-						src="/image/products/m30s.jpg"
-						alt="Whatsminer M30S++"
-						fill
-						style={{ objectFit: 'contain' }}
-					/>
+					<Image src={src} alt={title} fill style={{ objectFit: 'contain' }} />
 				</Link>
 			</div>
 			<div className={styles.info}>
-				<p className={styles.price}>116 200 ₽</p>
-				<Link href="">Asic майнер Whatsminer M30S++ 112TH/s</Link>
+				<p className={styles.price}>{price} ₽</p>
+				<Link href="">{title}</Link>
+				<p className={styles.available}>
+					{available ? 'Есть в наличии' : 'Нет в наличии'}
+				</p>
 				<div className={styles.features}>
 					<p>
-						<span>Хэшрейт</span> — 112 TH/s
+						<span>Хэшрейт</span> — {hashrate}
 					</p>
 					<p>
-						<span>Алгоритм</span> — SHA-256
+						<span>Алгоритм</span> — {algorithm}
 					</p>
 					<p>
-						<span>Добываемые монеты</span> — BTC/BCH
+						<span>Добываемые монеты</span> — {coins}
 					</p>
 				</div>
 			</div>

@@ -16,6 +16,40 @@
 	height: 100%;
 }
 
+.available {
+	font-size: 14px;
+}
+
+.status_wrapper {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	.status {
+		display: block;
+		margin-right: 5px;
+		border-radius: 6px;
+		font-size: 12px;
+		font-weight: 500;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 0.8px;
+		padding: 5px 10px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.status_hit {
+	background-color: #ff6565;
+	box-shadow: 0px 6px 12px rgba(255, 101, 101, 0.1);
+}
+
+.status_new {
+	background-color: #32cb5d;
+	box-shadow: 0px 6px 12px rgba(50, 203, 93, 0.1);
+}
+
 .info {
 	display: flex;
 	flex-direction: column;
