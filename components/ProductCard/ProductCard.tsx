@@ -20,6 +20,7 @@ const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
 				<div className={styles.status_wrapper}>
 					{status.map((nameStatus) => (
 						<span
+							key={nameStatus}
 							className={cn(styles.status, {
 								[styles.status_hit]: nameStatus === 'hit',
 								[styles.status_new]: nameStatus === 'new',
