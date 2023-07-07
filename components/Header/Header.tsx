@@ -189,49 +189,15 @@ const Header: FC = () => {
 						</li>
 					</ul>
 				</nav>
-				{/* <div
-          className={styles.dropdown_container}
-          style={showMenu ? { opacity: 1 } : { opacity: 0, zIndex: -1 }}>
-          <div>
-            <Link href="#">Asic Miner</Link>
-            <Link href="#">Bitmain</Link>
-            <Link href="#">Whatsminer</Link>
-            <Link href="#">Innosilicon</Link>
-            <Link href="#">Canaan</Link>
-            <Link href="#">Goldshell</Link>
-            <Link href="#">iPollo</Link>
-          </div>
-          <div>
-            <Link href="#">Mining containers</Link>
-            <Link href="#">PM Small Container</Link>
-            <Link href="#">PM Start container</Link>
-            <Link href="#">PM Medium container</Link>
-            <Link href="#">PM Optimal container</Link>
-            <Link href="#">PM Big container</Link>
-          </div>
-          <div>
-            <Link href="#">Ready-made business</Link>
-            <Link href="#">Ready-made business-START</Link>
-            <Link href="#">Ready-made business-SMART</Link>
-            <Link href="#">Ready-made business-MEDIUM</Link>
-            <Link href="#">Ready-made business-BIG</Link>
-            <Link href="#">Ready-made business-MAX</Link>
-            <Link href="#">Ready-made business-VIP</Link>
-            <Link href="#">Ready-made business-PREMIUM</Link>
-            <Link href="#">Ready-made business-TO THE MOON</Link>
-            <Link href="#">Ready-made business-STANDART</Link>
-          </div>
-        </div> */}
 			</header>
 			<Menu showMenu={showMenu} toggleMenu={toggleMenu} zIndex={2}>
 				<div>
 					<Link href="/product/asic-miners">Asic Miner</Link>
-					<Link href="#">Bitmain</Link>
-					<Link href="#">Whatsminer</Link>
-					<Link href="#">Innosilicon</Link>
-					<Link href="#">Canaan</Link>
-					<Link href="#">Goldshell</Link>
-					<Link href="#">iPollo</Link>
+					<Link href="/product/asic-miners?brand=Bitmain">Bitmain</Link>
+					<Link href="/product/asic-miners?brand=Whatsminer">Whatsminer</Link>
+					<Link href="/product/asic-miners?brand=Canaan">Canaan</Link>
+					<Link href="/product/asic-miners?brand=Goldshell">Goldshell</Link>
+					<Link href="/product/asic-miners?brand=iPollo">iPollo</Link>
 				</div>
 				<div>
 					<Link href="#">Mining containers</Link>

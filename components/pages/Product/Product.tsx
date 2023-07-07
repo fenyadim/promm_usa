@@ -2,6 +2,8 @@
 
 import cn from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { FC, Fragment, useEffect, useState } from 'react'
 
 import { ProductCard, Select } from '@/components'
@@ -44,14 +46,16 @@ type SortVars = 'Ascending' | 'Descending'
 const Product: FC = () => {
 	const [sortPrice, setSortPrice] = useState<SortVars>('Ascending')
 	const [sortHash, setSortHash] = useState<SortVars>('Ascending')
-	const [selectBrand, setSelectBrand] = useState<string>('')
 	const products = useAppSelector((state) => state.productReducer)
 	const dispatch = useAppDispatch()
 
+	const searchParams = useSearchParams()
+	const brandFind = searchParams.get('brand')
+
 	useEffect(() => {
-		if (selectBrand === '') dispatch(fetchAll())
-		else dispatch(filterByBrands(selectBrand))
-	}, [selectBrand])
+		if (brandFind === null) dispatch(fetchAll())
+		else dispatch(filterByBrands(brandFind))
+	}, [brandFind])
 
 	useEffect(() => {
 		dispatch(filterByPrice(sortPrice))
@@ -61,22 +65,21 @@ const Product: FC = () => {
 		dispatch(filterByHash(sortHash))
 	}, [sortHash])
 
-	const changeSelectBrand = (title: string) => {
-		if (title === selectBrand) setSelectBrand('')
-		else setSelectBrand(title)
-	}
-
 	return (
 		<section className={styles.wrapper}>
 			<h1>Miner</h1>
 			<div className={styles.brand_links}>
 				{brands.map(({ src, title }) => (
-					<button
+					<Link
 						key={title}
-						className={cn({
-							[styles.selected]: selectBrand === title,
+						href={
+							title !== brandFind
+								? `/product/asic-miners?brand=${title}`
+								: '/product/asic-miners'
+						}
+						className={cn(styles.brand_item, {
+							[styles.selected]: brandFind === title,
 						})}
-						onClick={() => changeSelectBrand(title)}
 					>
 						<div className={styles.brand_image}>
 							<Image
@@ -87,7 +90,7 @@ const Product: FC = () => {
 							/>
 						</div>
 						{title}
-					</button>
+					</Link>
 				))}
 			</div>
 			<div className={styles.layout}>
