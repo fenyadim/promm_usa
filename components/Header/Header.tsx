@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import NextNProgress from 'nextjs-progressbar'
 import { FC, useContext, useEffect, useRef, useState } from 'react'
+import { BiMenu } from 'react-icons/bi'
 
 import { ImageBtn, Menu } from '@/components'
 
@@ -117,12 +118,7 @@ const Header: FC = () => {
 					</Link>
 					<div className={styles.dropdown}>
 						<button onClick={toggleMenu} className={styles.catalog_btn}>
-							<Image
-								src="/image/header/burger-menu-svgrepo-com (2).svg"
-								alt="catalog"
-								width={16}
-								height={16}
-							/>
+							<BiMenu size={20} />
 							Catalog
 						</button>
 					</div>
@@ -200,7 +196,7 @@ const Header: FC = () => {
 					<Link href="/product/asic-miners?brand=iPollo">iPollo</Link>
 				</div>
 				<div>
-					<Link href="#">Mining containers</Link>
+					<Link href="/product/containers">Mining containers</Link>
 					<Link href="#">PM Small Container</Link>
 					<Link href="#">PM Start container</Link>
 					<Link href="#">PM Medium container</Link>
@@ -208,7 +204,7 @@ const Header: FC = () => {
 					<Link href="#">PM Big container</Link>
 				</div>
 				<div>
-					<Link href="#">Ready-made business</Link>
+					<Link href="/product/business">Ready-made business</Link>
 					<Link href="#">Ready-made business-START</Link>
 					<Link href="#">Ready-made business-SMART</Link>
 					<Link href="#">Ready-made business-MEDIUM</Link>

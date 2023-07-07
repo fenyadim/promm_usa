@@ -4,9 +4,8 @@
 
 .wrapper {
 	position: relative;
-	padding: 0 32px;
+	padding: 15px 32px 20px;
 	h1 {
-		padding-top: 15px;
 		padding-bottom: 35px;
 		font-size: 32px;
 		font-weight: 500;
@@ -27,26 +26,27 @@
 	flex-wrap: wrap;
 	gap: 12px;
 	margin-bottom: 32px;
-	.brand_item {
-		display: flex;
-		align-items: center;
-		gap: 24px;
-		background-color: #fff;
-		border: 1px solid #ededed;
-		border-radius: 12px;
-		padding: 18px 28px 18px 24px;
-		font-size: 16px;
-		.brand_image {
-			display: block;
-			position: relative;
-			width: 40px;
-			height: 40px;
-		}
+}
 
-		&:hover {
-			box-shadow: 0px 5px 30px rgba(34, 34, 34, 0.1);
-			color: #5820f6;
-		}
+.brand_item {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	background-color: #fff;
+	border: 1px solid #ededed;
+	border-radius: 12px;
+	padding: 18px 28px 18px 24px;
+	font-size: 16px;
+	.brand_image {
+		display: block;
+		position: relative;
+		width: 40px;
+		height: 40px;
+	}
+
+	&:hover {
+		box-shadow: 0px 5px 30px rgba(34, 34, 34, 0.1);
+		color: #5820f6;
 	}
 }
 
@@ -62,5 +62,52 @@
 }
 
 .fliter_wrapper {
-	width: 270px;
+	min-width: 270px;
+}
+
+.filter_btn {
+	display: none;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	gap: 7px;
+	transition: color 0.1 ease;
+	color: black;
+	&:hover {
+		color: #5820f6;
+	}
+}
+
+@media screen and (max-width: 1170px) {
+	.products_wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.products_wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.layout {
+		flex-direction: column;
+	}
+	.filter_btn {
+		display: flex;
+	}
+	.fliter_wrapper {
+		> div {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.products_wrapper {
+		grid-template-columns: 1fr;
+	}
 }

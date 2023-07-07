@@ -9,14 +9,28 @@ interface IMenuProps extends PropsWithChildren {
 	showMenu: boolean
 	toggleMenu: () => void
 	zIndex?: number
+	position?: 'left' | 'middle'
 }
 
-const Menu: FC<IMenuProps> = ({ showMenu, toggleMenu, zIndex, children }) => {
+const Menu: FC<IMenuProps> = ({
+	showMenu,
+	toggleMenu,
+	zIndex,
+	children,
+	position = 'middle',
+}) => {
 	return (
 		<div
-			className={cn(styles.menu_wrapper, {
-				[styles.closeMenu]: !showMenu,
-			})}
+			className={cn(
+				styles.menu_wrapper,
+				{
+					[styles.closeMenu]: !showMenu,
+				},
+				{
+					left: styles.position_left,
+					middle: styles.position_middle,
+				}[position]
+			)}
 			style={{ zIndex }}
 		>
 			<ImageBtn

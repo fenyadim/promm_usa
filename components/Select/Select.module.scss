@@ -61,3 +61,11 @@
 .show {
 	display: block;
 }
+
+@media screen and (max-width: 800px) {
+	.select_wrapper {
+		button {
+			width: 130px;
+		}
+	}
+}
