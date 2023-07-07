@@ -6,30 +6,30 @@ import { ImagesSlider, LinkBtn } from '@/components'
 
 import styles from './Home.module.scss'
 
-const Home: FC = () => {
-	const peopleInfo = [
-		{
-			srcImg: '/image/index/people/1.jpg',
-			name: 'Тимофей Кузьменко',
-			place: 'Основатель',
-		},
-		{
-			srcImg: '/image/index/people/2.jpg',
-			name: 'Евгений Дёготь',
-			place: 'Генеральный директор ',
-		},
-		{
-			srcImg: '/image/index/people/3.jpg',
-			name: 'Александр Федоров',
-			place: 'Директор по развитию',
-		},
-		{
-			srcImg: '/image/index/people/4.jpg',
-			name: 'Леонид Белоус',
-			place: 'Финансовый директор',
-		},
-	]
+const peopleInfo = [
+	{
+		srcImg: '/image/index/people/1.jpg',
+		name: 'Тимофей Кузьменко',
+		place: 'Основатель',
+	},
+	{
+		srcImg: '/image/index/people/2.jpg',
+		name: 'Евгений Дёготь',
+		place: 'Генеральный директор ',
+	},
+	{
+		srcImg: '/image/index/people/3.jpg',
+		name: 'Александр Федоров',
+		place: 'Директор по развитию',
+	},
+	{
+		srcImg: '/image/index/people/4.jpg',
+		name: 'Леонид Белоус',
+		place: 'Финансовый директор',
+	},
+]
 
+const Home: FC = () => {
 	return (
 		<div className={styles.wrapper}>
 			<section className={styles.media_container}>
@@ -59,10 +59,10 @@ const Home: FC = () => {
 						100,000 satisfied customers.
 					</p>
 					<div className={styles.links}>
-						<Link href="#">ACIS miners</Link>
+						<Link href="/product/asic-miners">ACIS miners</Link>
 						<Link href="#">Data Center</Link>
-						<Link href="#">Containers</Link>
-						<Link href="#">Turnkey Mining</Link>
+						<Link href="/product/containers">Containers</Link>
+						<Link href="turnkey-mining">Turnkey Mining</Link>
 					</div>
 				</div>
 			</section>
@@ -182,7 +182,7 @@ const Home: FC = () => {
 							</p>
 						</div>
 					</div>
-					<LinkBtn title="Learn more" />
+					<LinkBtn title="Learn more" href="company" />
 				</div>
 				<ImagesSlider data={peopleInfo} />
 			</section>
@@ -388,7 +388,7 @@ const Home: FC = () => {
 						<p>Provide access to monitoring and control systems</p>
 					</div>
 				</div>
-				<LinkBtn title="Learn more" />
+				<LinkBtn title="Learn more" href="turnkey-mining" />
 			</section>
 		</div>
 	)
