@@ -10,8 +10,16 @@ import { ProductType } from '@/types/product'
 import styles from './ProductCard.module.scss'
 
 const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
-	const { src, title, price, available, coins, hashrate, algorithm, status } =
-		items
+	const {
+		src,
+		title,
+		price,
+		availableCount,
+		coins,
+		hashrate,
+		algorithm,
+		status,
+	} = items
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
 	return (
@@ -39,12 +47,18 @@ const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
 			<div className={styles.info}>
 				<p className={styles.price}>{price} ₽</p>
 				<Link href="">{title}</Link>
-				<p className={styles.available}>
-					{available ? 'Есть в наличии' : 'Нет в наличии'}
+				<p
+					className={cn(styles.available, {
+						[styles.not_available]: availableCount === 0,
+					})}
+				>
+					{availableCount > 0
+						? `Есть в наличии - ${availableCount} шт.`
+						: 'Нет в наличии'}
 				</p>
 				<div className={styles.features}>
 					<p>
-						<span>Хэшрейт</span> — {hashrate}
+						<span>Хэшрейт</span> — {hashrate} MH/s
 					</p>
 					<p>
 						<span>Алгоритм</span> — {algorithm}

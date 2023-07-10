@@ -1,12 +1,17 @@
 import { ProductType } from '@/types/product'
 
-export const products: Array<ProductType> = [
-  {
+type DataType = {
+  miners: Array<ProductType>
+  containers: Array<ProductType>
+}
+
+export const products: DataType = {
+  miners: [{
     src: '/image/products/Bitmain Antminer L7.jpg',
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer L7 9500MH/s',
     price: 390100,
-    available: true,
+    availableCount: 10,
     hashrate: 9500,
     algorithm: 'Scrypt',
     coins: 'LTC/DOGE',
@@ -17,7 +22,7 @@ export const products: Array<ProductType> = [
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 195050,
-    available: false,
+    availableCount: 0,
     hashrate: 3680,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
@@ -27,7 +32,7 @@ export const products: Array<ProductType> = [
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 230000,
-    available: false,
+    availableCount: 15,
     hashrate: 2300,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
@@ -37,7 +42,7 @@ export const products: Array<ProductType> = [
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 320000,
-    available: false,
+    availableCount: 10,
     hashrate: 2300,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
@@ -47,7 +52,7 @@ export const products: Array<ProductType> = [
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 195050,
-    available: false,
+    availableCount: 14,
     hashrate: 3680,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
@@ -57,7 +62,7 @@ export const products: Array<ProductType> = [
     brand: 'Bitmain',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 195050,
-    available: false,
+    availableCount: 14,
     hashrate: 5200,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
@@ -67,9 +72,46 @@ export const products: Array<ProductType> = [
     brand: 'Whatsminer',
     title: 'Asic майнер Bitmain Antminer E9 Pro 3680 MH/s',
     price: 195050,
-    available: false,
+    availableCount: 14,
     hashrate: 3680,
     algorithm: 'Etchash/Ethash',
     coins: 'ETC/ETHW',
+  }],
+  containers: [{
+    src: '/image/containers/start.jpg',
+    title: 'Container PM Start',
+    price: 850000,
+    availableCount: 10,
+    quantityPlace: 36,
+    power: 198
+  }, {
+    src: '/image/containers/start.jpg',
+    title: 'Container PM Small',
+    price: 1400000,
+    availableCount: 10,
+    quantityPlace: 72,
+    power: 415
   },
-]
+  {
+    src: '/image/containers/optimal.jpg',
+    title: 'Container PM Optimal',
+    price: 2050000,
+    availableCount: 10,
+    quantityPlace: 192,
+    power: 831
+  }, {
+    src: '/image/containers/big.jpg',
+    title: 'Container PM Big',
+    price: 2850000,
+    availableCount: 10,
+    quantityPlace: 264,
+    power: 1050
+  }, {
+    src: '/image/containers/medium.jpg',
+    title: 'Container PM Medium',
+    price: 1650000,
+    availableCount: 10,
+    quantityPlace: 120,
+    power: 528
+  }]
+}

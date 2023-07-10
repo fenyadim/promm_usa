@@ -8,7 +8,7 @@ const productSlice = createSlice({
   reducers: {
     fetchAll: (state) => state = products,
     filterByBrands: (state, { payload }) =>
-      state = products.filter((items) => items.brand === payload),
+      state.miners = products.miners.filter((items) => items.brand === payload),
     filterByPrice: (state, { payload }) => {
       if (payload === 'Ascending') {
         state.sort((a, b) => a.price - b.price);

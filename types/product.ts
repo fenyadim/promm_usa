@@ -13,12 +13,14 @@ type statusVariable = 'new' | 'hit'
 
 export type ProductType = {
   src: string
-  brand: string
+  brand?: string
   title: string
   price: number
-  available: boolean
-  hashrate: number
-  algorithm: algorythmVariable
-  coins: string
+  availableCount: number
+  hashrate?: number
+  algorithm?: algorythmVariable
+  coins?: string
   status?: statusVariable[]
+  quantityPlace?: number
+  power?: number
 }
