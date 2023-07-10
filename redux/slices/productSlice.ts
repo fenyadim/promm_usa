@@ -1,26 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, Slice, createSlice } from '@reduxjs/toolkit'
 
 import { products } from '@/api/products'
+
+type SortType = {
+  slug: string
+  typeSort: string
+}
 
 const productSlice = createSlice({
   name: 'products',
   initialState: products,
   reducers: {
     fetchAll: (state) => state = products,
-    filterByBrands: (state, { payload }) =>
-      state.miners = products.miners.filter((items) => items.brand === payload),
-    filterByPrice: (state, { payload }) => {
-      if (payload === 'Ascending') {
-        state.sort((a, b) => a.price - b.price);
-      } else if (payload === 'Descending') {
-        state.sort((a, b) => b.price - a.price);
+    filterByBrands: (state, { payload }) => {
+      return {
+        ...state,
+        miners: products.miners.filter((items) => items.brand === payload),
       }
     },
+
+    filterByPrice: (state, { payload }) => {
+      const copyArr = [...state[payload.slug]]
+      return {
+        ...state,
+        [payload.slug]: payload.sortType === 'Ascending' ? copyArr.sort((a, b) => a.price - b.price) : copyArr.sort((a, b) => b.price - a.price)
+      };
+    },
+
     filterByHash: (state, { payload }) => {
       if (payload === 'Ascending') {
-        state.sort((a, b) => a.hashrate - b.hashrate);
+        state.miners.sort((a, b) => (a.hashrate as number) - (b.hashrate as number));
       } else if (payload === 'Descending') {
-        state.sort((a, b) => b.hashrate - a.hashrate);
+        state.miners.sort((a, b) => (b.hashrate as number) - (a.hashrate as number));
       }
     }
   },

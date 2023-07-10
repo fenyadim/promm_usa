@@ -3,9 +3,10 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { FC, useState } from 'react'
 
-import { ProductType } from '@/types/product'
+import { ProductType } from '@/types/product.type'
 
 import styles from './ProductCard.module.scss'
 
@@ -19,8 +20,14 @@ const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
 		hashrate,
 		algorithm,
 		status,
+		quantityPlace,
+		power,
+		income,
+		payback,
+		containerMining,
 	} = items
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
+	const path = usePathname()
 
 	return (
 		<div className={styles.wrapper}>
@@ -57,15 +64,47 @@ const ProductCard: FC<{ items: ProductType }> = ({ items }) => {
 						: 'Нет в наличии'}
 				</p>
 				<div className={styles.features}>
-					<p>
-						<span>Хэшрейт</span> — {hashrate} MH/s
-					</p>
-					<p>
-						<span>Алгоритм</span> — {algorithm}
-					</p>
-					<p>
-						<span>Добываемые монеты</span> — {coins}
-					</p>
+					{
+						{
+							'/product/asic-miners': (
+								<>
+									<p>
+										<span>Хэшрейт</span> — {hashrate} MH/s
+									</p>
+									<p>
+										<span>Алгоритм</span> — {algorithm}
+									</p>
+									<p>
+										<span>Добываемые монеты</span> — {coins}
+									</p>
+								</>
+							),
+							'/product/containers': (
+								<>
+									<p>
+										<span>Количество мест</span> — {quantityPlace}
+									</p>
+									<p>
+										<span>Общая мощность, кВт</span> — {power}
+									</p>
+								</>
+							),
+							'/product/business': (
+								<>
+									<p>
+										<span>Контейнер для майнинга, мест</span> —{' '}
+										{containerMining}
+									</p>
+									<p>
+										<span>Доход в месяц</span> — {income} BTC
+									</p>
+									<p>
+										<span>Срок окупаемости</span> — {payback} месяцев
+									</p>
+								</>
+							),
+						}[path]
+					}
 				</div>
 			</div>
 			<div className={styles.navigation}>

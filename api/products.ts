@@ -1,8 +1,7 @@
-import { ProductType } from '@/types/product'
+import { ProductType } from '@/types/product.type'
 
 type DataType = {
-  miners: Array<ProductType>
-  containers: Array<ProductType>
+  [slug: string]: Array<ProductType>
 }
 
 export const products: DataType = {
@@ -100,18 +99,28 @@ export const products: DataType = {
     quantityPlace: 192,
     power: 831
   }, {
-    src: '/image/containers/big.jpg',
+    src: '/image/containers/big.jpeg',
     title: 'Container PM Big',
     price: 2850000,
     availableCount: 10,
     quantityPlace: 264,
     power: 1050
   }, {
-    src: '/image/containers/medium.jpg',
+    src: '/image/containers/medium.jpeg',
     title: 'Container PM Medium',
     price: 1650000,
     availableCount: 10,
     quantityPlace: 120,
     power: 528
-  }]
+  }],
+  business: [{
+    src: '/image/ready-business/Start.jpg',
+    title: 'Готовый бизнес-START',
+    price: 6186000,
+    availableCount: 10,
+    containerMining: 36,
+    income: 0.38,
+    payback: 10
+  },
+  ]
 }

@@ -44,6 +44,12 @@ const brands = [
 	},
 ]
 
+const slugInNameArr: { [slug: string]: string } = {
+	'/product/asic-miners': 'miners',
+	'/product/containers': 'containers',
+	'/product/business': 'business',
+}
+
 type SortVars = 'Ascending' | 'Descending'
 
 const pathTitle: { [title: string]: string } = {
@@ -71,7 +77,12 @@ const Product: FC = () => {
 	}, [brandFind])
 
 	useEffect(() => {
-		dispatch(filterByPrice(sortPrice))
+		dispatch(
+			filterByPrice({
+				sortType: sortPrice,
+				slug: slugInNameArr[path],
+			})
+		)
 	}, [sortPrice])
 
 	useEffect(() => {
@@ -116,20 +127,22 @@ const Product: FC = () => {
 							currentVar={sortPrice}
 							setCurrent={setSortPrice}
 						/>
-						<Select
-							title="Hashrate"
-							currentVar={sortHash}
-							setCurrent={setSortHash}
-						/>
+						{path === '/product/asic-miners' && (
+							<Select
+								title="Hashrate"
+								currentVar={sortHash}
+								setCurrent={setSortHash}
+							/>
+						)}
 						<button className={styles.filter_btn} onClick={toggleMenu}>
 							<BiFilterAlt size={20} />
 							Filter
 						</button>
 					</div>
 					<div className={styles.products_wrapper}>
-						{products.map((items, id) => (
+						{products[slugInNameArr[path]].map((item, id) => (
 							<Fragment key={id}>
-								<ProductCard items={items} />
+								<ProductCard items={item} />
 							</Fragment>
 						))}
 					</div>
@@ -142,11 +155,13 @@ const Product: FC = () => {
 						currentVar={sortPrice}
 						setCurrent={setSortPrice}
 					/>
-					<Select
-						title="Hashrate"
-						currentVar={sortHash}
-						setCurrent={setSortHash}
-					/>
+					{path === '/product/asic-miners' && (
+						<Select
+							title="Hashrate"
+							currentVar={sortHash}
+							setCurrent={setSortHash}
+						/>
+					)}
 				</div>
 			</Menu>
 		</>
