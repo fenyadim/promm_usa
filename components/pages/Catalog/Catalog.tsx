@@ -19,7 +19,7 @@ import {
 
 import { toggleVisible } from '@/utils/toggleVisible'
 
-import styles from './Product.module.scss'
+import styles from './Catalog.module.scss'
 
 const brands = [
 	{
@@ -44,21 +44,22 @@ const brands = [
 	},
 ]
 
-const slugInNameArr: { [slug: string]: string } = {
-	'/product/asic-miners': 'miners',
-	'/product/containers': 'containers',
-	'/product/business': 'business',
-}
+const slugInNameArr: { [slug: string]: 'miners' | 'containers' | 'business' } =
+	{
+		'/catalog/asic-miners': 'miners',
+		'/catalog/containers': 'containers',
+		'/catalog/business': 'business',
+	}
 
 type SortVars = 'Ascending' | 'Descending'
 
 const pathTitle: { [title: string]: string } = {
-	'/product/asic-miners': 'Miner',
-	'/product/containers': 'Mining containers',
-	'/product/business': 'Ready-made business',
+	'/catalog/asic-miners': 'Miner',
+	'/catalog/containers': 'Mining containers',
+	'/catalog/business': 'Ready-made business',
 }
 
-const Product: FC = () => {
+const Catalog: FC = () => {
 	const [sortPrice, setSortPrice] = useState<SortVars>('Ascending')
 	const [sortHash, setSortHash] = useState<SortVars>('Ascending')
 	const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -93,15 +94,15 @@ const Product: FC = () => {
 		<>
 			<section className={styles.wrapper}>
 				<h1>{pathTitle[path]}</h1>
-				{path === '/product/asic-miners' && (
+				{path === '/catalog/asic-miners' && (
 					<div className={styles.brand_links}>
 						{brands.map(({ src, title }) => (
 							<Link
 								key={title}
 								href={
 									title !== brandFind
-										? `/product/asic-miners?brand=${title}`
-										: '/product/asic-miners'
+										? `/catalog/asic-miners?brand=${title}`
+										: '/catalog/asic-miners'
 								}
 								className={cn(styles.brand_item, {
 									[styles.selected]: brandFind === title,
@@ -127,7 +128,7 @@ const Product: FC = () => {
 							currentVar={sortPrice}
 							setCurrent={setSortPrice}
 						/>
-						{path === '/product/asic-miners' && (
+						{path === '/catalog/asic-miners' && (
 							<Select
 								title="Hashrate"
 								currentVar={sortHash}
@@ -142,7 +143,7 @@ const Product: FC = () => {
 					<div className={styles.products_wrapper}>
 						{products[slugInNameArr[path]].map((item, id) => (
 							<Fragment key={id}>
-								<ProductCard items={item} />
+								<ProductCard items={item} type={slugInNameArr[path]} />
 							</Fragment>
 						))}
 					</div>
@@ -155,7 +156,7 @@ const Product: FC = () => {
 						currentVar={sortPrice}
 						setCurrent={setSortPrice}
 					/>
-					{path === '/product/asic-miners' && (
+					{path === '/catalog/asic-miners' && (
 						<Select
 							title="Hashrate"
 							currentVar={sortHash}
@@ -168,4 +169,4 @@ const Product: FC = () => {
 	)
 }
 
-export default Product
+export default Catalog

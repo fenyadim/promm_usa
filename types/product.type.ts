@@ -12,6 +12,8 @@ type algorythmVariable =
 type statusVariable = 'new' | 'hit'
 
 export type ProductType = {
+  /** Ссылка товара */
+  slug: string
   /** Путь изображения */
   src: string
   /** Бренд (для машинок) */

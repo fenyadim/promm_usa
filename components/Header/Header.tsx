@@ -181,15 +181,15 @@ const Header: FC = () => {
 			</header>
 			<Menu showMenu={showMenu} toggleMenu={toggleMenu} zIndex={2}>
 				<div>
-					<Link href="/product/asic-miners">Asic Miner</Link>
-					<Link href="/product/asic-miners?brand=Bitmain">Bitmain</Link>
-					<Link href="/product/asic-miners?brand=Whatsminer">Whatsminer</Link>
-					<Link href="/product/asic-miners?brand=Canaan">Canaan</Link>
-					<Link href="/product/asic-miners?brand=Goldshell">Goldshell</Link>
-					<Link href="/product/asic-miners?brand=iPollo">iPollo</Link>
+					<Link href="/catalog/asic-miners">Asic Miner</Link>
+					<Link href="/catalog/asic-miners?brand=Bitmain">Bitmain</Link>
+					<Link href="/catalog/asic-miners?brand=Whatsminer">Whatsminer</Link>
+					<Link href="/catalog/asic-miners?brand=Canaan">Canaan</Link>
+					<Link href="/catalog/asic-miners?brand=Goldshell">Goldshell</Link>
+					<Link href="/catalog/asic-miners?brand=iPollo">iPollo</Link>
 				</div>
 				<div>
-					<Link href="/product/containers">Mining containers</Link>
+					<Link href="/catalog/containers">Mining containers</Link>
 					<Link href="#">PM Small Container</Link>
 					<Link href="#">PM Start container</Link>
 					<Link href="#">PM Medium container</Link>
@@ -197,7 +197,7 @@ const Header: FC = () => {
 					<Link href="#">PM Big container</Link>
 				</div>
 				<div>
-					<Link href="/product/business">Ready-made business</Link>
+					<Link href="/catalog/business">Ready-made business</Link>
 					<Link href="#">Ready-made business-START</Link>
 					<Link href="#">Ready-made business-SMART</Link>
 					<Link href="#">Ready-made business-MEDIUM</Link>

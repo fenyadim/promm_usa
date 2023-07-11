@@ -117,18 +117,7 @@
 
 	&:hover {
 		svg {
-			path {
-				stroke: #5820f6;
-			}
-		}
-	}
-}
-
-.favorite_active {
-	svg {
-		fill: #5820f6;
-		path {
-			stroke: #5820f6;
+			color: #5820f6;
 		}
 	}
 }
