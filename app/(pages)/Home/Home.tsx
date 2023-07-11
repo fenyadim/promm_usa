@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import { ImagesSlider, LinkBtn } from '@/components'
+import { ImagesSlider, LinkBtn, ProductSection } from '@/components'
 
 import styles from './Home.module.scss'
 
@@ -187,6 +187,8 @@ const Home: FC = () => {
 				<ImagesSlider data={peopleInfo} />
 			</section>
 
+			<ProductSection type="new" />
+
 			<section className={styles.partners_wrapper}>
 				<h2>Our Partners</h2>
 				<div>
@@ -224,6 +226,8 @@ const Home: FC = () => {
 					</div>
 				</div>
 			</section>
+
+			<ProductSection type="hit" />
 
 			<section className={styles.awards_wrapper}>
 				<h2>Our Awards</h2>

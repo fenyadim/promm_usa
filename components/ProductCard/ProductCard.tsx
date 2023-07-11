@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation'
 import { FC, useState } from 'react'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
+import { numberWithSpaces } from '@/utils/numberWithSpaces'
+
 import { ProductType } from '@/types/product.type'
 
 import styles from './ProductCard.module.scss'
@@ -59,7 +61,7 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 				</Link>
 			</div>
 			<div className={styles.info}>
-				<p className={styles.price}>{price} ₽</p>
+				<p className={styles.price}>$ {numberWithSpaces(price)}</p>
 				<Link href={slug}>{title}</Link>
 				<p
 					className={cn(styles.available, {

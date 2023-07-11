@@ -9,7 +9,7 @@ type algorythmVariable =
   | 'SHA-256'
   | 'X11'
 
-type statusVariable = 'new' | 'hit'
+export type statusVariable = 'new' | 'hit'
 
 export type ProductType = {
   /** Ссылка товара */
