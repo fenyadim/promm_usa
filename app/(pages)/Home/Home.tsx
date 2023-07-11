@@ -2,7 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import { ImagesSlider, LinkBtn, ProductSection } from '@/components'
+import {
+	ImagesSlider,
+	LinkBtn,
+	ProductSection,
+	RecallSection,
+} from '@/components'
 
 import styles from './Home.module.scss'
 
@@ -270,6 +275,8 @@ const Home: FC = () => {
 					</div>
 				</div>
 			</section>
+
+			<RecallSection />
 
 			<section className={styles.bussiness_wrapper}>
 				<Image
