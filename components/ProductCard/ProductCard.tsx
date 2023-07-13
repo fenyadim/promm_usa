@@ -56,13 +56,13 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 				</div>
 			)}
 			<div className={styles.image}>
-				<Link href={`product/${slug}?type=${type}`}>
+				<Link href={`/product/${slug}?type=${type}`}>
 					<Image src={src} alt={title} fill style={{ objectFit: 'contain' }} />
 				</Link>
 			</div>
 			<div className={styles.info}>
 				<p className={styles.price}>$ {numberWithSpaces(price)}</p>
-				<Link href={`product/${slug}?type=${type}`}>{title}</Link>
+				<Link href={`/product/${slug}?type=${type}`}>{title}</Link>
 				<AvailableItem count={availableCount} />
 				<Characteristic type={type} item={items} />
 			</div>
