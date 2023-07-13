@@ -171,9 +171,6 @@ const Header: FC = () => {
 							<Link href="">Data Center</Link>
 						</li>
 						<li>
-							<Link href="">Equipment leasing</Link>
-						</li>
-						<li>
 							<Link href="">Ready-made business</Link>
 						</li>
 					</ul>
@@ -190,11 +187,19 @@ const Header: FC = () => {
 				</div>
 				<div>
 					<Link href="/catalog/containers">Mining containers</Link>
-					<Link href="#">PM Small Container</Link>
-					<Link href="#">PM Start container</Link>
-					<Link href="#">PM Medium container</Link>
-					<Link href="#">PM Optimal container</Link>
-					<Link href="#">PM Big container</Link>
+					<Link href="/product/pm-small?type=containers">
+						PM Small Container
+					</Link>
+					<Link href="/product/pm-start?type=containers">
+						PM Start container
+					</Link>
+					<Link href="/product/pm-medium?type=containers">
+						PM Medium container
+					</Link>
+					<Link href="/product/pm-optimal?type=containers">
+						PM Optimal container
+					</Link>
+					<Link href="/product/pm-big?type=containers">PM Big container</Link>
 				</div>
 				<div>
 					<Link href="/catalog/business">Ready-made business</Link>
