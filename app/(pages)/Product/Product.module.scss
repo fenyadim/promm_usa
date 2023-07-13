@@ -83,6 +83,17 @@
 			color: #fff;
 		}
 	}
+	> p {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		margin-top: 10px;
+		color: #555;
+		svg {
+			margin-right: 10px;
+		}
+	}
 }
 
 .links_block {

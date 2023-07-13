@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { FC, useState } from 'react'
 import {
+	AiOutlineCar,
 	AiOutlineCloudServer,
 	AiOutlineDatabase,
 	AiOutlineSetting,
@@ -66,6 +67,10 @@ const Product: FC = () => {
 									<AvailableItem count={availableCount} />
 								</div>
 								<button>Order</button>
+								<p>
+									<AiOutlineCar size={20} />
+									Delivery 1-2 days
+								</p>
 							</div>
 							<div className={styles.links_block}>
 								<Link href="">
