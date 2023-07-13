@@ -42,7 +42,7 @@ const Product: FC = () => {
 			<div className={styles.breadcrumbs}>
 				{brand && (
 					<>
-						<Link href={`catalog/asic-miners?brand=${brand}`}>{brand}</Link>
+						<Link href={`/catalog/asic-miners?brand=${brand}`}>{brand}</Link>
 						<GoTriangleRight />
 					</>
 				)}
