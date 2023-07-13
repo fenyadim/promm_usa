@@ -6,12 +6,12 @@ import { ProductCard } from '@/components'
 
 import { useAppSelector } from '@/redux/hooks'
 
-import { statusVariable } from '@/types/product.type'
+import { StatusVariable } from '@/types/product.type'
 
 import styles from './ProductSection.module.scss'
 
 interface IProductSection {
-	type: statusVariable
+	type: StatusVariable
 }
 
 const ProductSection: FC<IProductSection> = ({ type }) => {

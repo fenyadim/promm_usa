@@ -1,0 +1,13 @@
+.features {
+	> p {
+		font-size: 14px;
+		margin-bottom: 8px;
+		line-height: 1.5;
+		span {
+			color: #555;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

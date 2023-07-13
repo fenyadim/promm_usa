@@ -9,7 +9,9 @@ type algorythmVariable =
   | 'SHA-256'
   | 'X11'
 
-export type statusVariable = 'new' | 'hit'
+export type StatusVariable = 'new' | 'hit'
+
+export type CatalogType = 'miners' | 'containers' | 'business'
 
 export type ProductType = {
   /** Ссылка товара */
@@ -31,7 +33,7 @@ export type ProductType = {
   /** Валюта */
   coins?: string
   /** Статусы: new и hit. Пример, ['new', 'hit'].  */
-  status?: statusVariable[]
+  status?: StatusVariable[]
   /** Количество мест */
   quantityPlace?: number
   /** Мощность */

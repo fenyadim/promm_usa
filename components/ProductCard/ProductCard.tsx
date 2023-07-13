@@ -3,19 +3,20 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { FC, useState } from 'react'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
+import { AvailableItem, Characteristic } from '@/components'
+
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
 
-import { ProductType } from '@/types/product.type'
+import { CatalogType, ProductType } from '@/types/product.type'
 
 import styles from './ProductCard.module.scss'
 
 interface IProductCard {
 	items: ProductType
-	type: 'miners' | 'containers' | 'business'
+	type: CatalogType
 }
 
 const ProductCard: FC<IProductCard> = ({ items, type }) => {
@@ -36,7 +37,6 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 		containerMining,
 	} = items
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
-	const path = usePathname()
 
 	return (
 		<div className={styles.wrapper}>
@@ -56,65 +56,15 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 				</div>
 			)}
 			<div className={styles.image}>
-				<Link href={`product/${slug}`}>
+				<Link href={`product/${slug}?type=${type}`}>
 					<Image src={src} alt={title} fill style={{ objectFit: 'contain' }} />
 				</Link>
 			</div>
 			<div className={styles.info}>
 				<p className={styles.price}>$ {numberWithSpaces(price)}</p>
-				<Link href={`product/${slug}`}>{title}</Link>
-				<p
-					className={cn(styles.available, {
-						[styles.not_available]: availableCount === 0,
-					})}
-				>
-					{availableCount > 0
-						? `Есть в наличии - ${availableCount} шт.`
-						: 'Нет в наличии'}
-				</p>
-				<div className={styles.features}>
-					{
-						{
-							miners: (
-								<>
-									<p>
-										<span>Хэшрейт</span> — {hashrate} MH/s
-									</p>
-									<p>
-										<span>Алгоритм</span> — {algorithm}
-									</p>
-									<p>
-										<span>Добываемые монеты</span> — {coins}
-									</p>
-								</>
-							),
-							containers: (
-								<>
-									<p>
-										<span>Количество мест</span> — {quantityPlace}
-									</p>
-									<p>
-										<span>Общая мощность, кВт</span> — {power}
-									</p>
-								</>
-							),
-							business: (
-								<>
-									<p>
-										<span>Контейнер для майнинга, мест</span> —{' '}
-										{containerMining}
-									</p>
-									<p>
-										<span>Доход в месяц</span> — {income} BTC
-									</p>
-									<p>
-										<span>Срок окупаемости</span> — {payback} месяцев
-									</p>
-								</>
-							),
-						}[type]
-					}
-				</div>
+				<Link href={`product/${slug}?type=${type}`}>{title}</Link>
+				<AvailableItem count={availableCount} />
+				<Characteristic type={type} item={items} />
 			</div>
 			<div className={styles.navigation}>
 				<button className={styles.order_btn}>Order</button>

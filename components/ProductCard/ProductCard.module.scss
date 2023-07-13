@@ -16,15 +16,6 @@
 	height: 100%;
 }
 
-.available {
-	font-size: 14px;
-	color: #32cb5d;
-}
-
-.not_available {
-	color: #ff6565;
-}
-
 .status_wrapper {
 	position: absolute;
 	z-index: 1;
@@ -68,19 +59,6 @@
 		line-height: 1.4;
 		&:hover {
 			color: #7140f7;
-		}
-	}
-	.features {
-		> p {
-			font-size: 14px;
-			margin-bottom: 8px;
-			line-height: 1.5;
-			span {
-				color: #555;
-			}
-			&:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
 }

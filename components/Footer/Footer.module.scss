@@ -1,8 +1,13 @@
+.footer {
+	background-color: #222222;
+}
+
 .footer_wrapper {
 	display: grid;
 	grid-template-areas: 'image a b c d';
+	margin: 0 auto;
+	max-width: calc(1662px + calc(2 * 32px));
 	padding: 80px 32px;
-	background-color: #222222;
 	color: #fff;
 }
 
