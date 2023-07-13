@@ -105,7 +105,7 @@ export const products: DataType = {
     src: '/image/containers/optimal.jpg',
     title: 'Container PM Optimal',
     price: 2050000,
-    availableCount: 10,
+    availableCount: 0,
     quantityPlace: 192,
     power: 831
   }, {

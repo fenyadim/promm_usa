@@ -67,10 +67,12 @@ const Product: FC = () => {
 									<AvailableItem count={availableCount} />
 								</div>
 								<button>Order</button>
-								<p>
-									<AiOutlineCar size={20} />
-									Delivery 1-2 days
-								</p>
+								{availableCount > 0 && (
+									<p>
+										<AiOutlineCar size={20} />
+										Delivery 1-2 days
+									</p>
+								)}
 							</div>
 							<div className={styles.links_block}>
 								<Link href="">
