@@ -13,6 +13,8 @@ export type StatusVariable = 'new' | 'hit'
 
 export type CatalogType = 'miners' | 'containers' | 'business'
 
+export type TabsType = 'Description' | 'Payment' | 'Delivery'
+
 export type ProductType = {
   /** Ссылка товара */
   slug: string

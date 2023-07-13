@@ -10,6 +10,7 @@
 	color: #555;
 	font-size: 13px;
 	gap: 10px;
+	margin-bottom: 20px;
 	a {
 		&:hover {
 			color: #5820f6;
@@ -19,7 +20,7 @@
 
 .product_wrapper {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1.8fr;
 }
 
 .image {
@@ -51,6 +52,7 @@
 .order {
 	width: 323px;
 	padding: 24px 20px;
+	margin-bottom: 10px;
 	background-color: #fff;
 	border-radius: 8px;
 	box-shadow: 0px 3px 20px rgba(34, 34, 34, 0.1);
@@ -59,9 +61,11 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 20px;
+		gap: 10px;
 		h3 {
 			font-size: 24px;
 			font-weight: 600;
+			white-space: nowrap;
 		}
 	}
 	button {
@@ -77,6 +81,158 @@
 		&:hover {
 			background-color: #5820f6;
 			color: #fff;
+		}
+	}
+}
+
+.links_block {
+	display: flex;
+	flex-direction: column;
+	padding: 24px 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0px 3px 20px rgba(34, 34, 34, 0.1);
+	font-size: 14px;
+	text-decoration: underline dotted;
+	a {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 8px;
+		&:hover {
+			color: #5820f6;
+			text-decoration-color: #5820f6;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.benefis_wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 24px;
+	> div {
+		display: flex;
+		max-width: 250px;
+		border-radius: 12px;
+		padding: 40px 24px;
+		> img {
+			margin-right: 24px;
+		}
+	}
+	.benefis_info {
+		h3 {
+			font-size: 16px;
+			font-weight: 500;
+			margin-bottom: 8px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 1.3;
+		}
+	}
+}
+
+.active_tab {
+	border-color: #5820f6 !important;
+}
+
+.tabs_nav {
+	position: relative;
+	button {
+		padding: 18px 0;
+		font-size: 16px;
+		background-color: #fff;
+		outline: none;
+		border: none;
+		margin-right: 23px;
+		border-bottom: 3px solid #fff;
+		&:hover {
+			color: #5820f6;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&::before {
+		position: absolute;
+		content: '';
+		right: 0;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		background-color: #dadada;
+	}
+}
+
+.tabs_body {
+	padding-top: 25px;
+	> div {
+		display: none;
+		h3 {
+			font-size: 24px;
+			font-weight: 500;
+			margin-bottom: 25px;
+		}
+		h4 {
+			font-size: 20px;
+			font-weight: 500;
+			margin: 25px 0;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		p {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+	}
+}
+
+@media screen and (max-width: 930px) {
+	.product_wrapper {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1.5fr;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.info_block {
+		display: flex;
+		flex-direction: column;
+	}
+	.order {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.product_wrapper {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.5fr 1fr;
+	}
+	.product_info {
+		h2 {
+			font-size: 26px;
+		}
+	}
+	.order {
+		.price_block {
+			h3 {
+				font-size: 20px;
+			}
+		}
+	}
+	.benefis_wrapper {
+		> div {
+			padding: 15px 24px;
+			&:first-child {
+				padding-top: 40px;
+			}
 		}
 	}
 }
