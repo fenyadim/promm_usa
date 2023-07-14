@@ -127,19 +127,19 @@ const Header: FC = () => {
 							<>
 								<ImageBtn
 									ref={btnSearchRef}
-									svgElem={<BsSearch size={25} />}
+									svg={<BsSearch size={25} />}
 									onClick={toggleSearch}
 								/>
 								<ImageBtn
 									onClick={toggleMobileMenu}
-									svgElem={<BiMenu size={30} />}
+									svg={<BiMenu size={30} />}
 								/>
 							</>
 						) : (
 							<ImageBtn
 								ref={btnSearchRef}
 								title="Search"
-								svgElem={<BsSearch size={25} />}
+								svg={<BsSearch size={25} />}
 								onClick={toggleSearch}
 							/>
 						)
@@ -147,13 +147,13 @@ const Header: FC = () => {
 						<input type="text" className={styles.header_input} />
 					)}
 					<div className={styles.header_right}>
-						<ImageBtn title="Basket" svgElem={<BsBasket size={25} />} />
+						<ImageBtn title="Basket" svg={<BsBasket size={25} />} />
 						{innerWidth > 860 && (
 							<>
-								<ImageBtn title="Favorites" svgElem={<BsStar size={25} />} />
+								<ImageBtn title="Favorites" svg={<BsStar size={25} />} />
 								<ImageBtn
 									title="Order a call"
-									svgElem={<BsTelephone size={25} />}
+									svg={<BsTelephone size={25} />}
 								/>
 							</>
 						)}
@@ -230,12 +230,12 @@ const Header: FC = () => {
 			<div className={styles.bot_menu}>
 				<ImageBtn
 					title="Catalog"
-					svgElem={<BsJournal size={25} />}
+					svg={<BsJournal size={25} />}
 					onClick={toggleMenu}
 				/>
-				<ImageBtn title="Basket" svgElem={<BsBasket size={25} />} />
-				<ImageBtn title="Favorites" svgElem={<BsStar size={25} />} />
-				<ImageBtn title="Order a call" svgElem={<BsTelephone size={25} />} />
+				<ImageBtn title="Basket" svg={<BsBasket size={25} />} />
+				<ImageBtn title="Favorites" svg={<BsStar size={25} />} />
+				<ImageBtn title="Order a call" svg={<BsTelephone size={25} />} />
 			</div>
 		</>
 	)

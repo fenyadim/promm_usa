@@ -37,7 +37,7 @@ const Menu: FC<IMenuProps> = ({
 			<ImageBtn
 				className={styles.close_btn}
 				onClick={toggleMenu}
-				svgElem={<BsXLg size={25} />}
+				svg={<BsXLg size={25} />}
 			/>
 			{children}
 		</div>

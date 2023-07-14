@@ -107,6 +107,12 @@
 	}
 }
 
+@media screen and (max-width: 450px) {
+	.brand_item {
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 400px) {
 	.products_wrapper {
 		grid-template-columns: 1fr;

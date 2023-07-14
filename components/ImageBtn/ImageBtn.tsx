@@ -4,17 +4,17 @@ import styles from './ImageBtn.module.scss'
 
 type IImageBtn = {
 	title?: string
-	svgElem?: ReactNode
+	svg?: ReactNode
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 type Ref = HTMLButtonElement
 
 const ImageBtn = forwardRef<Ref, IImageBtn>((props, ref) => {
-	const { title, svgElem } = props
+	const { title, svg } = props
 
 	return (
 		<button ref={ref} className={styles.btn_wrapper} {...props}>
-			{svgElem}
+			{svg}
 			{title && title}
 		</button>
 	)
