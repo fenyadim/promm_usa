@@ -11,6 +11,7 @@ import { store } from '@/redux/store'
 import { IsOpenSubMenuContext } from '@/utils/context'
 
 import './globals.css'
+import Providers from './providers'
 
 import 'swiper/scss'
 
@@ -24,13 +25,15 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body style={isOpen ? { overflowY: 'hidden' } : { overflowX: 'hidden' }}>
-				<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
-					<Provider store={store}>
-						<Header />
-						{children}
-						<Footer />
-					</Provider>
-				</IsOpenSubMenuContext.Provider>
+				<Providers>
+					<IsOpenSubMenuContext.Provider value={{ isOpen, setIsOpen }}>
+						<Provider store={store}>
+							<Header />
+							{children}
+							<Footer />
+						</Provider>
+					</IsOpenSubMenuContext.Provider>
+				</Providers>
 			</body>
 		</html>
 	)

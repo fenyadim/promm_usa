@@ -64,10 +64,10 @@ const Home: FC = () => {
 						100,000 satisfied customers.
 					</p>
 					<div className={styles.links}>
-						<Link href="/product/asic-miners">ACIS miners</Link>
+						<Link href="/catalog/asic-miners">ACIS miners</Link>
 						<Link href="#">Data Center</Link>
-						<Link href="/product/containers">Containers</Link>
-						<Link href="turnkey-mining">Turnkey Mining</Link>
+						<Link href="/catalog/containers">Containers</Link>
+						<Link href="/turnkey-mining">Turnkey Mining</Link>
 					</div>
 				</div>
 			</section>
