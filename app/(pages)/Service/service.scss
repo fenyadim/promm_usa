@@ -5,6 +5,9 @@ ol {
 /* service content */
 
 .service__conteiner {
+	padding: 0 25px;
+	max-width: calc(1662px + calc(2 * 32px));
+	margin: 0 auto;
 	section {
 		margin: 50px 0;
 	}

@@ -63,7 +63,7 @@ const Catalog: FC = () => {
 	const [sortPrice, setSortPrice] = useState<SortVars>('Ascending')
 	const [sortHash, setSortHash] = useState<SortVars>('Ascending')
 	const [showMenu, setShowMenu] = useState<boolean>(false)
-	const products = useAppSelector((state) => state.productReducer)
+	const products = useAppSelector((state) => state.product)
 	const dispatch = useAppDispatch()
 
 	const path = usePathname()

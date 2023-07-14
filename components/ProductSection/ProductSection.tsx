@@ -15,7 +15,7 @@ interface IProductSection {
 }
 
 const ProductSection: FC<IProductSection> = ({ type }) => {
-	const { miners } = useAppSelector((state) => state.productReducer)
+	const { miners } = useAppSelector((state) => state.product)
 	const findArr = miners.filter(({ status }) => status?.includes(type))
 	const transformTitle = type.charAt(0).toUpperCase() + type.slice(1)
 

@@ -1,4 +1,4 @@
-import { PayloadAction, Slice, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { products } from '@/api/products'
 

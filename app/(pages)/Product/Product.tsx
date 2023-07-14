@@ -26,7 +26,7 @@ const tabs: TabsType[] = ['Description', 'Payment', 'Delivery']
 
 const Product: FC = () => {
 	const [activeTab, setActiveTab] = useState<TabsType>('Description')
-	const state = useAppSelector((state) => state.productReducer)
+	const state = useAppSelector((state) => state.product)
 
 	const path = usePathname()
 	const searchParams = useSearchParams()

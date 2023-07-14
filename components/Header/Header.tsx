@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FC, useContext, useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
 import {
 	BsBasket,
@@ -15,7 +15,6 @@ import {
 
 import { ImageBtn, Menu } from '@/components'
 
-import { IsOpenSubMenuContext } from '@/utils/context'
 import { toggleVisible } from '@/utils/toggleVisible'
 
 import styles from './Header.module.scss'
@@ -35,9 +34,12 @@ const Header: FC = () => {
 	const searchRef = useRef<any>(null)
 	const btnSearchRef = useRef<any>(null)
 	const pathname = usePathname()
-	const { setIsOpen } = useContext(IsOpenSubMenuContext)
 
-	setIsOpen(showMenu || showMobileMenu)
+	useEffect(() => {
+		if (showMenu === true || showMobileMenu === true)
+			document.body.style.position = 'fixed'
+		else document.body.style.position = 'relative'
+	}, [showMenu, showMobileMenu])
 
 	useEffect(() => {
 		const onClick = (e: Event) => {
@@ -163,16 +165,16 @@ const Header: FC = () => {
 				<nav className={styles.nav_bot}>
 					<ul>
 						<li>
-							<Link href="investment">Investing in mining</Link>
+							<Link href="/investment">Investing in mining</Link>
 						</li>
 						<li>
-							<Link href="turnkey-mining">Turnkey Mining</Link>
+							<Link href="/turnkey-mining">Turnkey Mining</Link>
 						</li>
 						<li>
 							<Link href="">Data Center</Link>
 						</li>
 						<li>
-							<Link href="">Ready-made business</Link>
+							<Link href="/catalog/business">Ready-made business</Link>
 						</li>
 					</ul>
 				</nav>
@@ -216,11 +218,10 @@ const Header: FC = () => {
 				</div>
 			</Menu>
 			<Menu showMenu={showMobileMenu} toggleMenu={toggleMobileMenu}>
-				<Link href="investment">Investing in mining</Link>
-				<Link href="turnkey-mining">Turnkey Mining</Link>
+				<Link href="/investment">Investing in mining</Link>
+				<Link href="/turnkey-mining">Turnkey Mining</Link>
 				<Link href="">Data Center</Link>
-				<Link href="">Equipment leasing</Link>
-				<Link href="">Ready-made business</Link>
+				<Link href="/catalog/business">Ready-made business</Link>
 				{topLinks.map(({ slug, title }) => (
 					<Link key={slug} href={slug}>
 						{title}
