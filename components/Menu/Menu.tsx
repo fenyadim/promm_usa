@@ -1,5 +1,6 @@
 import cn from 'classnames'
 import { FC, PropsWithChildren } from 'react'
+import { BsXLg } from 'react-icons/bs'
 
 import { ImageBtn } from '@/components'
 
@@ -36,7 +37,7 @@ const Menu: FC<IMenuProps> = ({
 			<ImageBtn
 				className={styles.close_btn}
 				onClick={toggleMenu}
-				src="/image/header/cross.svg"
+				svgElem={<BsXLg size={25} />}
 			/>
 			{children}
 		</div>

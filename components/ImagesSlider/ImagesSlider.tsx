@@ -3,6 +3,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import { FC, useRef } from 'react'
+import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs'
 import { Navigation, Swiper as SwiperType } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -50,11 +51,15 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 				<button
 					onClick={() => swiperRef.current?.slidePrev()}
 					className={cn(styles.prev_btn, styles.btn)}
-				/>
+				>
+					<BsArrowLeftCircle size={36} />
+				</button>
 				<button
 					onClick={() => swiperRef.current?.slideNext()}
 					className={cn(styles.next_btn, styles.btn)}
-				/>
+				>
+					<BsArrowRightCircle size={36} />
+				</button>
 			</div>
 		</div>
 	)

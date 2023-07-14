@@ -48,14 +48,10 @@
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-}
-
-.next_btn {
-	background-image: url('../../public/image/index/button/nav-next.svg');
-}
-
-.prev_btn {
-	background-image: url('../../public/image/index/button/nav-prev.svg');
+	color: #5820f6;
+	&:hover {
+		color: #6f3bff;
+	}
 }
 
 @media screen and (max-width: 570px) {

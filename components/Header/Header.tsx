@@ -5,6 +5,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC, useContext, useEffect, useRef, useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
+import {
+	BsBasket,
+	BsJournal,
+	BsSearch,
+	BsStar,
+	BsTelephone,
+} from 'react-icons/bs'
 
 import { ImageBtn, Menu } from '@/components'
 
@@ -120,19 +127,19 @@ const Header: FC = () => {
 							<>
 								<ImageBtn
 									ref={btnSearchRef}
-									src="/image/header/search_black.svg"
+									svgElem={<BsSearch size={25} />}
 									onClick={toggleSearch}
 								/>
 								<ImageBtn
 									onClick={toggleMobileMenu}
-									src="/image/header/burger-menu-svgrepo-com (1).svg"
+									svgElem={<BiMenu size={30} />}
 								/>
 							</>
 						) : (
 							<ImageBtn
 								ref={btnSearchRef}
 								title="Search"
-								src="/image/header/search_black.svg"
+								svgElem={<BsSearch size={25} />}
 								onClick={toggleSearch}
 							/>
 						)
@@ -140,19 +147,13 @@ const Header: FC = () => {
 						<input type="text" className={styles.header_input} />
 					)}
 					<div className={styles.header_right}>
-						<ImageBtn
-							title="Basket"
-							src="/image/header/basket_icon_160414.svg"
-						/>
+						<ImageBtn title="Basket" svgElem={<BsBasket size={25} />} />
 						{innerWidth > 860 && (
 							<>
-								<ImageBtn
-									title="Favorites"
-									src="/image/header/star-favorite-1498-svgrepo-com.svg"
-								/>
+								<ImageBtn title="Favorites" svgElem={<BsStar size={25} />} />
 								<ImageBtn
 									title="Order a call"
-									src="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
+									svgElem={<BsTelephone size={25} />}
 								/>
 							</>
 						)}
@@ -228,20 +229,13 @@ const Header: FC = () => {
 			</Menu>
 			<div className={styles.bot_menu}>
 				<ImageBtn
-					src="/image/header/catalog.svg"
 					title="Catalog"
-					size={30}
+					svgElem={<BsJournal size={25} />}
 					onClick={toggleMenu}
 				/>
-				<ImageBtn title="Basket" src="/image/header/basket_icon_160414.svg" />
-				<ImageBtn
-					title="Favorites"
-					src="/image/header/star-favorite-1498-svgrepo-com.svg"
-				/>
-				<ImageBtn
-					title="Order a call"
-					src="/image/header/auricular-phone-symbol-in-a-circle_icon-icons.com_56570.svg"
-				/>
+				<ImageBtn title="Basket" svgElem={<BsBasket size={25} />} />
+				<ImageBtn title="Favorites" svgElem={<BsStar size={25} />} />
+				<ImageBtn title="Order a call" svgElem={<BsTelephone size={25} />} />
 			</div>
 		</>
 	)

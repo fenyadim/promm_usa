@@ -1,22 +1,20 @@
-import Image from 'next/image'
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { ButtonHTMLAttributes, ReactNode, forwardRef } from 'react'
 
 import styles from './ImageBtn.module.scss'
 
 type IImageBtn = {
 	title?: string
-	src: string
-	size?: number
+	svgElem?: ReactNode
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 type Ref = HTMLButtonElement
 
 const ImageBtn = forwardRef<Ref, IImageBtn>((props, ref) => {
-	const { title, src, size = 25 } = props
+	const { title, svgElem } = props
 
 	return (
 		<button ref={ref} className={styles.btn_wrapper} {...props}>
-			<Image src={src} alt="" width={size} height={size} />
+			{svgElem}
 			{title && title}
 		</button>
 	)

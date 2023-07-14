@@ -1,19 +1,19 @@
 .btn_wrapper {
-  justify-self: end;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  width: max-content;
-  background-color: transparent;
-  color: #000;
-  cursor: pointer;
-  &:hover {
-    color: #5820f6;
-  }
-  img {
-    margin-bottom: 5px;
-  }
+	justify-self: end;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 500;
+	border: none;
+	width: max-content;
+	background-color: transparent;
+	color: #000;
+	cursor: pointer;
+	&:hover {
+		color: #5820f6;
+	}
+	svg {
+		margin-bottom: 5px;
+	}
 }
