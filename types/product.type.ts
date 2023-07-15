@@ -46,4 +46,6 @@ export type ProductType = {
   income?: number
   /** Срок окупаемости  */
   payback?: number
+  /** Описание */
+  desc?: string
 }

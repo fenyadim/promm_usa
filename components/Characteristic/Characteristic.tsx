@@ -18,7 +18,6 @@ const Characteristic: FC<ICharacteristic> = ({ type, item }) => {
 		power,
 		containerMining,
 		income,
-		payback,
 	} = item
 
 	return (
@@ -55,9 +54,6 @@ const Characteristic: FC<ICharacteristic> = ({ type, item }) => {
 							</p>
 							<p>
 								<span>Доход в месяц</span> — {income} BTC
-							</p>
-							<p>
-								<span>Срок окупаемости</span> — {payback} месяцев
 							</p>
 						</>
 					),
