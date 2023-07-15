@@ -63,7 +63,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m50s+',
-      src: '/image/products/m50S+.jpg',
+      src: '/image/products/m50s+.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M50S+ 142 Th/s',
       price: 390100,
