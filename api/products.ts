@@ -16,7 +16,7 @@ export const products: DataType = {
     algorithm: 'Scrypt',
     coins: 'LTC/DOGE',
     status: ['hit', 'new'],
-    desc: 'Описание'
+    desc: 'Test\n\ Hui Test'
   },
   {
     slug: 'bitmain-antminer-e9-pro',

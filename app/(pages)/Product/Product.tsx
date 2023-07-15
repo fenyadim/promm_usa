@@ -36,7 +36,7 @@ const Product: FC = () => {
 		({ slug }) => slug === path.split('/product/')[1]
 	)[0]
 
-	const { brand, title, src, price, availableCount } = items
+	const { brand, title, src, price, availableCount, desc } = items
 
 	return (
 		<section className={styles.wrapper}>
@@ -193,6 +193,7 @@ const Product: FC = () => {
 					>
 						<h3>{title}</h3>
 						<h4>О товаре</h4>
+
 						<p>
 							Производитель Bitmain впервые презентовал улучшенную версию серии
 							S19 в недалеком 2020 году. Несмотря на такой приличный промежуток
