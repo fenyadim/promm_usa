@@ -11,7 +11,7 @@ export const products: DataType = {
 
     {
       slug: 'microbt-whatsminer-m30S',
-      src: '/image/products/M30S.jpg',
+      src: '/image/products/m30s.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M30S 88 Th/s',
       price: 390100,
@@ -24,7 +24,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m30S++',
-      src: '/image/products/M30S++.jpg',
+      src: '/image/products/m30s++.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M30S++ 112 Th/s',
       price: 390100,
@@ -37,7 +37,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m50S',
-      src: '/image/products/M50S.jpg',
+      src: '/image/products/m50s.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M50S 130 Th/s',
       price: 390100,
@@ -50,7 +50,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m50',
-      src: '/image/products/M50.jpg',
+      src: '/image/products/m50.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M50 120 Th/s',
       price: 390100,
@@ -63,7 +63,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m50s+',
-      src: '/image/products/M50S+.jpg',
+      src: '/image/products/m50S+.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M50S+ 142 Th/s',
       price: 390100,
@@ -76,7 +76,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m50s++',
-      src: '/image/products/M50S++.jpg',
+      src: '/image/products/m50s++.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M50S++ 150 Th/s',
       price: 390100,
@@ -89,7 +89,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m33s+',
-      src: '/image/products/M33S+.jpg',
+      src: '/image/products/m33s+.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M33S+ 220 Th/s',
       price: 390100,
@@ -102,7 +102,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m33s++',
-      src: '/image/products/M33S++.jpg',
+      src: '/image/products/m33s++.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M33S++ 240 Th/s',
       price: 390100,
@@ -115,7 +115,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m56',
-      src: '/image/products/M56.jpg',
+      src: '/image/products/m56.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M56 194 Th/s',
       price: 390100,
@@ -128,7 +128,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m56s',
-      src: '/image/products/M56.jpg',
+      src: '/image/products/m56.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M56 212 Th/s',
       price: 390100,
@@ -141,7 +141,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m53',
-      src: '/image/products/M56.jpg',
+      src: '/image/products/m56.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M53 246 Th/s',
       price: 390100,
@@ -154,7 +154,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m53s',
-      src: '/image/products/M56.jpg',
+      src: '/image/products/m56.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M53S 260 Th/s',
       price: 390100,
@@ -167,7 +167,7 @@ export const products: DataType = {
     },
     {
       slug: 'microbt-whatsminer-m53s++',
-      src: '/image/products/M53s++.jpg',
+      src: '/image/products/m53s++.jpg',
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M53S++ 320 Th/s',
       price: 390100,
