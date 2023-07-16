@@ -8,6 +8,9 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 import { AvailableItem, Characteristic } from '@/components'
 
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { addItem, removeItem } from '@/redux/slices/favoritesSlice'
+
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
 
 import { CatalogType, ProductType } from '@/types/product.type'
@@ -20,23 +23,18 @@ interface IProductCard {
 }
 
 const ProductCard: FC<IProductCard> = ({ items, type }) => {
-	const {
-		slug,
-		src,
-		title,
-		price,
-		availableCount,
-		coins,
-		hashrate,
-		algorithm,
-		status,
-		quantityPlace,
-		power,
-		income,
-		payback,
-		containerMining,
-	} = items
-	const [isFavorite, setIsFavorite] = useState<boolean>(false)
+	const favorites = useAppSelector((state) => state.favorites)
+	const action = useAppDispatch()
+	const { slug, src, title, price, availableCount, status } = items
+	const isCheckedFavorite = favorites.find((item) => item.slug === slug)
+
+	const clickFavoritesBtn = () => {
+		if (!isCheckedFavorite) {
+			action(addItem(items))
+		} else {
+			action(removeItem(items))
+		}
+	}
 
 	return (
 		<div className={styles.wrapper}>
@@ -69,11 +67,8 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 			<div className={styles.navigation}>
 				<button className={styles.order_btn}>Order</button>
 
-				<button
-					onClick={() => setIsFavorite(!isFavorite)}
-					className={styles.favorite_btn}
-				>
-					{isFavorite ? (
+				<button onClick={clickFavoritesBtn} className={styles.favorite_btn}>
+					{isCheckedFavorite ? (
 						<AiFillStar size={26} color="#5820f6" />
 					) : (
 						<AiOutlineStar size={26} />

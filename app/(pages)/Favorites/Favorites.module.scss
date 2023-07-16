@@ -1,0 +1,26 @@
+.wrapper {
+	padding: 24px 32px;
+	margin: 0 auto;
+	max-width: calc(1662px + calc(2 * 32px));
+
+	h1 {
+		font-size: 32px;
+		font-weight: 500;
+		margin-bottom: 25px;
+	}
+}
+
+.products_container {
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.nothing_wrapper {
+	display: flex;
+	justify-content: center;
+	padding: 200px 0;
+	h3 {
+		font-size: 28px;
+		color: #dadada;
+	}
+}
