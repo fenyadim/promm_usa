@@ -239,7 +239,11 @@ const Header: FC = () => {
 					onClick={toggleMenu}
 				/>
 				<ImageBtn title="Basket" svg={<BsBasket size={25} />} />
-				<ImageBtn title="Favorites" svg={<BsStar size={25} />} />
+				<ImageBtn
+					title="Favorites"
+					svg={<BsStar size={25} />}
+					link="/favorites"
+				/>
 				<ImageBtn title="Order a call" svg={<BsTelephone size={25} />} />
 			</div>
 		</>
