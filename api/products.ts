@@ -15,7 +15,7 @@ export const products: DataType = {
       brand: 'Whatsminer',
       title: 'Asic miner Whatsminer M30S 88 Th/s',
       price: 1100,
-      availableCount: ,
+      availableCount: 0,
       hashrate: 88,
       algorithm: 'SHA-256',
       coins: 'Bitcoin',
