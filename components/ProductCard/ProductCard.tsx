@@ -9,6 +9,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { AvailableItem, Characteristic } from '@/components'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { addInBasket } from '@/redux/slices/basketSlice'
 import { addItem, removeItem } from '@/redux/slices/favoritesSlice'
 
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
@@ -24,15 +25,15 @@ interface IProductCard {
 
 const ProductCard: FC<IProductCard> = ({ items, type }) => {
 	const favorites = useAppSelector((state) => state.favorites)
-	const action = useAppDispatch()
+	const dispatch = useAppDispatch()
 	const { slug, src, title, price, availableCount, status } = items
 	const isCheckedFavorite = favorites.find((item) => item.slug === slug)
 
 	const clickFavoritesBtn = () => {
 		if (!isCheckedFavorite) {
-			action(addItem(items))
+			dispatch(addItem(items))
 		} else {
-			action(removeItem(items))
+			dispatch(removeItem(items))
 		}
 	}
 
@@ -65,7 +66,12 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 				<Characteristic type={type} item={items} />
 			</div>
 			<div className={styles.navigation}>
-				<button className={styles.order_btn}>Order</button>
+				<button
+					className={styles.order_btn}
+					onClick={() => dispatch(addInBasket(items))}
+				>
+					Order
+				</button>
 
 				<button onClick={clickFavoritesBtn} className={styles.favorite_btn}>
 					{isCheckedFavorite ? (

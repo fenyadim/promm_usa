@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-nprogress-bar'
 import { ButtonHTMLAttributes, ReactNode, forwardRef } from 'react'
 
 import styles from './ImageBtn.module.scss'

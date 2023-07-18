@@ -149,7 +149,11 @@ const Header: FC = () => {
 						<input type="text" className={styles.header_input} />
 					)}
 					<div className={styles.header_right}>
-						<ImageBtn title="Basket" svg={<BsBasket size={25} />} />
+						<ImageBtn
+							title="Basket"
+							svg={<BsBasket size={25} />}
+							link="/basket"
+						/>
 						{innerWidth > 860 && (
 							<>
 								<ImageBtn
@@ -238,7 +242,7 @@ const Header: FC = () => {
 					svg={<BsJournal size={25} />}
 					onClick={toggleMenu}
 				/>
-				<ImageBtn title="Basket" svg={<BsBasket size={25} />} />
+				<ImageBtn title="Basket" svg={<BsBasket size={25} />} link="/basket" />
 				<ImageBtn
 					title="Favorites"
 					svg={<BsStar size={25} />}
