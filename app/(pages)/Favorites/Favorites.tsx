@@ -6,22 +6,12 @@ import { ProductCard } from '@/components'
 
 import { useAppSelector } from '@/redux/hooks'
 
-import { CatalogType, ProductType } from '@/types/product.type'
+import { fetchType } from '@/utils/fetchType'
 
 import styles from './Favorites.module.scss'
 
 const Favorites: FC = () => {
 	const favorites = useAppSelector((state) => state.favorites)
-
-	const fetchType = (item: ProductType): CatalogType => {
-		if (item.power) {
-			return 'containers'
-		} else if (item.income) {
-			return 'business'
-		} else {
-			return 'miners'
-		}
-	}
 
 	return (
 		<section className={styles.wrapper}>

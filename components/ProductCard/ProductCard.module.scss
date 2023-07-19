@@ -88,6 +88,16 @@
 	}
 }
 
+.in_basket {
+	background-color: #5820f6;
+	color: #fff;
+	&:hover {
+		background-color: #fff;
+		border: 1px solid #5820f6;
+		color: #5820f6;
+	}
+}
+
 .favorite_btn {
 	width: 24px;
 	height: 24px;

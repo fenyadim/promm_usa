@@ -3,7 +3,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 import { AvailableItem, Characteristic } from '@/components'
@@ -24,10 +24,12 @@ interface IProductCard {
 }
 
 const ProductCard: FC<IProductCard> = ({ items, type }) => {
-	const favorites = useAppSelector((state) => state.favorites)
-	const dispatch = useAppDispatch()
 	const { slug, src, title, price, availableCount, status } = items
+	const favorites = useAppSelector((state) => state.favorites)
+	const basket = useAppSelector((state) => state.basket)
+	const dispatch = useAppDispatch()
 	const isCheckedFavorite = favorites.find((item) => item.slug === slug)
+	const isCheckedBasket = basket.find((item) => item.slug === slug)
 
 	const clickFavoritesBtn = () => {
 		if (!isCheckedFavorite) {
@@ -67,10 +69,12 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 			</div>
 			<div className={styles.navigation}>
 				<button
-					className={styles.order_btn}
+					className={cn(styles.order_btn, {
+						[styles.in_basket]: isCheckedBasket,
+					})}
 					onClick={() => dispatch(addInBasket(items))}
 				>
-					Order
+					{isCheckedBasket ? 'In Basket' : 'Order'}
 				</button>
 
 				<button onClick={clickFavoritesBtn} className={styles.favorite_btn}>

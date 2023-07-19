@@ -1,0 +1,52 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr min-content;
+	max-width: 850px;
+	gap: 15px;
+	padding: 5px 30px;
+	grid-template-rows: 120px;
+	align-items: center;
+	border: 1px solid #dadada;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.info {
+	h2 {
+		font-size: 28px;
+		margin-bottom: 10px;
+	}
+}
+
+.image {
+	position: relative;
+	height: 100%;
+}
+
+.nav {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	background-color: #efefef;
+	border-radius: 8px;
+	width: max-content;
+	overflow: hidden;
+
+	p {
+		font-size: 18px;
+	}
+
+	button {
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+		border: none;
+		padding: 15px;
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+	}
+}
