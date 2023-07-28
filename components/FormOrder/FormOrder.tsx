@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { Button, Input } from '@/components'
 
 import { useAppDispatch } from '@/redux/hooks'
+import { clear } from '@/redux/slices/basketSlice'
 
 import { IFormValues } from '@/types/form.type'
 
@@ -129,7 +130,13 @@ const FormOrder: FC = () => {
 				<Button type="submit" styleType="fill">
 					Оформить заказ
 				</Button>
-				<Button styleType="clear">Очистить корзину</Button>
+				<Button
+					type="button"
+					styleType="clear"
+					onClick={() => dispatch(clear())}
+				>
+					Очистить корзину
+				</Button>
 			</div>
 		</form>
 	)

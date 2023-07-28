@@ -66,7 +66,7 @@ const Home: FC = () => {
 						</p>
 						<div className={styles.links}>
 							<Link href="/catalog/asic-miners">ACIS miners</Link>
-							<Link href="#">Data Center</Link>
+							<Link href="/data-center">Data Center</Link>
 							<Link href="/catalog/containers">Containers</Link>
 							<Link href="/turnkey-mining">Turnkey Mining</Link>
 						</div>

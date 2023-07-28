@@ -179,7 +179,7 @@ const Header: FC = () => {
 							<Link href="/turnkey-mining">Turnkey Mining</Link>
 						</li>
 						<li>
-							<Link href="">Data Center</Link>
+							<Link href="/data-center">Data Center</Link>
 						</li>
 						<li>
 							<Link href="/catalog/business">Ready-made business</Link>
@@ -228,7 +228,7 @@ const Header: FC = () => {
 			<Menu showMenu={showMobileMenu} toggleMenu={toggleMobileMenu}>
 				<Link href="/investment">Investing in mining</Link>
 				<Link href="/turnkey-mining">Turnkey Mining</Link>
-				<Link href="">Data Center</Link>
+				<Link href="/data-center">Data Center</Link>
 				<Link href="/catalog/business">Ready-made business</Link>
 				{topLinks.map(({ slug, title }) => (
 					<Link key={slug} href={slug}>
