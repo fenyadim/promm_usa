@@ -1,5 +1,7 @@
 'use client'
 
+import { Metadata } from 'next'
+import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import 'swiper/scss/navigation'
@@ -13,6 +15,12 @@ import Providers from './providers'
 
 import 'swiper/scss'
 
+export const metadata: Metadata = {
+	icons: {
+		icon: './favicon.ico',
+	},
+}
+
 export default function RootLayout({
 	children,
 }: {
@@ -20,6 +28,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<Head>
+				<link rel="icon" href="/icon.ico" sizes="any" />
+			</Head>
 			<body>
 				<Providers>
 					<Provider store={store}>
