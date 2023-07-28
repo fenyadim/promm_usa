@@ -1,11 +1,12 @@
 'use client'
 
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import 'swiper/scss/navigation'
 
 import { Footer, Header } from '@/components'
 
-import { store } from '@/redux/store'
+import { persistor, store } from '@/redux/store'
 
 import './globals.css'
 import Providers from './providers'
@@ -22,9 +23,11 @@ export default function RootLayout({
 			<body>
 				<Providers>
 					<Provider store={store}>
-						<Header />
-						{children}
-						<Footer />
+						<PersistGate loading={null} persistor={persistor}>
+							<Header />
+							{children}
+							<Footer />
+						</PersistGate>
 					</Provider>
 				</Providers>
 			</body>
