@@ -1,8 +1,12 @@
 export interface IFormValues {
   phone: string
-  name: string
+  firstName: string
+  lastName: string
+  company: string
+  address: string
   city: string
-  street: string
-  house: string
+  region: string
+  postalCode: string
   apartment: string
+  country: string
 }

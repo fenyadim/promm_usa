@@ -27,67 +27,102 @@ const FormOrder: FC = () => {
 		<form className={styles.form} onSubmit={handleSubmit(submit)}>
 			<Input
 				type="tel"
-				placeholder="+7(___)___-__-__"
-				title="Телефон"
+				placeholder="Phone"
+				title="Phone"
 				error={errors.phone}
 				//@ts-ignore
 				register={{
 					...register('phone', {
-						required: 'Введите телефон',
+						required: 'Enter phone number',
 						pattern: {
 							value: phoneReg,
-							message: 'Введите корректный номер',
+							message: 'Enter a valid number',
 						},
 					}),
 				}}
 			/>
+			<div
+				className={styles.addressWrapper}
+				style={{ gridTemplateColumns: '1fr 1fr' }}
+			>
+				<Input
+					title="First name"
+					placeholder="John"
+					error={errors.firstName}
+					//@ts-ignore
+					register={{
+						...register('firstName', {
+							required: 'Enter first name',
+							pattern: {
+								value: nameReg,
+								message: 'Enter first name',
+							},
+						}),
+					}}
+				/>
+				<Input
+					title="Last name"
+					placeholder="Doe"
+					error={errors.lastName}
+					//@ts-ignore
+					register={{
+						...register('lastName', {
+							required: 'Enter last name',
+							pattern: {
+								value: nameReg,
+								message: 'Enter last name',
+							},
+						}),
+					}}
+				/>
+			</div>
 			<Input
-				title="ФИО"
-				placeholder="Например, Иванов Иван Иванович"
-				error={errors.name}
 				//@ts-ignore
 				register={{
-					...register('name', {
-						required: 'Введите ФИО',
-						pattern: {
-							value: nameReg,
-							message: 'Введите ФИО',
-						},
-					}),
+					...register('company'),
 				}}
+				title="Company (optional)"
+				placeholder="Promminer"
+				error={errors.company}
 			/>
 			<Input
 				//@ts-ignore
 				register={{
-					...register('city', { required: 'Введите город/поселок' }),
+					...register('address', { required: 'Enter address' }),
 				}}
-				title="Город/Поселок"
-				placeholder="Например, г. Москва"
-				error={errors.city}
+				title="Address"
+				placeholder="2 WATTAQUADOCK HILL RD"
+				error={errors.address}
 			/>
 			<Input
 				//@ts-ignore
-				register={{ ...register('street') }}
-				title="Улица"
-				placeholder="Например, ул.Пушкина"
-				error={errors.street}
+				register={{ ...register('apartment') }}
+				title="Apartment, suite, etc. (optional)"
+				error={errors.apartment}
 			/>
 			<div className={styles.addressWrapper}>
 				<Input
 					//@ts-ignore
-					register={{ ...register('house', { required: 'Введите дом' }) }}
-					title="Дом"
-					placeholder="Например, д.45/4"
-					error={errors.house}
+					register={{ ...register('city', { required: 'Enter city' }) }}
+					title="City"
+					placeholder="Bolton"
+					error={errors.city}
+				/>
+				<Input
+					//@ts-ignore
+					register={{ ...register('region', { required: 'Enter region' }) }}
+					title="Region"
+					placeholder="MA"
+					error={errors.region}
 				/>
 				<Input
 					//@ts-ignore
 					register={{
-						...register('apartment', { required: 'Введите квартиру' }),
+						...register('postalCode', { required: 'Enter postal code' }),
 					}}
-					title="Квартира"
-					placeholder="Например, кв.24"
-					error={errors.apartment}
+					title="Postal Code"
+					placeholder="01740"
+					error={errors.postalCode}
 				/>
 			</div>
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>

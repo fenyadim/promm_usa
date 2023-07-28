@@ -11,7 +11,7 @@ $paddingForm: 8px;
 .addressWrapper {
 	display: grid;
 	gap: 10px;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .error {
@@ -19,17 +19,17 @@ $paddingForm: 8px;
 	color: #ff6060;
 }
 
-@media screen and (min-width: 250px) {
+@media screen and (max-width: 450px) {
 	.addressWrapper {
 		display: block;
 	}
 }
 
-@media screen and (min-width: 358px) {
-	.addressWrapper {
-		display: grid;
-	}
-}
+// @media screen and (min-width: 358px) {
+// 	.addressWrapper {
+// 		display: grid;
+// 	}
+// }
 
 // @include screen-table {
 // 	.form {
