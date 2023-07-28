@@ -19,3 +19,27 @@
 		font-size: 28px;
 	}
 }
+
+.items {
+	display: grid;
+	grid-template-columns: minmax(300px, 700px) minmax(300px, 500px);
+	gap: 50px;
+	justify-content: space-around;
+}
+
+@media screen and (max-width: 1080px) {
+	.items {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 365px) {
+	.header {
+		h1 {
+			font-size: 24px;
+		}
+		h3 {
+			font-size: 22px;
+		}
+	}
+}

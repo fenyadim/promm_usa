@@ -2,7 +2,7 @@
 
 import { FC, Fragment } from 'react'
 
-import { ProductCard } from '@/components'
+import { NothingWrapper, ProductCard } from '@/components'
 
 import { useAppSelector } from '@/redux/hooks'
 
@@ -13,6 +13,8 @@ import styles from './Favorites.module.scss'
 const Favorites: FC = () => {
 	const favorites = useAppSelector((state) => state.favorites)
 
+	console.log(favorites.length !== 0)
+
 	return (
 		<section className={styles.wrapper}>
 			<h1>Favorites</h1>
@@ -22,17 +24,13 @@ const Favorites: FC = () => {
 					favorites.length !== 0 ? { display: 'flex' } : { display: 'block' }
 				}
 			>
-				{favorites.length !== 0 ? (
-					favorites.map((item) => (
+				<NothingWrapper visible={favorites.length === 0}>
+					{favorites.map((item) => (
 						<Fragment key={item.slug}>
 							<ProductCard items={item} type={fetchType(item)} />
 						</Fragment>
-					))
-				) : (
-					<div className={styles.nothing_wrapper}>
-						<h3>There's nothing here</h3>
-					</div>
-				)}
+					))}
+				</NothingWrapper>
 			</div>
 		</section>
 	)

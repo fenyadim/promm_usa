@@ -1,10 +1,11 @@
 .wrapper {
 	display: grid;
+	grid-template-areas: 'img info nav' 'img info nav';
 	grid-template-columns: 1fr 2fr min-content;
 	max-width: 850px;
 	gap: 15px;
-	padding: 5px 30px;
-	grid-template-rows: 120px;
+	padding: 20px 30px;
+	grid-template-rows: max-content;
 	align-items: center;
 	border: 1px solid #dadada;
 	border-radius: 8px;
@@ -14,19 +15,25 @@
 	}
 }
 
-.info {
-	h2 {
-		font-size: 28px;
-		margin-bottom: 10px;
-	}
-}
-
 .image {
+	grid-area: img;
 	position: relative;
 	height: 100%;
 }
 
+.info {
+	grid-area: info;
+	h2 {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: 16px;
+	}
+}
+
 .nav {
+	grid-area: nav;
 	display: flex;
 	gap: 8px;
 	align-items: center;
@@ -36,7 +43,7 @@
 	overflow: hidden;
 
 	p {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	button {
@@ -48,5 +55,57 @@
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.05);
 		}
+	}
+}
+
+// @media screen and (max-width: 1180px) {
+// 	.info {
+// 		h2 {
+// 			font-size: 20px;
+// 		}
+// 	}
+// }
+
+@media screen and (max-width: 1180px) {
+	.wrapper {
+		max-width: 100%;
+		grid-template-rows: max-content;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.wrapper {
+		grid-template-areas:
+			'img info info'
+			'img nav nav';
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.info {
+		h2 {
+			font-size: 20px;
+		}
+	}
+	.nav {
+		button {
+			padding: 10px;
+		}
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.wrapper {
+		grid-template-rows: 1fr 1fr min-content;
+		gap: 0;
+		row-gap: 15px;
+		grid-template-areas:
+			'img img img'
+			'info info info'
+			'nav nav nav';
+	}
+	.nav {
+		justify-content: space-between;
+		width: 100%;
 	}
 }

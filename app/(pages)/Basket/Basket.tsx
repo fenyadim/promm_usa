@@ -2,7 +2,7 @@
 
 import { FC, Fragment } from 'react'
 
-import { BasketItem } from '@/components'
+import { BasketItem, FormOrder, NothingWrapper } from '@/components'
 
 import { useAppSelector } from '@/redux/hooks'
 
@@ -23,15 +23,18 @@ const Basket: FC = () => {
 				<h1>Basket</h1>
 				<h3>Total: $ {numberWithSpaces(totalPrice)}</h3>
 			</div>
-			<div>
-				<div>
-					{basket.map((item) => (
-						<Fragment key={item.slug}>
-							<BasketItem item={item} />
-						</Fragment>
-					))}
+			<NothingWrapper visible={basket.length === 0}>
+				<div className={styles.items}>
+					<div>
+						{basket.map((item) => (
+							<Fragment key={item.slug}>
+								<BasketItem item={item} />
+							</Fragment>
+						))}
+					</div>
+					<FormOrder />
 				</div>
-			</div>
+			</NothingWrapper>
 		</section>
 	)
 }

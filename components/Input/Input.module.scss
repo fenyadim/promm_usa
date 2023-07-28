@@ -1,0 +1,76 @@
+.field {
+	position: relative;
+	margin-bottom: 20px;
+
+	&:target {
+		input {
+			height: 100px;
+		}
+	}
+
+	input {
+		border: none;
+		outline: 1px solid #dadada;
+		border-radius: 8px;
+		width: 100%;
+		padding: 10px 18px;
+		font-size: 14px;
+		transition: outline-color 0.1s;
+
+		&:hover {
+			outline-color: #7e7e7e;
+		}
+
+		&:focus {
+			outline-color: #5820f6;
+		}
+	}
+
+	.label {
+		z-index: 1;
+		position: absolute;
+		top: -8px;
+		left: 20px;
+		font-size: 0.75rem;
+		background: #fff;
+	}
+}
+
+.error_text {
+	display: block;
+	font-size: 0.75rem;
+}
+
+.error {
+	> input {
+		outline-color: #ff6060;
+		&:focus {
+			outline-color: #ff6060;
+		}
+	}
+	> span {
+		color: #ff6060;
+	}
+}
+
+// // @include screen-phone {
+// // 	.field {
+// // 		input {
+// // 			font-size: 0.75rem;
+// // 		}
+// // 		.label {
+// // 			font-size: 0.6875rem;
+// // 		}
+// // 		.error_text {
+// // 			font-size: 0.6875rem;
+// // 		}
+// // 	}
+// // }
+
+// // @include screen-table {
+// // 	.field {
+// // 		input {
+// // 			font-size: 0.8rem;
+// // 		}
+// // 	}
+// // }

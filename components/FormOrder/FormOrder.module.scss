@@ -1,0 +1,50 @@
+$paddingForm: 8px;
+
+.form {
+	position: relative;
+	overflow: hidden;
+	padding: $paddingForm 1px 0 1px;
+	width: 100%;
+	justify-self: center;
+}
+
+.addressWrapper {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.error {
+	margin-bottom: 15px;
+	color: #ff6060;
+}
+
+@media screen and (min-width: 250px) {
+	.addressWrapper {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 358px) {
+	.addressWrapper {
+		display: grid;
+	}
+}
+
+// @include screen-table {
+// 	.form {
+// 		justify-self: flex-start;
+// 		padding-top: 10px;
+
+// 		&::before {
+// 			position: absolute;
+// 			top: 0;
+// 			left: -25px;
+// 			content: '';
+// 			display: block;
+// 			border-left: 1px solid var(--grey);
+// 			width: 1px;
+// 			height: 100%;
+// 		}
+// 	}
+// }

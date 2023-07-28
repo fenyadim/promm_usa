@@ -1,0 +1,36 @@
+.btn {
+	height: 35px;
+	padding: 0 16px;
+	font-size: 14px;
+	font-weight: 600;
+	outline: none;
+	background-color: #fff;
+	border: 1px solid #5820f6;
+	border-radius: 8px;
+	color: #5820f6;
+
+	&:hover {
+		background-color: #5820f6;
+		color: #fff;
+	}
+}
+
+.fill {
+	background-color: #5820f6;
+	color: #fff;
+	&:hover {
+		background-color: #fff;
+		border: 1px solid #5820f6;
+		color: #5820f6;
+	}
+}
+
+.clear {
+	background-color: #fff;
+	border: 1px solid #ff6060;
+	color: #ff6060;
+	&:hover {
+		background-color: #ff6060;
+		color: #fff;
+	}
+}
