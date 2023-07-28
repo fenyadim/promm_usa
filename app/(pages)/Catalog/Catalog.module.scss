@@ -5,6 +5,8 @@
 .wrapper {
 	position: relative;
 	padding: 15px 32px 20px;
+	max-width: calc(1662px + calc(2 * 32px));
+	margin: 0 auto;
 	h1 {
 		padding-bottom: 35px;
 		font-size: 32px;
