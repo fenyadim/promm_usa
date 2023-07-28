@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
