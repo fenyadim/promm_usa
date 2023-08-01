@@ -1,23 +1,22 @@
 'use client'
 
-import { Dispatch, FC, SetStateAction } from 'react'
+import { useRouter } from 'next-nprogress-bar'
+import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { Button, Input } from '@/components'
 
 import { useAppDispatch } from '@/redux/hooks'
 import { clear } from '@/redux/slices/basketSlice'
+import { addFormData } from '@/redux/slices/formSlice'
 
 import { IFormValues } from '@/types/form.type'
 
 import styles from './FormOrder.module.scss'
 import { countryReg, nameReg, phoneReg } from './regular'
 
-interface IFormOrder {
-	toggleMerchant: Dispatch<SetStateAction<boolean>>
-}
-
-const FormOrder: FC<IFormOrder> = ({ toggleMerchant }) => {
+const FormOrder: FC<{ amount: number }> = ({ amount }) => {
+	const router = useRouter()
 	const {
 		register,
 		handleSubmit,
@@ -28,7 +27,8 @@ const FormOrder: FC<IFormOrder> = ({ toggleMerchant }) => {
 	const dispatch = useAppDispatch()
 
 	const submit: SubmitHandler<IFormValues> = async (formData) => {
-		toggleMerchant(true)
+		dispatch(addFormData({ ...formData, amount }))
+		router.push('/payment')
 	}
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(submit)}>

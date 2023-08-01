@@ -2,7 +2,7 @@
 
 import { FC, Fragment, useState } from 'react'
 
-import { BasketItem, FormOrder, Merchant, NothingWrapper } from '@/components'
+import { BasketItem, FormOrder, NothingWrapper } from '@/components'
 
 import { useAppSelector } from '@/redux/hooks'
 
@@ -34,15 +34,10 @@ const Basket: FC = () => {
 								</Fragment>
 							))}
 						</div>
-						<FormOrder toggleMerchant={setVisibleMerchant} />
+						<FormOrder amount={totalPrice} />
 					</div>
 				</NothingWrapper>
 			</section>
-			<Merchant
-				visible={visibleMerchant}
-				toggleMerchant={setVisibleMerchant}
-				amount={totalPrice}
-			/>
 		</>
 	)
 }

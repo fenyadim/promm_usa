@@ -3,6 +3,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import productReducer from './slices/productSlice'
 import favoritesReducer from './slices/favoritesSlice'
 import basketReducer from './slices/basketSlice'
+import formReducer from './slices/formSlice'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 
@@ -35,7 +36,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
   product: productReducer,
   favorites: favoritesReducer,
-  basket: basketReducer
+  basket: basketReducer,
+  formData: formReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
