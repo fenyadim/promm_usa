@@ -1,6 +1,6 @@
 'use client'
 
-import { FC } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { Button, Input } from '@/components'
@@ -11,21 +11,42 @@ import { clear } from '@/redux/slices/basketSlice'
 import { IFormValues } from '@/types/form.type'
 
 import styles from './FormOrder.module.scss'
-import { nameReg, phoneReg } from './regular'
+import { countryReg, nameReg, phoneReg } from './regular'
 
-const FormOrder: FC = () => {
+interface IFormOrder {
+	toggleMerchant: Dispatch<SetStateAction<boolean>>
+}
+
+const FormOrder: FC<IFormOrder> = ({ toggleMerchant }) => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isValid },
+		formState: { errors },
 	} = useForm<IFormValues>({
 		mode: 'onChange',
 	})
 	const dispatch = useAppDispatch()
 
-	const submit: SubmitHandler<IFormValues> = async (formData) => {}
+	const submit: SubmitHandler<IFormValues> = async (formData) => {
+		toggleMerchant(true)
+	}
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(submit)}>
+			<Input
+				title="Country"
+				placeholder="USA"
+				error={errors.country}
+				//@ts-ignore
+				register={{
+					...register('country', {
+						required: 'Enter country',
+						pattern: {
+							value: countryReg,
+							message: 'Enter a valid country',
+						},
+					}),
+				}}
+			/>
 			<Input
 				type="tel"
 				placeholder="Phone"

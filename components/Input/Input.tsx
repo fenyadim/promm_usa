@@ -24,17 +24,7 @@ const Input: FC<IInput> = ({
 			style={style}
 		>
 			<span className={styles.label}>{title}</span>
-			{type === 'tel' ? (
-				<InputMask
-					mask="+7(999)999-99-99"
-					type={type}
-					placeholder={placeholder}
-					{...register}
-					{...props}
-				/>
-			) : (
-				<input type={type} placeholder={placeholder} {...register} {...props} />
-			)}
+			<input type={type} placeholder={placeholder} {...register} {...props} />
 			{error && <span className={styles.error_text}>{error.message}</span>}
 		</div>
 	)
