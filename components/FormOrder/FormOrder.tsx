@@ -27,7 +27,7 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 	const dispatch = useAppDispatch()
 
 	const submit: SubmitHandler<IFormValues> = async (formData) => {
-		dispatch(addFormData({ ...formData, amount }))
+		dispatch(addFormData({ ...formData, amount, time: Date.now() }))
 		router.push('/payment')
 	}
 	return (
