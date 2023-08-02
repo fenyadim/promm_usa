@@ -37,25 +37,18 @@ const Payment: FC = () => {
 
 	const future = new Date(time).getTime() + 30 * 60000
 
-	console.log()
-	console.log()
-
 	useEffect(() => {
 		let timer = setInterval(() => {
 			const min = new Date(future - Date.now()).getMinutes()
 			const sec = new Date(future - Date.now()).getSeconds()
 			setMinutes(min)
 			setSeconds(sec > 9 ? sec : '0' + sec)
-			if (min === 0 && sec === 0) router.replace('/basket')
+			if (future < Date.now()) router.replace('/basket')
 		}, 1000)
 		return () => {
 			clearInterval(timer)
 		}
 	}, [])
-
-	// const [minutes, seconds] = useCountdown(time)
-
-	// console.log(minutes, seconds)
 
 	useEffect(() => {
 		if (Object.keys(formData).length === 0 || basketItems.length === 0)
@@ -117,6 +110,11 @@ const Payment: FC = () => {
 						{minutes}:{seconds}
 					</p>
 				</div>
+				<span>
+					Payment ID: CPHH2KXPZVIAZQAG4OI8GUMCKV Verification Code:
+					80a6ad9d73b694b83f8b128fba75a404 (save in case there are any issues
+					with your payment)
+				</span>
 			</div>
 		</div>
 	)
