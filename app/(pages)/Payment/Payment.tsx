@@ -115,6 +115,20 @@ const Payment: FC = () => {
 					80a6ad9d73b694b83f8b128fba75a404 (save in case there are any issues
 					with your payment)
 				</span>
+				<h4 className={styles.desc}>
+					After transferring the payment, review the status of the transaction.
+					Once the payment has been confirmed several times in the blockchain,
+					it will be finalized and the merchant will receive a notification. The
+					confirmation process usually takes 30-45 minutes, but depends on the
+					cryptocurrency's blockchain time and the number of block confirmations
+					required. The status page will be available for the next 30 days.
+					<span>
+						What should I do if I accidentally sent insufficient funds?
+					</span>
+					If you have sent insufficient funds, don't worry. Simply send the
+					missing portion and we will combine those transfers for you. You can
+					also make transfers from multiple wallets/accounts if needed.
+				</h4>
 			</div>
 		</div>
 	)
