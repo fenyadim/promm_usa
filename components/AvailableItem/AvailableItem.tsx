@@ -10,7 +10,7 @@ const AvailableItem: FC<{ count: number }> = ({ count }) => {
 				[styles.not_available]: count === 0,
 			})}
 		>
-			{count > 0 ? `Есть в наличии - ${count} шт.` : 'Нет в наличии'}
+			{count > 0 ? `In stock - ${count} pcs.` : 'Out of stock'}
 		</p>
 	)
 }

@@ -27,33 +27,33 @@ const Characteristic: FC<ICharacteristic> = ({ type, item }) => {
 					miners: (
 						<>
 							<p>
-								<span>Хэшрейт</span> — {hashrate} MH/s
+								<span>Hashrate</span> — {hashrate} MH/s
 							</p>
 							<p>
-								<span>Алгоритм</span> — {algorithm}
+								<span>Algorithm</span> — {algorithm}
 							</p>
 							<p>
-								<span>Добываемые монеты</span> — {coins}
+								<span>Coins to be mined</span> — {coins}
 							</p>
 						</>
 					),
 					containers: (
 						<>
 							<p>
-								<span>Количество мест</span> — {quantityPlace}
+								<span>Number of places</span> — {quantityPlace}
 							</p>
 							<p>
-								<span>Общая мощность, кВт</span> — {power}
+								<span>Total power, kW</span> — {power}
 							</p>
 						</>
 					),
 					business: (
 						<>
 							<p>
-								<span>Контейнер для майнинга, мест</span> — {containerMining}
+								<span>Mining container, places</span> — {containerMining}
 							</p>
 							<p>
-								<span>Доход в месяц</span> — {income} BTC
+								<span>Income per month</span> — {income} BTC
 							</p>
 						</>
 					),
