@@ -1,10 +1,10 @@
 'use client'
 
 import { useRouter } from 'next-nprogress-bar'
-import { FC } from 'react'
+import { ChangeEvent, FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { Button, Input } from '@/components'
+import { Button, Input, RadioBtn } from '@/components'
 
 import { useAppDispatch } from '@/redux/hooks'
 import { clear } from '@/redux/slices/basketSlice'
@@ -17,6 +17,7 @@ import { countryReg, nameReg, phoneReg } from './regular'
 
 const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 	const router = useRouter()
+	const [checkedValue, setCheckedValue] = useState('DHL')
 	const {
 		register,
 		handleSubmit,
@@ -26,8 +27,19 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 	})
 	const dispatch = useAppDispatch()
 
+	const toggleChecked = (e: ChangeEvent<HTMLInputElement>) => {
+		setCheckedValue(e.target.value)
+	}
+
 	const submit: SubmitHandler<IFormValues> = async (formData) => {
-		dispatch(addFormData({ ...formData, amount, time: Date.now() }))
+		const deliveryPrice = checkedValue === 'DHL' ? 125 : 70
+		dispatch(
+			addFormData({
+				...formData,
+				amount: amount + deliveryPrice,
+				time: Date.now(),
+			})
+		)
 		router.push('/payment')
 	}
 	return (
@@ -146,6 +158,29 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 					placeholder="01740"
 					error={errors.postalCode}
 				/>
+			</div>
+			<div className={styles.delivery_block}>
+				<h3>Delivery</h3>
+				<div>
+					<RadioBtn
+						//@ts-ignore
+						register={{ ...register('delivery') }}
+						value="DHL"
+						text="DHL - 125$ (2-3 days)"
+						srcImg="/image/delivery/dhl.svg"
+						onChange={toggleChecked}
+						checked={checkedValue === 'DHL'}
+					/>
+					<RadioBtn
+						//@ts-ignore
+						register={{ ...register('delivery') }}
+						value="UPS"
+						text="UPS - 70$ (2-5 days)"
+						srcImg="/image/delivery/ups.svg"
+						onChange={toggleChecked}
+						checked={checkedValue === 'UPS'}
+					/>
+				</div>
 			</div>
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 				<Button type="submit" styleType="fill">

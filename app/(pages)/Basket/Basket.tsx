@@ -11,7 +11,6 @@ import { numberWithSpaces } from '@/utils/numberWithSpaces'
 import styles from './Basket.module.scss'
 
 const Basket: FC = () => {
-	const [visibleMerchant, setVisibleMerchant] = useState(false)
 	const basket = useAppSelector((state) => state.basket)
 	const totalPrice = basket.reduce(
 		(acc, item) => acc + item.price * item.count,

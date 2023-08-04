@@ -32,6 +32,17 @@ const Footer = () => {
 						info@promminer.ru
 					</Link>
 				</div>
+				<div className={styles.contacts}>
+					<h3>Our location</h3>
+					<ul>
+						<li>Los Angeles - 5261 W Imperial Hwy, CA 90045</li>
+						<li>Dubai - Business Bay, Exchange Tower, office 105</li>
+						<li>Moscow - Letnaya str., 99 st3</li>
+						<li>Irkutsk - Gorky str. 14B</li>
+						<li>Saint Petersburg- Izmailovsky Prospekt 2B</li>
+						<li>Hong Kong - 14 Science Museum Rd, Tsim Sha Tsui East</li>
+					</ul>
+				</div>
 			</div>
 		</footer>
 	)

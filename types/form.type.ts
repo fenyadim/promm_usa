@@ -9,4 +9,5 @@ export interface IFormValues {
   postalCode: string
   apartment: string
   country: string
+  delivery: 'dhl' | 'ups'
 }

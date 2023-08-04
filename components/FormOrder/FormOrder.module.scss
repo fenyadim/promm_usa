@@ -19,9 +19,28 @@ $paddingForm: 8px;
 	color: #ff6060;
 }
 
+.delivery_block {
+	h3 {
+		font-size: 16px;
+		margin: 0 0 5px 8px;
+	}
+	> div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+	margin-bottom: 20px;
+}
+
 @media screen and (max-width: 450px) {
 	.addressWrapper {
 		display: block;
+	}
+	.delivery_block {
+		> div {
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
 	}
 }
 

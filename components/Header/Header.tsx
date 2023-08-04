@@ -10,7 +10,7 @@ import {
 	BsJournal,
 	BsSearch,
 	BsStar,
-	BsTelephone,
+	BsWhatsapp,
 } from 'react-icons/bs'
 
 import { ImageBtn, Menu } from '@/components'
@@ -161,10 +161,7 @@ const Header: FC = () => {
 									svg={<BsStar size={25} />}
 									link="/favorites"
 								/>
-								<ImageBtn
-									title="Order a call"
-									svg={<BsTelephone size={25} />}
-								/>
+								<ImageBtn title="WhatsApp" svg={<BsWhatsapp size={25} />} />
 							</>
 						)}
 					</div>
@@ -248,7 +245,7 @@ const Header: FC = () => {
 					svg={<BsStar size={25} />}
 					link="/favorites"
 				/>
-				<ImageBtn title="Order a call" svg={<BsTelephone size={25} />} />
+				<ImageBtn title="WhatsApp" svg={<BsWhatsapp size={25} />} />
 			</div>
 		</>
 	)

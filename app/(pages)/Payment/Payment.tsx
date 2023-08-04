@@ -10,10 +10,6 @@ import { Button, Loader } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { clear } from '@/redux/slices/basketSlice'
 
-import { useCountdown } from '@/hooks/useCountdown'
-
-import { numberWithSpaces } from '@/utils/numberWithSpaces'
-
 import { IFormValues } from '@/types/form.type'
 
 import styles from './Payment.module.scss'
@@ -25,7 +21,6 @@ type FormType = {
 
 const Payment: FC = () => {
 	const [isLoading, setIsLoading] = useState(true)
-	// const [] = useCountdown('13:47:')
 	const router = useRouter()
 	const formData = useAppSelector((state) => state.formData)
 	const basketItems = useAppSelector((state) => state.basket)
