@@ -184,14 +184,14 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 			</div>
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 				<Button type="submit" styleType="fill">
-					Pay
+					Checkout
 				</Button>
 				<Button
 					type="button"
 					styleType="clear"
 					onClick={() => dispatch(clear())}
 				>
-					Empty
+					Clear
 				</Button>
 			</div>
 		</form>

@@ -1,5 +1,6 @@
 'use client'
 
+import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
@@ -14,7 +15,8 @@ import { GoTriangleRight } from 'react-icons/go'
 
 import { AvailableItem, Characteristic } from '@/components'
 
-import { useAppSelector } from '@/redux/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { addInBasket } from '@/redux/slices/basketSlice'
 
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
 
@@ -27,13 +29,17 @@ const tabs: TabsType[] = ['Description', 'Payment', 'Delivery']
 const Product: FC = () => {
 	const [activeTab, setActiveTab] = useState<TabsType>('Description')
 	const state = useAppSelector((state) => state.product)
+	const basket = useAppSelector((state) => state.basket)
+	const dispatch = useAppDispatch()
 
 	const path = usePathname()
+	const slugFromPath = path.split('/product/')[1]
 	const searchParams = useSearchParams()
 	const typeFind = searchParams.get('type')
+	const isCheckedBasket = basket.find((item) => item.slug === slugFromPath)
 
 	const items = state[typeFind as string].filter(
-		({ slug }) => slug === path.split('/product/')[1]
+		({ slug }) => slug === slugFromPath
 	)[0]
 
 	const { brand, title, src, price, availableCount, desc } = items
@@ -66,7 +72,14 @@ const Product: FC = () => {
 									<h3>$ {numberWithSpaces(price)}</h3>
 									<AvailableItem count={availableCount} />
 								</div>
-								<button>Order</button>
+								<button
+									className={cn(styles.order_btn, {
+										[styles.in_basket]: isCheckedBasket,
+									})}
+									onClick={() => dispatch(addInBasket(items))}
+								>
+									{isCheckedBasket ? 'In Basket' : 'Order'}
+								</button>
 								{availableCount > 0 && (
 									<p>
 										<AiOutlineCar size={20} />

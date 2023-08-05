@@ -36,9 +36,13 @@ const Header: FC = () => {
 	const pathname = usePathname()
 
 	useEffect(() => {
-		if (showMenu === true || showMobileMenu === true)
+		if (showMenu === true || showMobileMenu === true) {
 			document.body.style.position = 'fixed'
-		else document.body.style.position = 'relative'
+			document.body.style.left = '100vw'
+		} else {
+			document.body.style.position = 'relative'
+			document.body.style.left = '0'
+		}
 	}, [showMenu, showMobileMenu])
 
 	useEffect(() => {
