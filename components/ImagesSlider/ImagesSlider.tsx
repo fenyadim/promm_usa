@@ -15,8 +15,6 @@ interface IImagesSlider {
 
 type PeopleType = {
 	srcImg: string
-	name: string
-	place: string
 }
 
 const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
@@ -32,18 +30,14 @@ const ImagesSlider: FC<IImagesSlider> = ({ data }) => {
 					swiperRef.current = swiper
 				}}
 			>
-				{data.map(({ name, srcImg, place }, id) => (
-					<SwiperSlide key={`${name} ${id}`} className={styles.slide}>
+				{data.map(({ srcImg }, id) => (
+					<SwiperSlide key={id} className={styles.slide}>
 						<Image
 							src={srcImg}
-							alt={name}
+							alt={srcImg}
 							fill
 							style={{ objectFit: 'cover' }}
 						/>
-						<div className={styles.slide_info}>
-							<h4>{name}</h4>
-							<p>{place}</p>
-						</div>
 					</SwiperSlide>
 				))}
 			</Swiper>

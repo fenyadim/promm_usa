@@ -13,24 +13,25 @@ import styles from './Home.module.scss'
 
 const peopleInfo = [
 	{
-		srcImg: '/image/index/people/1.jpg',
-		name: 'Тимофей Кузьменко',
-		place: 'Основатель',
+		srcImg: '/image/presentation/1.jpg',
 	},
 	{
-		srcImg: '/image/index/people/2.jpg',
-		name: 'Евгений Дёготь',
-		place: 'Генеральный директор ',
+		srcImg: '/image/presentation/2.jpg',
 	},
 	{
-		srcImg: '/image/index/people/3.jpg',
-		name: 'Александр Федоров',
-		place: 'Директор по развитию',
+		srcImg: '/image/presentation/3.jfif',
 	},
 	{
-		srcImg: '/image/index/people/4.jpg',
-		name: 'Леонид Белоус',
-		place: 'Финансовый директор',
+		srcImg: '/image/presentation/4.jfif',
+	},
+	{
+		srcImg: '/image/presentation/5.jfif',
+	},
+	{
+		srcImg: '/image/presentation/6.jpg',
+	},
+	{
+		srcImg: '/image/presentation/7.jpg',
 	},
 ]
 
