@@ -88,6 +88,17 @@
 	}
 }
 
+.delete_btn {
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+	border: none;
+	color: #ff6060;
+	&:hover {
+		color: #f73131;
+	}
+}
+
 .in_basket {
 	background-color: #5820f6;
 	color: #fff;

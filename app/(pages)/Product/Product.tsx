@@ -9,6 +9,7 @@ import {
 	AiOutlineCar,
 	AiOutlineCloudServer,
 	AiOutlineDatabase,
+	AiOutlineDelete,
 	AiOutlineSetting,
 } from 'react-icons/ai'
 import { GoTriangleRight } from 'react-icons/go'
@@ -16,7 +17,7 @@ import { GoTriangleRight } from 'react-icons/go'
 import { AvailableItem, Characteristic } from '@/components'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { addInBasket } from '@/redux/slices/basketSlice'
+import { addInBasket, deleteItem } from '@/redux/slices/basketSlice'
 
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
 
@@ -72,14 +73,31 @@ const Product: FC = () => {
 									<h3>$ {numberWithSpaces(price)}</h3>
 									<AvailableItem count={availableCount} />
 								</div>
-								<button
-									className={cn(styles.order_btn, {
-										[styles.in_basket]: isCheckedBasket,
-									})}
-									onClick={() => dispatch(addInBasket(items))}
+								<div
+									className={styles.nav}
+									style={
+										isCheckedBasket
+											? { gridTemplateColumns: '4fr 1fr' }
+											: { gridTemplateColumns: '1fr' }
+									}
 								>
-									{isCheckedBasket ? 'In Basket' : 'Order'}
-								</button>
+									<button
+										className={cn(styles.order_btn, {
+											[styles.in_basket]: isCheckedBasket,
+										})}
+										onClick={() => dispatch(addInBasket(items))}
+									>
+										{isCheckedBasket ? 'In Basket' : 'Order'}
+									</button>
+									{isCheckedBasket && (
+										<button
+											className={styles.delete_btn}
+											onClick={() => dispatch(deleteItem(items))}
+										>
+											<AiOutlineDelete size={26} />
+										</button>
+									)}
+								</div>
 								{availableCount > 0 && (
 									<p>
 										<AiOutlineCar size={20} />

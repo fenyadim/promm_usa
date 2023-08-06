@@ -4,12 +4,12 @@ import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { AiFillStar, AiOutlineDelete, AiOutlineStar } from 'react-icons/ai'
 
 import { AvailableItem, Characteristic } from '@/components'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { addInBasket } from '@/redux/slices/basketSlice'
+import { addInBasket, deleteItem } from '@/redux/slices/basketSlice'
 import { addItem, removeItem } from '@/redux/slices/favoritesSlice'
 
 import { numberWithSpaces } from '@/utils/numberWithSpaces'
@@ -76,6 +76,15 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 				>
 					{isCheckedBasket ? 'In Basket' : 'Order'}
 				</button>
+
+				{isCheckedBasket && (
+					<button
+						className={styles.delete_btn}
+						onClick={() => dispatch(deleteItem(items))}
+					>
+						<AiOutlineDelete size={26} />
+					</button>
+				)}
 
 				<button onClick={clickFavoritesBtn} className={styles.favorite_btn}>
 					{isCheckedFavorite ? (

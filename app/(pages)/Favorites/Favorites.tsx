@@ -13,15 +13,13 @@ import styles from './Favorites.module.scss'
 const Favorites: FC = () => {
 	const favorites = useAppSelector((state) => state.favorites)
 
-	console.log(favorites.length !== 0)
-
 	return (
 		<section className={styles.wrapper}>
 			<h1>Favorites</h1>
 			<div
 				className={styles.products_container}
 				style={
-					favorites.length !== 0 ? { display: 'flex' } : { display: 'block' }
+					favorites.length !== 0 ? { display: 'grid' } : { display: 'block' }
 				}
 			>
 				<NothingWrapper visible={favorites.length === 0}>
