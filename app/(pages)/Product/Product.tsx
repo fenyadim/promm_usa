@@ -78,7 +78,7 @@ const Product: FC = () => {
 									style={
 										isCheckedBasket
 											? { gridTemplateColumns: '4fr 1fr' }
-											: { gridTemplateColumns: '1fr' }
+											: { gridTemplateColumns: '1fr 0fr' }
 									}
 								>
 									<button
