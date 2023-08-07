@@ -16,6 +16,9 @@
 		padding: 10px 18px;
 		font-size: 14px;
 		transition: outline-color 0.1s;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
 
 		&:hover {
 			outline-color: #7e7e7e;
