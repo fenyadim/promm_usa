@@ -4,7 +4,7 @@ import { useRouter } from 'next-nprogress-bar'
 import { ChangeEvent, FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { Button, Input, RadioBtn } from '@/components'
+import { Button, CountrySelect, Input, RadioBtn } from '@/components'
 
 import { useAppDispatch } from '@/redux/hooks'
 import { clear } from '@/redux/slices/basketSlice'
@@ -44,20 +44,10 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 	}
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(submit)}>
-			<Input
-				title="Country"
-				placeholder="USA"
-				error={errors.country}
+			<CountrySelect
 				//@ts-ignore
-				register={{
-					...register('country', {
-						required: 'Enter country',
-						pattern: {
-							value: countryReg,
-							message: 'Enter a valid country',
-						},
-					}),
-				}}
+				register={{ ...register('country', { required: 'Select country' }) }}
+				error={errors.country}
 			/>
 			<Input
 				type="tel"
@@ -70,7 +60,7 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 						required: 'Enter phone number',
 						pattern: {
 							value: phoneReg,
-							message: 'Enter a valid number',
+							message: 'Enter a valid phone number',
 						},
 					}),
 				}}
@@ -89,7 +79,7 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 							required: 'Enter first name',
 							pattern: {
 								value: nameReg,
-								message: 'Enter first name',
+								message: 'Enter a valid first name',
 							},
 						}),
 					}}
@@ -104,7 +94,7 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 							required: 'Enter last name',
 							pattern: {
 								value: nameReg,
-								message: 'Enter last name',
+								message: 'Enter a valid last name',
 							},
 						}),
 					}}
@@ -152,13 +142,31 @@ const FormOrder: FC<{ amount: number }> = ({ amount }) => {
 				<Input
 					//@ts-ignore
 					register={{
-						...register('postalCode', { required: 'Enter postal code' }),
+						...register('postalCode', {
+							required: 'Enter postal code',
+							pattern: {
+								value: phoneReg,
+								message: 'Enter a valid postal code',
+							},
+						}),
 					}}
 					title="Postal Code"
 					placeholder="01740"
 					error={errors.postalCode}
 				/>
 			</div>
+			<Input
+				type="email"
+				placeholder="info@promminer.ru"
+				title="Email"
+				error={errors.email}
+				//@ts-ignore
+				register={{
+					...register('email', {
+						required: 'Enter email',
+					}),
+				}}
+			/>
 			<div className={styles.delivery_block}>
 				<h3>Delivery</h3>
 				<div>

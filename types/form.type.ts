@@ -10,4 +10,5 @@ export interface IFormValues {
   apartment: string
   country: string
   delivery: 'dhl' | 'ups'
+  email: string
 }
