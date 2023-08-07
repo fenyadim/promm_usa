@@ -74,7 +74,7 @@ const ProductCard: FC<IProductCard> = ({ items, type }) => {
 					})}
 					onClick={() => dispatch(addInBasket(items))}
 				>
-					{isCheckedBasket ? 'In Basket' : 'Order'}
+					{isCheckedBasket ? `In Basket - ${isCheckedBasket.count}` : 'Order'}
 				</button>
 
 				{isCheckedBasket && (

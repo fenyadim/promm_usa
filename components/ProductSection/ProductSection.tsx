@@ -24,7 +24,7 @@ const ProductSection: FC<IProductSection> = ({ type }) => {
 			<div className={styles.wrapper}>
 				<h2>{transformTitle}</h2>
 				<div className={styles.product_wrapper}>
-					{findArr.slice(0, 5).map((items) => (
+					{findArr.slice(0, 6).map((items) => (
 						<Fragment key={items.slug}>
 							<ProductCard items={items} type="miners" />
 						</Fragment>
