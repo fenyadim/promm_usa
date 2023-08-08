@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
 
 import footerLogo from '../../public/image/footer/footer_logo.svg'
 
 import styles from './Footer.module.scss'
 
-const Footer = () => {
+const Footer: FC = () => {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer_wrapper}>
