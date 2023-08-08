@@ -9,7 +9,7 @@ import { contactInfo } from '@/api/contactInfo'
 
 import styles from './Contacts.module.scss'
 
-const mapState = { center: [55.751574, 37.573856], zoom: 3 }
+const mapState = { center: [55.751574, 37.573856], zoom: 2 }
 
 const Contacts: FC = () => {
 	const [chosenPlace, setChosenPlace] = useState<number>()
