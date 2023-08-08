@@ -81,7 +81,7 @@ export const products: DataType = {
       title: 'Asic miner Whatsminer M50S++ 150 Th/s',
       price: 2400,
       availableCount: 71,
-      hashrate: 150000,
+      hashrate: 150,
       algorithm: 'SHA-256',
       coins: 'Bitcoin',
       status: ['hit', 'new'],
@@ -313,7 +313,7 @@ export const products: DataType = {
       title: 'Asic miner Bitmain Antminer S19 XP 141TH/s',
       price: 3270,
       availableCount: 73,
-      hashrate: 141000,
+      hashrate: 141,
       algorithm: 'SHA-256',
       coins: 'BTC/BCH',
       status: ['new'],
@@ -407,7 +407,7 @@ export const products: DataType = {
       hashrate: 166,
       algorithm: 'Blake2S',
       coins: 'KDA',
-      status: ['hit','new'],
+      status: ['hit', 'new'],
       desc: 'The presentation of the latest miner model from Bitmain took place a little over a month ago - on September 13.  Immediately after its launch, the Antminer KA3 166th topped the list of Kadena cryptocurrency mining efficiency among all currently available devices.'
     },
     {
@@ -420,7 +420,7 @@ export const products: DataType = {
       hashrate: 3780,
       algorithm: 'Etchash/Ethash',
       coins: 'ETC/ETHW',
-      status: ['hit','new'],
+      status: ['hit', 'new'],
       desc: 'Bitmain Antminer E9 PRO is an ASIC miner designed to mine cryptocurrencies using the Ethash algorithm. It was first announced in 2021, and was only released in 2022. Despite the fact that the device is relatively new, it is already a popular choice for many crypto investors who need high hashing power and energy efficiency.'
     },
     {

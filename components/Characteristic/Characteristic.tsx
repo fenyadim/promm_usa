@@ -1,6 +1,12 @@
 import { FC } from 'react'
 
-import { CatalogType, ProductType } from '@/types/product.type'
+import { fetchHashrate } from '@/utils/fetchHashrate'
+
+import {
+	AlgorythmVariable,
+	CatalogType,
+	ProductType,
+} from '@/types/product.type'
 
 import styles from './Characteristic.module.scss'
 
@@ -27,7 +33,8 @@ const Characteristic: FC<ICharacteristic> = ({ type, item }) => {
 					miners: (
 						<>
 							<p>
-								<span>Hashrate</span> — {hashrate} MH/s
+								<span>Hashrate</span> — {hashrate}{' '}
+								{fetchHashrate(algorithm as AlgorythmVariable)}
 							</p>
 							<p>
 								<span>Algorithm</span> — {algorithm}

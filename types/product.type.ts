@@ -1,4 +1,4 @@
-type algorythmVariable =
+export type AlgorythmVariable =
   | 'Blake2B+SHA3'
   | 'Blake2S'
   | 'Eaglesong'
@@ -31,7 +31,7 @@ export type ProductType = {
   /** Хэшрэйт */
   hashrate?: number
   /** Алгоритм */
-  algorithm?: algorythmVariable
+  algorithm?: AlgorythmVariable
   /** Валюта */
   coins?: string
   /** Статусы: new и hit. Пример, ['new', 'hit'].  */
