@@ -38,7 +38,7 @@ export const recallData: RecallType[] = [
     text: "Very disappointed in Apollo not honoring full replacement warranty for 3 day old product, you don't repair brand new equipment! Thank you Leonid L. @Promminer for stepping in and honoring the warranty for them.  Belay Mining went above and beyond to satisfy a customer, if I need more mining equipment you can bet I'm coming here.  I'm glad to be back up and running eking out that last bit of EARTH before the merge. Thanks again for the great customer service..",
   },
   {
-    src: "/image/people/8.png",
+    src: "/image/people/8.jpeg",
     date: '29.05.2023',
     name: 'Calvin P',
     text: "Had some issues setting it up and finding the IP but ended up getting the help i needed!It mines over the advertised amount at about 150mh/s Sometimes it can dip lower and sometimes even higher but generally stays in the lower 100's-150. I do wish it were a little more consistent because it has dipped under 100mh/s but fortunately it usually doesnt stay that low for long Earning around .04etc/day THANKS SO MUCH! VERY VERY QUIET. Compared to an S9 its not even perceptible. Great little device, just wish it had more VRAM",
