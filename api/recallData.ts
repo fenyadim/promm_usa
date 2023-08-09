@@ -46,7 +46,7 @@ export const recallData: RecallType[] = [
   {
     src: "/image/people/9.jpg",
     date: '25.05.2023',
-    name: 'David O',
+    name: 'David J',
     text: "Second purchase from Prominent in past 2 months and as usual, great pricing, fast delivery and help when you need it. Bought the V1 Mini Gold just prior to the EARTH change to keep up with expected increase in Hashrate and it was most definitely warranted. Highly recommended source for your mining equipment!",
   },
   {
