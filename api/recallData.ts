@@ -20,7 +20,7 @@ export const recallData: RecallType[] = [
     text: "I love the miner and customer service I would recommend promminer to anyone looking for good deals! My apollo V1 mini classic has been hashing on average at about 151 mhz which is great! Profitable and good for beginners!",
   },
   {
-    src: "/image/people/5.jpg",
+    src: "/image/people/5.png",
     date: '19.06.2023',
     name: 'Richard S',
     text: "Great buying experience, competitive prices, fast shipping, sturdy packaging, Thank you!",
@@ -38,7 +38,7 @@ export const recallData: RecallType[] = [
     text: "Very disappointed in Apollo not honoring full replacement warranty for 3 day old product, you don't repair brand new equipment! Thank you Leonid L. @Promminer for stepping in and honoring the warranty for them.  Belay Mining went above and beyond to satisfy a customer, if I need more mining equipment you can bet I'm coming here.  I'm glad to be back up and running eking out that last bit of EARTH before the merge. Thanks again for the great customer service..",
   },
   {
-    src: "/image/people/8.jpg",
+    src: "/image/people/8.png",
     date: '29.05.2023',
     name: 'Calvin P',
     text: "Had some issues setting it up and finding the IP but ended up getting the help i needed!It mines over the advertised amount at about 150mh/s Sometimes it can dip lower and sometimes even higher but generally stays in the lower 100's-150. I do wish it were a little more consistent because it has dipped under 100mh/s but fortunately it usually doesnt stay that low for long Earning around .04etc/day THANKS SO MUCH! VERY VERY QUIET. Compared to an S9 its not even perceptible. Great little device, just wish it had more VRAM",
@@ -56,7 +56,7 @@ export const recallData: RecallType[] = [
     text: "Awesome service. I received my grin miner within 4 business days. I was up and mining in no time. Thank you, Promminer",
   },
   {
-    src: "/image/people/12.jpg",
+    src: "/image/people/12.png",
     date: '19.05.2023',
     name: 'Scott S',
     text: "I placed my order with Delay as theSE Plus model was USA stock and best price I could find. I received an email 1 day later with shipment info and it arrived 3 days after I placed my order. Hashing beautifully with 2 x SE models and the older apollo 'gold' model. Doing just over 400 mh/s @ 234 watts. Altogether 1100+ mh/s @ 702 watts. Profitable at 14 cent power. Will do more business with Promminer.",
