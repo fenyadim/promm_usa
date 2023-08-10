@@ -2,9 +2,10 @@
 	padding: 30px 30px 28px 27px;
 	border: 1px solid #ededed;
 	border-radius: 8px;
-	max-width: 400px;
+	min-width: 400px;
+
 	&:hover {
-		box-shadow: 0px 5px 30px rgba(34, 34, 34, 0.1);
+		border-color: #7140f7;
 	}
 	p {
 		color: #555;
