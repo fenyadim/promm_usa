@@ -1,32 +1,30 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
-import './data.css'
+import styles from './DataCenter.module.scss'
+
+// import './data.css'
 
 const DataCenter: FC = () => {
 	return (
-		<section>
-			<section className="data">
-				<div className="wrapper data__wrapper">
-					<h1 className="data-banner__header">
-						Mining hotel at a bargain price, own data center
-					</h1>
-					<ol className="data-banner__list">
-						<li className="data-banner__item">Shipping to the data center</li>
-						<li className="data-banner__item">Equipment placement</li>
-						<li className="data-banner__item">
-							Round-the-clock paramilitary guard
-						</li>
-						<li className="data-banner__item">
-							Ensuring uninterrupted operation
-						</li>
+		<div className={styles.data_wrapper}>
+			<section className={styles.header_container}>
+				<div className={styles.header_info}>
+					<h1>Mining hotel at a bargain price, own data center</h1>
+					<ol>
+						<li>Shipping to the data center</li>
+						<li>Equipment placement</li>
+						<li>Round-the-clock paramilitary guard</li>
+						<li>Ensuring uninterrupted operation</li>
 					</ol>
 				</div>
 			</section>
-			<section className="data-benefits">
-				<div className="wrapper">
-					<h3 className="data-benefits__header">Benefits</h3>
-					<ul className="data-benefits__list">
-						<li className="data-benefits__item">
+			<section>
+				<div className={styles.benefits_wrapper}>
+					<h3>Benefits</h3>
+					<ul className={styles.blocks_wrapper}>
+						<li className={styles.block}>
 							<svg
 								width="54"
 								height="64"
@@ -42,15 +40,13 @@ const DataCenter: FC = () => {
 									fill="#5820F6"
 								></path>
 							</svg>
-							<strong className="data-benefits__item-heading">
-								Uptime 99%
-							</strong>
-							<p className="data-benefits__item-description">
+							<h4>Uptime 99%</h4>
+							<p>
 								Provides high reliability: so your equipment will not be idle
 								and will bring more profit.
 							</p>
 						</li>
-						<li className="data-benefits__item">
+						<li className={styles.block}>
 							<svg
 								width="65"
 								height="64"
@@ -66,15 +62,13 @@ const DataCenter: FC = () => {
 									fill="#5820F6"
 								></path>
 							</svg>
-							<strong className="data-benefits__item-heading">
-								Low cost of electricity
-							</strong>
-							<p className="data-benefits__item-description">
+							<h4>Low cost of electricity</h4>
+							<p>
 								This is completely legal electricity - bought on the electricity
 								generation market.
 							</p>
 						</li>
-						<li className="data-benefits__item">
+						<li className={styles.block}>
 							<svg
 								width="64"
 								height="52"
@@ -90,15 +84,13 @@ const DataCenter: FC = () => {
 									fill="#5820F6"
 								></path>
 							</svg>
-							<strong className="data-benefits__item-heading">
-								Placement monitoring
-							</strong>
-							<p className="data-benefits__item-description">
+							<h4>Placement monitoring</h4>
+							<p>
 								In online format, you can monitor the efficiency of your
 								equipment from anywhere in the world.
 							</p>
 						</li>
-						<li className="data-benefits__item">
+						<li className={styles.block}>
 							<svg
 								width="60"
 								height="50"
@@ -114,15 +106,13 @@ const DataCenter: FC = () => {
 									fill="#5820F6"
 								></path>
 							</svg>
-							<strong className="data-benefits__item-heading">
-								All equipment is insured
-							</strong>
-							<p className="data-benefits__item-description">
+							<h4>All equipment is insureds</h4>
+							<p>
 								So your funds are always safe and in case of unforeseen
 								circumstances we will give you your money back.
 							</p>
 						</li>
-						<li className="data-benefits__item">
+						<li className={styles.block}>
 							<svg
 								width="56"
 								height="57"
@@ -138,10 +128,8 @@ const DataCenter: FC = () => {
 									fill="#5820F6"
 								></path>
 							</svg>
-							<strong className="data-benefits__item-heading">
-								Professional Security
-							</strong>
-							<p className="data-benefits__item-description">
+							<h4>Professional Security</h4>
+							<p>
 								The entire facility is guarded around the clock - all equipment
 								is reliably protected.
 							</p>
@@ -149,99 +137,83 @@ const DataCenter: FC = () => {
 					</ul>
 				</div>
 			</section>
-			<section className="data-service">
-				<div className="wrapper">
-					<div className="data-service__list">
-						<div className="data-service__item">
-							<h3 className="data-service__heading">UPTIME 99%</h3>
-							<p className="data-service__description">
-								Legal access to electricity
-							</p>
-						</div>
-						<div className="data-service__item">
-							<h3 className="data-service__heading">Advantageous tariff</h3>
-							<p className="data-service__description">
-								We have one of the lowest electricity rates in the U.S.
-							</p>
-						</div>
-						<div className="data-service__item">
-							<h3 className="data-service__heading">24/7</h3>
-							<p className="data-service__description">
-								Monitoring and maintenance
-							</p>
-						</div>
+			<section>
+				<div className={styles.service_wrapper}>
+					<div className={styles.service_item}>
+						<h3>UPTIME 99%</h3>
+						<p>Legal access to electricity</p>
+					</div>
+					<div className={styles.service_item}>
+						<h3>Advantageous tariff</h3>
+						<p>We have one of the lowest electricity rates in the U.S.</p>
+					</div>
+					<div className={styles.service_item}>
+						<h3>24/7</h3>
+						<p>Monitoring and maintenance</p>
 					</div>
 				</div>
 			</section>
-			<section className="data-container">
-				<div className="wrapper data-wrapper">
-					<div className="data-container__left">
-						<h3 className="data-container__heading">Mining containers</h3>
-						<p className="data-container__description">
+			<section className={styles.mining}>
+				<div className={styles.mining_wrapper}>
+					<div className={styles.mining_left}>
+						<h3>Mining containers</h3>
+						<p>
 							If you plan to accommodate more than 50 units, we recommend buying
 							a separate container.
 						</p>
-						<ul className="data-container__list">
-							<li className="data-container__item">
-								<p className="data-container__item-heading">
-									Production time from
-								</p>
-								<p className="data-container__item-description">14 days</p>
+						<ul className={styles.mining_info}>
+							<li className={styles.mining_item}>
+								<span>Production time from</span>
+								14 days
 							</li>
-							<li className="data-container__item">
-								<p className="data-container__item-heading">Cost from</p>
-								<p className="data-container__item-description">8000$</p>
+							<li className={styles.mining_item}>
+								<span>Cost from</span>
+								$8000
 							</li>
-							<li className="data-container__item">
-								<p className="data-container__item-heading">Capacity</p>
-								<p className="data-container__item-description">
-									36 to 264 units
-								</p>
+							<li className={styles.mining_item}>
+								<span>Capacity</span>
+								36 to 264 units
 							</li>
 						</ul>
-						<a href="#" className="data-container__btn">
+						<Link href="/catalog/containers" className={styles.btn}>
 							Choose a container
-						</a>
+						</Link>
 					</div>
-					<div className="data-container__right">
-						<img
+					<div className={styles.mining_right}>
+						<Image
 							src="/image/data-center/container.png"
 							alt=""
-							className="data-conteiner-img"
+							// className="data-conteiner-img"
+							fill
+							style={{ objectFit: 'cover', objectPosition: 'left' }}
 						/>
 					</div>
 				</div>
 			</section>
-			<section className="data-how">
-				<div className="wrapper">
-					<h3 className="data-how__heading">How it works</h3>
-					<div className="data-how__list">
-						<div className="data-how__item">
-							<p className="data-how__item-number">01</p>
-							<p className="data-how__item-description">
-								Buying equipment at promminer.us
-							</p>
+			<section>
+				<div className={styles.how_wrapper}>
+					<h3>How it works</h3>
+					<div className={styles.how_data}>
+						<div className={styles.how_item}>
+							<span>01</span>
+							<p>Buying equipment at promminer.us</p>
 						</div>
-						<div className="data-how__item">
-							<p className="data-how__item-number">02</p>
-							<p className="data-how__item-description">
-								We deliver equipment to our data center
-							</p>
+						<div className={styles.how_item}>
+							<span>02</span>
+							<p>We deliver equipment to our data center</p>
 						</div>
-						<div className="data-how__item">
-							<p className="data-how__item-number">03</p>
-							<p className="data-how__item-description">We insure equipment</p>
+						<div className={styles.how_item}>
+							<span>03</span>
+							<p>We insure equipment</p>
 						</div>
-						<div className="data-how__item">
-							<p className="data-how__item-number">04</p>
-							<p className="data-how__item-description">
-								Setting up and placing equipment
-							</p>
+						<div className={styles.how_item}>
+							<span>04</span>
+							<p>Setting up and placing equipment</p>
 						</div>
 					</div>
 				</div>
 			</section>
-		</section>
+		</div>
 	)
 }
 
