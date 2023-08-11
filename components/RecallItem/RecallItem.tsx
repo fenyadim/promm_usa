@@ -11,7 +11,9 @@ const RecallItem: FC<{ items: RecallType }> = ({ items }) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.top}>
-				<Image src={src} alt={name} width={64} height={64} />
+				<div className={styles.image}>
+					<Image src={src} alt={name} fill style={{ objectFit: 'cover' }} />
+				</div>
 				<div className={styles.info}>
 					<p>
 						Buyer - <span>{date}</span>

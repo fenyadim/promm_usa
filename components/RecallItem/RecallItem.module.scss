@@ -1,8 +1,14 @@
 .wrapper {
+	position: relative;
 	padding: 30px 30px 28px 27px;
 	border: 1px solid #ededed;
 	border-radius: 8px;
-	min-width: 400px;
+	overflow-y: hidden;
+	// min-width: 400px;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	row-gap: 10px;
 
 	&:hover {
 		border-color: #7140f7;
@@ -11,16 +17,23 @@
 		color: #555;
 		line-height: 1.4;
 	}
+	> p {
+		overflow-y: scroll;
+	}
 }
 
 .top {
 	display: flex;
 	align-items: center;
 	gap: 20px;
-	margin-bottom: 25px;
-	img {
-		border-radius: 50%;
-	}
+}
+
+.image {
+	position: relative;
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	overflow: hidden;
 }
 
 .info {

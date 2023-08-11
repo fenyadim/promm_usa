@@ -4,8 +4,6 @@ import { FC } from 'react'
 
 import styles from './DataCenter.module.scss'
 
-// import './data.css'
-
 const DataCenter: FC = () => {
 	return (
 		<div className={styles.data_wrapper}>
