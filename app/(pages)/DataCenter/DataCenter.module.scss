@@ -11,7 +11,7 @@
 .header_container {
 	position: relative;
 	background: url(/image/data-center/data-slide.png);
-	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
 	height: 522px;
 	&::before {

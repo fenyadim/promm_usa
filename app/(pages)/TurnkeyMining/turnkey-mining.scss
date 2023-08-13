@@ -11,16 +11,33 @@
 }
 
 .turnkey-mining {
+	position: relative;
 	background: url(/image/turnkey-mining/slide.jpg);
+	background-size: cover;
 	background-position: center;
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			rgba(0, 0, 0, 0.2) 0%,
+			rgba(55, 52, 117, 0.8) 90%
+		);
+		display: block;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+	}
 }
 
 .turnkey-mining__wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: 522px;
 	padding: 0 50px;
+	z-index: 1;
 }
 
 .turnkey-mining__header {
@@ -75,7 +92,7 @@
 .turnkey-info__list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .turnkey-info__block {

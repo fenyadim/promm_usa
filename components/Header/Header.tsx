@@ -1,9 +1,10 @@
 'use client'
 
+import { useRouter } from 'next-nprogress-bar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import { BiMenu } from 'react-icons/bi'
 import {
 	BsBasket,
@@ -31,9 +32,11 @@ const Header: FC = () => {
 	const [showSearch, setShowSearch] = useState<boolean>(false)
 	const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
 	const [innerWidth, setInnerWidth] = useState<number>(0)
+	const [valueSearch, setValueSearch] = useState<string>('')
 	const searchRef = useRef<any>(null)
 	const btnSearchRef = useRef<any>(null)
 	const pathname = usePathname()
+	const router = useRouter()
 
 	useEffect(() => {
 		if (showMenu === true || showMobileMenu === true) {
@@ -81,6 +84,11 @@ const Header: FC = () => {
 		setShowMobileMenu(false)
 	}, [pathname])
 
+	const enterSearch = (e: KeyboardEvent) => {
+		if (e.code === 'Enter') {
+			if (valueSearch.length !== 0) router.push('/catalog/asic-miners')
+		}
+	}
 	const toggleMobileMenu = toggleVisible(setShowMobileMenu, showMobileMenu)
 
 	const toggleMenu = toggleVisible(setShowMenu, showMenu)
@@ -104,11 +112,14 @@ const Header: FC = () => {
 					ref={searchRef}
 					type="text"
 					className={styles.header_input}
+					value={valueSearch}
+					onChange={(e) => setValueSearch(e.target.value)}
 					style={
 						showSearch
 							? { display: 'block', width: '100%' }
 							: { display: 'none' }
 					}
+					onKeyUp={enterSearch}
 				/>
 				<div
 					className={styles.header_middle}
@@ -150,7 +161,13 @@ const Header: FC = () => {
 							/>
 						)
 					) : (
-						<input type="text" className={styles.header_input} />
+						<input
+							type="text"
+							className={styles.header_input}
+							value={valueSearch}
+							onChange={(e) => setValueSearch(e.target.value)}
+							onKeyUp={enterSearch}
+						/>
 					)}
 					<div className={styles.header_right}>
 						<ImageBtn
