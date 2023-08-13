@@ -96,8 +96,8 @@ const Header: FC = () => {
 	const toggleSearch = toggleVisible(setShowSearch, showSearch)
 
 	return (
-		<>
-			<header className={styles.header}>
+		<header className={styles.header}>
+			<div className={styles.header_content}>
 				<nav className={styles.nav_top}>
 					<ul className={styles.nav_top_left}>
 						{topLinks.map(({ slug, title }) => (
@@ -204,7 +204,7 @@ const Header: FC = () => {
 						</li>
 					</ul>
 				</nav>
-			</header>
+			</div>
 			<Menu showMenu={showMenu} toggleMenu={toggleMenu} zIndex={2}>
 				<div>
 					<Link href="/catalog/asic-miners">Asic Miner</Link>
@@ -268,7 +268,7 @@ const Header: FC = () => {
 				/>
 				<ImageBtn title="WhatsApp" svg={<BsWhatsapp size={25} />} />
 			</div>
-		</>
+		</header>
 	)
 }
 
