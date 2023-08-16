@@ -468,7 +468,7 @@ export const products: DataType = {
     slug: 'pm-start',
     src: '/image/containers/start.jpg',
     title: 'Container PM Start',
-    price: 850000,
+    price: 8000,
     availableCount: 10,
     quantityPlace: 36,
     power: 198
@@ -476,7 +476,7 @@ export const products: DataType = {
     slug: 'pm-small',
     src: '/image/containers/start.jpg',
     title: 'Container PM Small',
-    price: 1400000,
+    price: 14500,
     availableCount: 10,
     quantityPlace: 72,
     power: 415
@@ -485,7 +485,7 @@ export const products: DataType = {
     slug: 'pm-optimal',
     src: '/image/containers/optimal.jpg',
     title: 'Container PM Optimal',
-    price: 2050000,
+    price: 20000,
     availableCount: 0,
     quantityPlace: 192,
     power: 831
@@ -493,7 +493,7 @@ export const products: DataType = {
     slug: 'pm-big',
     src: '/image/containers/big.jpeg',
     title: 'Container PM Big',
-    price: 2850000,
+    price: 25000,
     availableCount: 10,
     quantityPlace: 264,
     power: 1050
@@ -501,7 +501,7 @@ export const products: DataType = {
     slug: 'pm-medium',
     src: '/image/containers/medium.jpeg',
     title: 'Container PM Medium',
-    price: 1650000,
+    price: 16500,
     availableCount: 10,
     quantityPlace: 120,
     power: 528
