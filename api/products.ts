@@ -261,6 +261,19 @@ export const products: DataType = {
       status: ['hit'],
       desc: 'The V1 Mini SE PLUS looks like a router - thanks to its size it can be moved without much effort, if necessary. The metal case protects the device from mechanical damage, dust and dirt. It is equipped with one medium-sized cooler, which copes with its work quite well and does not allow the device to overheat.'
     },
+    {
+      slug: 'iPollo-v1-mini-hydro',
+      src: '/image/products/minihydro1.png',
+      brand: 'iPollo',
+      title: 'Asic miner iPollo V1 MINI HYDRO 900 Mh/s',
+      price: 1100,
+      availableCount: 95,
+      hashrate: 900,
+      algorithm: 'Etchash/Ethash',
+      coins: 'ETC, ZIL',
+      status: ['hit'],
+      desc: 'The V1 Mini SE PLUS looks like a router - thanks to its size it can be moved without much effort, if necessary. The metal case protects the device from mechanical damage, dust and dirt. It is equipped with one medium-sized cooler, which copes with its work quite well and does not allow the device to overheat.'
+    },
 
     // Goldshell
 
