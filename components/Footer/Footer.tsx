@@ -7,6 +7,8 @@ import footerLogo from '../../public/image/footer/footer_logo.svg'
 import styles from './Footer.module.scss'
 
 const Footer: FC = () => {
+	const yearNow = new Date().getFullYear()
+
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer_wrapper}>
@@ -48,6 +50,12 @@ const Footer: FC = () => {
 					</ul>
 				</div>
 			</div>
+			<section>
+				<div className={styles.footer_privacy}>
+					<h4>© {yearNow} Promminer.us </h4>
+					<Link href="/privacy">Privacy policy</Link>
+				</div>
+			</section>
 		</footer>
 	)
 }

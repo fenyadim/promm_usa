@@ -1,15 +1,32 @@
 .footer {
 	background-color: #222222;
+	> section {
+		background-color: #1b1b1b;
+	}
 }
 
 .footer_wrapper {
 	display: grid;
 	grid-template-areas: 'image a b c d e';
-	// grid-template-columns: repeat(6, 1fr);
 	margin: 0 auto;
 	max-width: calc(1662px + calc(2 * 32px));
 	padding: 80px 32px;
 	color: #fff;
+}
+
+.footer_privacy {
+	display: flex;
+	color: #696767;
+	justify-content: space-between;
+	font-size: 14px;
+	padding: 20px 32px;
+	margin: 0 auto;
+	max-width: calc(1662px + calc(2 * 32px));
+	> a {
+		&:hover {
+			color: white;
+		}
+	}
 }
 
 .footer_image {
@@ -102,6 +119,9 @@
 
 @media screen and (max-width: 570px) {
 	.footer_wrapper {
-		padding: 24px 20px 80px;
+		padding: 24px 20px;
+	}
+	.footer_privacy {
+		padding-bottom: 100px;
 	}
 }
