@@ -108,15 +108,15 @@ const Product: FC = () => {
 								)}
 							</div>
 							<div className={styles.links_block}>
-								<Link href="">
+								<Link href="/data-center">
 									<AiOutlineDatabase size={20} />
 									Free hosting in the data center
 								</Link>
-								<Link href="">
+								<Link href="/data-center">
 									<AiOutlineCloudServer size={20} />
 									Free pool connection
 								</Link>
-								<Link href="">
+								<Link href="/service">
 									<AiOutlineSetting size={20} />
 									Service
 								</Link>

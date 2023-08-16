@@ -232,15 +232,33 @@ const Header: FC = () => {
 				</div>
 				<div>
 					<Link href="/catalog/business">Ready-made business</Link>
-					<Link href="#">Ready-made business-START</Link>
-					<Link href="#">Ready-made business-SMART</Link>
-					<Link href="#">Ready-made business-MEDIUM</Link>
-					<Link href="#">Ready-made business-BIG</Link>
-					<Link href="#">Ready-made business-MAX</Link>
-					<Link href="#">Ready-made business-VIP</Link>
-					<Link href="#">Ready-made business-PREMIUM</Link>
-					<Link href="#">Ready-made business-TO THE MOON</Link>
-					<Link href="#">Ready-made business-STANDART</Link>
+					<Link href="/product/ready-start?type=business">
+						Ready-made business-START
+					</Link>
+					<Link href="/product/ready-smart?type=business">
+						Ready-made business-SMART
+					</Link>
+					<Link href="/product/ready-medium?type=business">
+						Ready-made business-MEDIUM
+					</Link>
+					<Link href="/product/ready-big?type=business">
+						Ready-made business-BIG
+					</Link>
+					<Link href="/product/ready-max?type=business">
+						Ready-made business-MAX
+					</Link>
+					<Link href="/product/ready-vip?type=business">
+						Ready-made business-VIP
+					</Link>
+					<Link href="/product/ready-lux?type=business">
+						Ready-made business-LUX
+					</Link>
+					<Link href="/product/ready-moon?type=business">
+						Ready-made business-TO THE MOON
+					</Link>
+					<Link href="/product/ready-standart?type=business">
+						Ready-made business-STANDART
+					</Link>
 				</div>
 			</Menu>
 			<Menu showMenu={showMobileMenu} toggleMenu={toggleMobileMenu}>
