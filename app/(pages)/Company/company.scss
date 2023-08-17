@@ -37,18 +37,18 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 30px;
+	gap: 60px;
 }
 
 .history__left {
 	max-width: 800px;
+	gap: 40px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
 .history__img {
-	margin-top: 50px;
 	border-radius: 10px;
 }
 
@@ -87,6 +87,7 @@
 
 .section__heading {
 	font-size: 26px;
+	margin-bottom: 20px;
 }
 
 .team__item {
@@ -122,8 +123,8 @@
 	}
 
 	.history__left {
-		max-width: 550px;
-		margin-right: 65px;
+		// max-width: 550px;
+		// margin-right: 65px;
 	}
 
 	.history__wrapper {
@@ -135,6 +136,20 @@
 	.history__img {
 		width: 220px;
 		height: 200px;
+	}
+	.history__right {
+		max-width: 100%;
+	}
+	.history__left {
+		justify-content: space-around;
+		gap: 30px;
+		max-width: 100%;
+	}
+
+	.history__wrapper {
+		align-items: center;
+		flex-direction: column-reverse;
+		gap: 30px;
 	}
 
 	.company__heading {
@@ -163,10 +178,10 @@
 		max-width: 150px;
 	}
 
-	.history__img {
-		max-width: 100px;
-		max-height: 120px;
-	}
+	// .history__img {
+	// 	max-width: 100px;
+	// 	max-height: 120px;
+	// }
 }
 
 @media screen and (max-width: 425px) {
