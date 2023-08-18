@@ -14,7 +14,7 @@ type IImageBtn = {
 type Ref = HTMLButtonElement
 
 const ImageBtn = forwardRef<Ref, IImageBtn>((props, ref) => {
-	const { title, svg, link } = props
+	const { title, svg, link, ...other } = props
 	const router = useRouter()
 
 	return (
@@ -22,7 +22,7 @@ const ImageBtn = forwardRef<Ref, IImageBtn>((props, ref) => {
 			ref={ref}
 			className={styles.btn_wrapper}
 			onClick={() => link && router.push(link)}
-			{...props}
+			{...other}
 		>
 			{svg}
 			{title && title}

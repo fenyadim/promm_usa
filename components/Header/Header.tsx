@@ -130,6 +130,7 @@ const Header: FC = () => {
 							src="/image/header/logo.png"
 							alt="Promminer"
 							fill
+							priority
 							style={{ objectFit: 'contain' }}
 						/>
 					</Link>
