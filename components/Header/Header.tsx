@@ -289,7 +289,11 @@ const Header: FC = () => {
 					svg={<BsStar size={25} />}
 					link="/favorites"
 				/>
-				<ImageBtn title="WhatsApp" svg={<BsWhatsapp size={25} />} />
+				<ImageBtn
+					title="WhatsApp"
+					svg={<BsWhatsapp size={25} />}
+					link="https://wa.me/+18325572656"
+				/>
 			</div>
 		</header>
 	)
